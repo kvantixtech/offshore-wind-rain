@@ -1,0 +1,5 @@
+.cdsapirc
+.env
+__pycache__/
+*.pyc
+/tmp/
