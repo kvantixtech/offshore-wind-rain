@@ -1,0 +1,2 @@
+name,lat,lon,radius_km,source,note
+Vindeby,54.97,11.13,3,https://en.wikipedia.org/wiki/Vindeby_Offshore_Wind_Farm,"First offshore wind farm (1991, 11 x 450 kW), dismantled in 2017. Not in the EMODnet layer. The register gives the turbines and dates; this file only names them."

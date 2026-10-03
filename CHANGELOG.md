@@ -45,3 +45,13 @@ Changes to the method are written here, with the reason, before they take effect
 - **Farm names and groups.**
   - A register turbine gets the name of the EMODnet farm whose polygon contains it, or lies within 2 km. Otherwise it keeps the register's own park name.
   - Groups for the randomization inference follow METHOD.md. German North Sea farms are split at 54.3° N.
+- **First run (commit `9d1bf65`), and what it led to:**
+  - **Turbines.** 2,863 turbine points: 750 Danish (ENS), 1,808 German (MaStR), 305 grid points for Gemini and Lillgrund. 59 farms.
+  - **Left out.** 101 German units have no commissioning date: the planned clusters "NC 1–4", 6 He Dreiht units and 1 Windanker unit. They are listed in the check file.
+  - **No farm missing.** No EMODnet farm within 150 km of a station is without turbines.
+  - **Two naming fixes,** made before any exposure is computed:
+    1. All turbines of one register park now take the EMODnet name that most of that park's turbines match. For example, one Arkona unit lay just outside the polygon and became a farm of its own.
+    2. Danish register turbines outside every EMODnet polygon and without a park name (the 11 Vindeby turbines, 1991–2017) are named from `data/farm_names_extra.csv`, which cites its source. This changes names and groups only, not capacity or dates.
+  - **German total.** In operation at the end of 2025: 9,737 MW. Deutsche WindGuard, *Status des Offshore-Windenergieausbaus in Deutschland, Jahr 2025*, gives 9,740 MW. The difference is under 0.1 %.
+  - **Danish total.** 2,632 MW. The national figure to compare with is still to be found; check 1 is not passed until it is.
+  - **Danish dates are per park.** The register gives one connection date for all turbines of most Danish parks, for example Horns Rev 3: 2018-12-23. The capacity of such a park therefore starts on one day.

@@ -251,6 +251,24 @@ def main():
         t["farm_match_m"] = round(d)
         t["country"] = "Denmark" if t["turbine_id"].startswith("DK-") else "Germany"
         turbines.append(t)
+    # one name per register park: the EMODnet farm most of the park's matched turbines fall in
+    from collections import Counter
+    by_park = {}
+    for t in turbines:
+        if t["register_park"] and t["farm_match_m"] <= 2000:
+            by_park.setdefault((t["country"], t["register_park"]), Counter())[t["farm"]] += 1
+    for t in turbines:
+        c = by_park.get((t["country"], t["register_park"]))
+        if c:
+            t["farm"] = c.most_common(1)[0][0]
+    # register turbines with no EMODnet farm and no park name: names from data/farm_names_extra.csv (with sources)
+    extra = list(csv.DictReader(open(os.path.join(DATA, "farm_names_extra.csv"), encoding="utf-8")))
+    for t in turbines:
+        if t["farm"] in ("", "unmatched"):
+            p3 = Point(to3035(t["lon"], t["lat"]))
+            for e in extra:
+                if p3.distance(Point(to3035(float(e["lon"]), float(e["lat"])))) <= float(e["radius_km"]) * 1000:
+                    t["farm"] = e["name"]
     log(f"register turbines: {len(turbines)}; matched to an EMODnet farm within 2 km: {sum(1 for t in turbines if t['farm_match_m'] <= 2000)}")
 
     # farms without a turbine register here: points on a 500 m grid inside the polygon, capacity ramped between the two dates
@@ -334,7 +352,8 @@ def main():
     for f, what in (("turbines.csv", "Every offshore turbine point with capacity, dates, farm and group (tools/farms.py)"),
                     ("farms.csv", "Farm table: capacity, first and last commissioning, distance to the nearest station"),
                     ("farms_check.json", "Check 1 inputs: farms without turbines, national totals, what was left out"),
-                    ("farms_manual.csv", "Hand-entered dates with sources for farms without a turbine register here")):
+                    ("farms_manual.csv", "Hand-entered dates with sources for farms without a turbine register here"),
+                    ("farm_names_extra.csv", "Names, with sources, for register turbines outside every EMODnet polygon")):
         p = os.path.join(DATA, f)
         man["files"][f] = {"sha256": hashlib.sha256(open(p, "rb").read()).hexdigest(), "bytes": os.path.getsize(p), "what": what}
     json.dump(man, open(mp, "w", encoding="utf-8"), indent=1, ensure_ascii=False, sort_keys=True); open(mp, "a").write("\n")
