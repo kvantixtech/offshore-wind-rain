@@ -12,6 +12,7 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+      - run: pip install -q --break-system-packages openpyxl
       - run: python3 probe/probe.py 2>&1 | tee probe/stdout.txt; exit ${PIPESTATUS[0]}
         shell: bash
       - if: always()
