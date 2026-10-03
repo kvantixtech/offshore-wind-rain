@@ -1,0 +1,25 @@
+name: farms
+# Step 1 of the order of work in METHOD.md: turbines and farms. Reads no rain data.
+on:
+  push:
+    branches: ["main"]
+    paths: ["tools/farms.py", "tools/rangezip.py", "data/farms_manual.csv", ".github/workflows/farms.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: farms
+  cancel-in-progress: false
+jobs:
+  farms:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q --break-system-packages openpyxl pyproj shapely
+      - run: python3 tools/farms.py 2>&1 | tee data/farms_run.log; exit ${PIPESTATUS[0]}
+        shell: bash
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ && git commit -qm "farms: turbines and farm table (tools/farms.py)" && git pull -q --rebase && git push -q || echo "nothing to commit"
