@@ -1,0 +1,19 @@
+name: probe
+# Temporary, on the branch "probe" only: finds the turbine registers before tools/farms.py is written. No rain data.
+on:
+  push:
+    branches: ["probe"]
+    paths: ["probe/probe.py", ".github/workflows/probe.yml"]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 probe/probe.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probe/ && git commit -qm "probe result" && git push -q
