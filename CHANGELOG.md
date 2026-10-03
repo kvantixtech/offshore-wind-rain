@@ -55,3 +55,4 @@ Changes to the method are written here, with the reason, before they take effect
   - **German total.** In operation at the end of 2025: 9,737 MW. Deutsche WindGuard, *Status des Offshore-Windenergieausbaus in Deutschland, Jahr 2025*, gives 9,740 MW. The difference is under 0.1 %.
   - **Danish total.** 2,632 MW. The national figure to compare with is still to be found; check 1 is not passed until it is.
   - **Danish dates are per park.** The register gives one connection date for all turbines of most Danish parks, for example Horns Rev 3: 2018-12-23. The capacity of such a park therefore starts on one day.
+- **The coverage check follows the fix.** After the renaming, the EMODnet layer's second polygon for Baltic 1 ("EnBW Baltic I", the same 48 MW farm as "EnBW Windpark Baltic 1") was reported as missing. The check now counts a polygon as covered when any turbine point lies within 2 km of it, whatever name the turbine carries.

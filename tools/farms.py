@@ -330,9 +330,12 @@ def main():
                         "first": f["first"].isoformat() if f["first"] else "", "last": f["last"].isoformat() if f["last"] else ""})
 
     # check 1 (METHOD.md): every relevant EMODnet farm within 150 km of a station has turbines; national totals at end of 2025
-    have = set(t["farm"] for t in turbines)
+    # a farm polygon is covered if any turbine point lies within 2 km of it, whatever name the turbine carries
+    tp = [Point(to3035(t["lon"], t["lat"])) for t in turbines]
+    ttree = STRtree(tp)
+    covered = lambda g3: len(ttree.query(g3.buffer(2000))) > 0
     missing = [{"name": p["name"], "country": p["country"], "status": p["status"], "year": p.get("year"), "power_mw": p.get("power_mw"),
-                "km_to_station": round(d, 1)} for (p, g, g3), d in zip(relevant, rel_dist) if d <= 150 and p["name"] not in have]
+                "km_to_station": round(d, 1)} for (p, g, g3), d in zip(relevant, rel_dist) if d <= 150 and not covered(g3)]
     totals = {}
     for t in turbines:
         if t["start"] and t["start"] <= END_2025 and (not t["end"] or t["end"] > END_2025):
