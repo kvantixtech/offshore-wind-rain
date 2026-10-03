@@ -11,8 +11,8 @@
    "what": "Farm table: capacity, first and last commissioning, distance to the nearest station"
   },
   "farms_check.json": {
-   "bytes": 13267,
-   "sha256": "21512b0315ce9f6bf3bc72bdeea4048365944ff1c522ab639094032af9694c2e",
+   "bytes": 13112,
+   "sha256": "151ba72248e587e696f101c385ee8328b7bb1c8403bf266f9b20885644420dd2",
    "what": "Check 1 inputs: farms without turbines, national totals, what was left out"
   },
   "farms_manual.csv": {
@@ -22,28 +22,28 @@
   },
   "raw/emodnet_windfarmspoly.geojson.xz": {
    "bytes": 365160,
-   "fetched_utc": "2026-10-03T09:39:28Z",
-   "sha256": "0d3211b30b797c6b54fbfd5e1383fb131c1272e24e7fbf9e9ecaea22771c05d7",
+   "fetched_utc": "2026-10-03T09:40:49Z",
+   "sha256": "2cff305561c292b73efb8ab4b73a941ec58205ae2250a68c405568e9a002f3f9",
    "source": "https://ows.emodnet-humanactivities.eu/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=emodnet%3Awindfarmspoly&outputFormat=application%2Fjson&srsName=EPSG%3A4326",
    "what": "EMODnet Human Activities, wind farm polygons (WFS GetFeature, GeoJSON), xz-compressed"
   },
   "raw/ens_historiske_vinddata.xlsx": {
    "bytes": 1280243,
-   "fetched_utc": "2026-10-03T09:39:03Z",
+   "fetched_utc": "2026-10-03T09:40:24Z",
    "sha256": "e08632169f78cbfe6cbe6eb9c8c15cc21ac4c1bab9c7478115a3c8afe9fe92b4",
    "source": "https://ens.dk/media/8746/download",
    "what": "Energistyrelsen, Stamdataregister for vindkraftanlæg (attachment; filename=\"Historiske vinddata.xlsx\")"
   },
   "raw/ens_vinddata.xlsx": {
    "bytes": 2503214,
-   "fetched_utc": "2026-10-03T09:38:59Z",
+   "fetched_utc": "2026-10-03T09:40:20Z",
    "sha256": "4667614be5e4750fae57e6325d7315d6424d0ab3a5aba628da015ca1cb7610df",
    "source": "https://ens.dk/media/8748/download",
    "what": "Energistyrelsen, Stamdataregister for vindkraftanlæg (attachment; filename=Vinddata.xlsx)"
   },
   "raw/mastr_offshore_units.csv.xz": {
    "bytes": 79260,
-   "fetched_utc": "2026-10-03T09:39:26Z",
+   "fetched_utc": "2026-10-03T09:40:48Z",
    "sha256": "29e9319c0696ba9d33909eb176fc6c6719c9fc29aadd715d2d4d2f5d73a7923a",
    "source": "https://download.marktstammdatenregister.de/Gesamtdatenexport_20261003_26.2.zip",
    "what": "Marktstammdatenregister full export, member EinheitenWind.xml (CRC bce996bd, 206460776 bytes): every unit with WindAnLandOderAufSee = 889, all fields, unchanged"
