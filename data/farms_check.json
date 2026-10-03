@@ -1,5 +1,14 @@
 {
- "emodnet_farms_within_150km_without_turbines": [],
+ "emodnet_farms_within_150km_without_turbines": [
+  {
+   "name": "EnBW Baltic I",
+   "country": "Germany",
+   "status": "Production",
+   "year": "2010",
+   "power_mw": 48.0,
+   "km_to_station": 20.9
+  }
+ ],
  "mw_in_operation_end_2025_by_country": {
   "Germany": 9737.2,
   "Denmark": 2632.2,
@@ -665,5 +674,5 @@
    }
   ]
  },
- "seconds": 39
+ "seconds": 36
 }

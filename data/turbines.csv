@@ -19,7 +19,7 @@ DE-SEE900924483104,Germany,EnBW Windpark Baltic 2,Kriegers Flak and Baltic 1/2,S
 DE-SEE900930108824,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.237774,6.832403,4.2,2016-11-03,,MaStR,OWP Sandbank,0,88.5,mastr_offshore_units.csv.xz
 DE-SEE900959631303,Germany,EnBW He Dreiht,German Bight north of 54.3N,North Sea,54.354576,6.210594,15.0,2026-03-05,,MaStR,EnBW He Dreiht,10240,89.9,mastr_offshore_units.csv.xz
 DE-SEE900995028679,Germany,Gode Wind 01,German Bight south of 54.3N,North Sea,54.037566,6.942749,6.264,2016-08-01,,MaStR,Gode Wind 1,0,38.7,mastr_offshore_units.csv.xz
-DE-SEE901006060237,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.902571,13.994243,15.0,2026-09-02,,MaStR,OWP Windanker,5850,95.5,mastr_offshore_units.csv.xz
+DE-SEE901006060237,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.902571,13.994243,15.0,2026-09-02,,MaStR,OWP Windanker,5850,95.5,mastr_offshore_units.csv.xz
 DE-SEE901299254238,Germany,Meerwind Sued/Ost,German Bight north of 54.3N,North Sea,54.364995,7.641274,3.78,2014-11-21,,MaStR,Meerwind Süd|Ost,0,26.7,mastr_offshore_units.csv.xz
 DE-SEE901338274838,Germany,Veja Mate,German Bight north of 54.3N,North Sea,54.35682,5.864274,6.3,2017-03-19,,MaStR,OWP Veja Mate,0,100.7,mastr_offshore_units.csv.xz
 DE-SEE901429414358,Germany,Borkum Riffgrund 1,German Bight south of 54.3N,North Sea,53.953948,6.594166,4.2,2015-05-25,,MaStR,Borkum Riffgrund 1,0,38.9,mastr_offshore_units.csv.xz
@@ -81,12 +81,12 @@ DE-SEE904780632317,Germany,DanTysk,German Bight north of 54.3N,North Sea,55.1905
 DE-SEE904836387451,Germany,Borkum Riffgrund 2,German Bight south of 54.3N,North Sea,53.974146,6.617016,8.3,2018-08-05,,MaStR,Borkum Riffgrund 2,0,39.9,mastr_offshore_units.csv.xz
 DE-SEE904899315484,Germany,Amrumbank West,German Bight north of 54.3N,North Sea,54.506383,7.666667,3.78,2015-09-10,,MaStR,Amrumbank-West,1,39.7,mastr_offshore_units.csv.xz
 DE-SEE904904853499,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.246524,6.828993,4.2,2016-10-26,,MaStR,OWP Sandbank,0,88.3,mastr_offshore_units.csv.xz
-DE-SEE904972063707,Germany,Trianel Windpark Borkum Phase 2,German Bight south of 54.3N,North Sea,54.000189,6.448212,5.0,2015-04-18,,MaStR,Trianel Windpark Borkum,0,47.7,mastr_offshore_units.csv.xz
+DE-SEE904972063707,Germany,Trianel Windpark Borkum Phase 1,German Bight south of 54.3N,North Sea,54.000189,6.448212,5.0,2015-04-18,,MaStR,Trianel Windpark Borkum,0,47.7,mastr_offshore_units.csv.xz
 DE-SEE905023554328,Germany,EnBW Hohe See,German Bight north of 54.3N,North Sea,54.418438,6.324234,7.35,2019-07-19,,MaStR,Windpark Hohe See,0,92.4,mastr_offshore_units.csv.xz
 DE-SEE905025349632,Germany,EnBW Windpark Baltic 2,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,54.996278,13.166861,3.78,2015-04-25,,MaStR,Baltic 2,0,44.7,mastr_offshore_units.csv.xz
 DE-SEE905159407185,Germany,EnBW Windpark Baltic 2,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,54.994479,13.201473,3.78,2015-06-02,,MaStR,Baltic 2,0,46.9,mastr_offshore_units.csv.xz
 DE-SEE905186617335,Germany,Nordsee One,German Bight south of 54.3N,North Sea,53.976259,6.780955,6.15,2017-06-30,,MaStR,Nordsee One,0,35.5,mastr_offshore_units.csv.xz
-DE-SEE905266159809,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.920938,14.007993,15.0,2026-08-23,,MaStR,OWP Windanker,6913,97.6,mastr_offshore_units.csv.xz
+DE-SEE905266159809,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.920938,14.007993,15.0,2026-08-23,,MaStR,OWP Windanker,6913,97.6,mastr_offshore_units.csv.xz
 DE-SEE905345823836,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.14075,6.868897,4.2,2016-10-07,,MaStR,OWP Sandbank,0,89.5,mastr_offshore_units.csv.xz
 DE-SEE905373051485,Germany,Gode Wind 3,German Bight south of 54.3N,North Sea,54.02367,7.0851,11.55,2024-07-31,,MaStR,Gode Wind 3,0,34.9,mastr_offshore_units.csv.xz
 DE-SEE905374235600,Germany,Merkur Offshore (MEG Offshore I),German Bight south of 54.3N,North Sea,54.04563,6.57901,6.15,2018-11-25,,MaStR,Merkur Offshore,0,48.0,mastr_offshore_units.csv.xz
@@ -130,7 +130,7 @@ DE-SEE907329897376,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat
 DE-SEE907353096202,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.821014,14.091142,5.23,2017-11-30,,MaStR,WIKINGER,0,94.5,mastr_offshore_units.csv.xz
 DE-SEE907370162409,Germany,Nordsee One,German Bight south of 54.3N,North Sea,53.972179,6.80366,6.15,2017-07-26,,MaStR,Nordsee One,0,34.7,mastr_offshore_units.csv.xz
 DE-SEE907392221870,Germany,ARCADIS Ost 1,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.853613,13.612982,9.525,2023-01-20,,MaStR,Arcadis Ost I,1,74.9,mastr_offshore_units.csv.xz
-DE-SEE907394220611,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.905567,14.019557,15.0,2026-08-24,,MaStR,OWP Windanker,5080,97.0,mastr_offshore_units.csv.xz
+DE-SEE907394220611,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.905567,14.019557,15.0,2026-08-24,,MaStR,OWP Windanker,5080,97.0,mastr_offshore_units.csv.xz
 DE-SEE907421344761,Germany,Arkona-Becken Südost,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.782903,14.132888,6.3,2018-09-29,,MaStR,Arkona Becken Süd-Ost,0,94.3,mastr_offshore_units.csv.xz
 DE-SEE907467182310,Germany,EnBW Hohe See,German Bight north of 54.3N,North Sea,54.450541,6.349861,7.35,2019-08-20,,MaStR,Windpark Hohe See,0,95.0,mastr_offshore_units.csv.xz
 DE-SEE907484978088,Germany,Kaskasi II,German Bight north of 54.3N,North Sea,54.500013,7.654222,9.0,2022-11-14,,MaStR,OWP Kaskasi,0,39.3,mastr_offshore_units.csv.xz
@@ -525,15 +525,15 @@ DE-SEE929403151624,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.200
 DE-SEE929542066056,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.02816,6.25739,11.55,2026-05-05,,MaStR,Borkum Riffgrund 3,0,56.1,mastr_offshore_units.csv.xz
 DE-SEE929594113609,Germany,EnBW He Dreiht,German Bight north of 54.3N,North Sea,54.338435,6.193439,15.0,2026-06-23,,MaStR,EnBW He Dreiht,11399,88.9,mastr_offshore_units.csv.xz
 DE-SEE929625468838,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.807625,14.042563,5.23,2017-12-12,,MaStR,WIKINGER,0,91.1,mastr_offshore_units.csv.xz
-DE-SEE929665304516,Germany,Gode Wind 02,German Bight south of 54.3N,North Sea,54.038887,7.041072,15.0,2026-08-12,,MaStR,NC 1,1868,37.1,mastr_offshore_units.csv.xz
+DE-SEE929665304516,Germany,Gode Wind 3,German Bight south of 54.3N,North Sea,54.038887,7.041072,15.0,2026-08-12,,MaStR,NC 1,1868,37.1,mastr_offshore_units.csv.xz
 DE-SEE929707702508,Germany,Kaskasi II,German Bight north of 54.3N,North Sea,54.494673,7.715249,9.0,2022-08-08,,MaStR,OWP Kaskasi,0,37.4,mastr_offshore_units.csv.xz
-DE-SEE929751352261,Germany,Trianel Windpark Borkum Phase 2,German Bight south of 54.3N,North Sea,54.044921,6.473281,5.0,2015-04-05,,MaStR,Trianel Windpark Borkum,0,51.7,mastr_offshore_units.csv.xz
+DE-SEE929751352261,Germany,Trianel Windpark Borkum Phase 1,German Bight south of 54.3N,North Sea,54.044921,6.473281,5.0,2015-04-05,,MaStR,Trianel Windpark Borkum,0,51.7,mastr_offshore_units.csv.xz
 DE-SEE929755322970,Germany,Arkona-Becken Südost,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.791009,14.072885,6.3,2018-10-12,,MaStR,Arkona Becken Süd-Ost,0,91.6,mastr_offshore_units.csv.xz
 DE-SEE929837771061,Germany,DanTysk,German Bight north of 54.3N,North Sea,55.109911,7.217119,3.78,2014-12-05,,MaStR,OWP DanTysk,0,69.5,mastr_offshore_units.csv.xz
 DE-SEE929888739249,Germany,Gode Wind 01,German Bight south of 54.3N,North Sea,53.995317,7.045361,6.264,2016-07-18,,MaStR,Gode Wind 1,0,32.3,mastr_offshore_units.csv.xz
 DE-SEE929936670364,Germany,Gode Wind 01,German Bight south of 54.3N,North Sea,53.992451,6.988175,6.264,2016-08-01,,MaStR,Gode Wind 1,0,33.0,mastr_offshore_units.csv.xz
 DE-SEE929977699614,Germany,Global Tech I,German Bight north of 54.3N,North Sea,54.485867,6.394733,5.0,2015-02-07,,MaStR,Global Tech I,0,97.4,mastr_offshore_units.csv.xz
-DE-SEE930086471695,Germany,NC 1,German Bight south of 54.3N,North Sea,54.048108,7.070119,15.0,2026-09-07,,MaStR,NC 1,2240,37.8,mastr_offshore_units.csv.xz
+DE-SEE930086471695,Germany,Gode Wind 3,German Bight south of 54.3N,North Sea,54.048108,7.070119,15.0,2026-09-07,,MaStR,NC 1,2240,37.8,mastr_offshore_units.csv.xz
 DE-SEE930115174122,Germany,ARCADIS Ost 1,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.830236,13.663315,9.525,2023-01-20,,MaStR,Arcadis Ost I,0,75.1,mastr_offshore_units.csv.xz
 DE-SEE930214455054,Germany,Bard Offshore 1,German Bight north of 54.3N,North Sea,54.322593,5.99498,5.5,2011-06-25,,MaStR,Bard Offshore 1 - C10 - 51573657604,0,93.0,mastr_offshore_units.csv.xz
 DE-SEE930218437995,Germany,Arkona-Becken Südost,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.768943,14.123509,6.3,2018-09-16,,MaStR,Arkona Becken Süd-Ost,0,92.9,mastr_offshore_units.csv.xz
@@ -623,14 +623,14 @@ DE-SEE934273260024,Germany,Veja Mate,German Bight north of 54.3N,North Sea,54.34
 DE-SEE934278234518,Germany,EnBW Windpark Baltic 1,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,54.605806,12.642389,2.3,2011-04-04,,MaStR,Baltic 1,0,18.4,mastr_offshore_units.csv.xz
 DE-SEE934314616605,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.869582,14.089899,5.23,2017-12-02,,MaStR,WIKINGER,1,97.8,mastr_offshore_units.csv.xz
 DE-SEE934361982159,Germany,ARCADIS Ost 1,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.829979,13.573086,9.525,2023-03-18,,MaStR,Arcadis Ost I,0,71.5,mastr_offshore_units.csv.xz
-DE-SEE934386159987,Germany,EnBW Baltic I,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.630667,12.691889,2.3,2011-04-13,,MaStR,Baltic 1,0,22.1,mastr_offshore_units.csv.xz
+DE-SEE934386159987,Germany,EnBW Windpark Baltic 1,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,54.630667,12.691889,2.3,2011-04-13,,MaStR,Baltic 1,0,22.1,mastr_offshore_units.csv.xz
 DE-SEE934394514839,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.812568,14.026836,5.23,2017-12-03,,MaStR,WIKINGER,1,90.6,mastr_offshore_units.csv.xz
 DE-SEE934543166827,Germany,Butendiek,German Bight north of 54.3N,North Sea,54.972827,7.789362,3.6,2015-05-25,,MaStR,Butendiek,0,34.5,mastr_offshore_units.csv.xz
-DE-SEE934554297022,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.911253,13.99125,15.0,2026-09-08,,MaStR,OWP Windanker,6706,96.1,mastr_offshore_units.csv.xz
+DE-SEE934554297022,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.911253,13.99125,15.0,2026-09-08,,MaStR,OWP Windanker,6706,96.1,mastr_offshore_units.csv.xz
 DE-SEE934677635855,Germany,Global Tech I,German Bight north of 54.3N,North Sea,54.473692,6.357866,5.0,2015-07-18,,MaStR,Global Tech I,0,97.1,mastr_offshore_units.csv.xz
 DE-SEE934697756301,Germany,ARCADIS Ost 1,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.809937,13.679713,9.525,2023-04-13,,MaStR,Arcadis Ost I,0,74.1,mastr_offshore_units.csv.xz
 DE-SEE934776436049,Germany,Borkum Riffgrund 1,German Bight south of 54.3N,North Sea,53.980862,6.536996,4.2,2015-03-26,,MaStR,Borkum Riffgrund 1,0,43.5,mastr_offshore_units.csv.xz
-DE-SEE934812516407,Germany,Gode Wind 01,German Bight south of 54.3N,North Sea,54.031148,7.028788,15.0,2026-09-15,,MaStR,NC 1,819,36.4,mastr_offshore_units.csv.xz
+DE-SEE934812516407,Germany,Gode Wind 3,German Bight south of 54.3N,North Sea,54.031148,7.028788,15.0,2026-09-15,,MaStR,NC 1,819,36.4,mastr_offshore_units.csv.xz
 DE-SEE934849409062,Germany,Global Tech I,German Bight north of 54.3N,North Sea,54.4981,6.373024,5.0,2014-10-15,,MaStR,Global Tech I,0,99.2,mastr_offshore_units.csv.xz
 DE-SEE934884763020,Germany,Meerwind Sued/Ost,German Bight north of 54.3N,North Sea,54.405671,7.764137,3.78,2015-01-19,,MaStR,Meerwind Süd|Ost,0,27.0,mastr_offshore_units.csv.xz
 DE-SEE934900424751,Germany,Amrumbank West,German Bight north of 54.3N,North Sea,54.533427,7.703883,3.78,2015-08-22,,MaStR,Amrumbank West,0,41.7,mastr_offshore_units.csv.xz
@@ -650,7 +650,7 @@ DE-SEE935940603205,Germany,Veja Mate,German Bight north of 54.3N,North Sea,54.30
 DE-SEE936042022574,Germany,Nordergründe,German Bight south of 54.3N,North Sea,53.846333,8.165116,6.15,2017-12-11,,MaStR,OWP Nordergründe,2,18.1,mastr_offshore_units.csv.xz
 DE-SEE936114553166,Germany,Nordsee Ost,German Bight north of 54.3N,North Sea,54.454667,7.640501,6.15,2015-02-16,,MaStR,OWP Nordsee Ost 1,0,35.2,mastr_offshore_units.csv.xz
 DE-SEE936388105023,Germany,Amrumbank West,German Bight north of 54.3N,North Sea,54.506383,7.679072,3.78,2015-09-13,,MaStR,Amrumbank-West,1,39.4,mastr_offshore_units.csv.xz
-DE-SEE936401206737,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.893942,13.997215,15.0,2026-08-27,,MaStR,OWP Windanker,5028,95.0,mastr_offshore_units.csv.xz
+DE-SEE936401206737,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.893942,13.997215,15.0,2026-08-27,,MaStR,OWP Windanker,5028,95.0,mastr_offshore_units.csv.xz
 DE-SEE936409606911,Germany,Nordsee Ost,German Bight north of 54.3N,North Sea,54.417415,7.682603,6.15,2015-06-13,,MaStR,OWP Nordsee Ost 1,1,30.2,mastr_offshore_units.csv.xz
 DE-SEE936479813509,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.02839,6.24023,11.55,2026-03-07,,MaStR,Borkum Riffgrund 3,0,56.7,mastr_offshore_units.csv.xz
 DE-SEE936618736799,Germany,Meerwind Sued/Ost,German Bight north of 54.3N,North Sea,54.413716,7.742752,3.78,2015-01-25,,MaStR,Meerwind Süd|Ost,0,28.3,mastr_offshore_units.csv.xz
@@ -689,7 +689,7 @@ DE-SEE938419714914,Germany,Nordsee Ost,German Bight north of 54.3N,North Sea,54.
 DE-SEE938436194270,Germany,Arkona-Becken Südost,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.786165,14.146476,6.3,2018-10-08,,MaStR,Arkona Becken Süd-Ost,0,95.2,mastr_offshore_units.csv.xz
 DE-SEE938506812240,Germany,EnBW Windpark Baltic 2,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,54.966789,13.147068,3.78,2015-06-08,,MaStR,Baltic 2,0,43.5,mastr_offshore_units.csv.xz
 DE-SEE938745263216,Germany,Amrumbank West,German Bight north of 54.3N,North Sea,54.517171,7.741088,3.78,2015-04-12,,MaStR,Amrumbank-West,0,39.3,mastr_offshore_units.csv.xz
-DE-SEE938766370603,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.889839,14.04223,15.0,2026-08-22,,MaStR,OWP Windanker,2813,96.9,mastr_offshore_units.csv.xz
+DE-SEE938766370603,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.889839,14.04223,15.0,2026-08-22,,MaStR,OWP Windanker,2813,96.9,mastr_offshore_units.csv.xz
 DE-SEE938825827567,Germany,DanTysk,German Bight north of 54.3N,North Sea,55.119269,7.169986,3.78,2015-01-23,,MaStR,OWP DanTysk,0,71.9,mastr_offshore_units.csv.xz
 DE-SEE938844957719,Germany,DanTysk,German Bight north of 54.3N,North Sea,55.066322,7.227639,3.78,2015-02-04,,MaStR,OWP DanTysk,0,70.9,mastr_offshore_units.csv.xz
 DE-SEE939020285671,Germany,Merkur Offshore (MEG Offshore I),German Bight south of 54.3N,North Sea,54.0589,6.528,6.15,2019-02-23,,MaStR,Merkur Offshore,0,51.0,mastr_offshore_units.csv.xz
@@ -714,7 +714,7 @@ DE-SEE939913744070,Germany,Meerwind Sued/Ost,German Bight north of 54.3N,North S
 DE-SEE939935842822,Germany,Kaskasi II,German Bight north of 54.3N,North Sea,54.477285,7.655293,9.0,2022-12-06,,MaStR,OWP Kaskasi,0,37.0,mastr_offshore_units.csv.xz
 DE-SEE939957507006,Germany,Riffgat,German Bight south of 54.3N,North Sea,53.697094,6.469261,3.78,2014-02-23,,MaStR,RIFFGAT,0,18.7,mastr_offshore_units.csv.xz
 DE-SEE940122192637,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.84319,14.031667,5.23,2017-11-09,,MaStR,WIKINGER,0,93.0,mastr_offshore_units.csv.xz
-DE-SEE940177894593,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.887863,14.020936,15.0,2026-08-22,,MaStR,OWP Windanker,3489,95.7,mastr_offshore_units.csv.xz
+DE-SEE940177894593,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.887863,14.020936,15.0,2026-08-22,,MaStR,OWP Windanker,3489,95.7,mastr_offshore_units.csv.xz
 DE-SEE940178432558,Germany,Arkona-Becken Südost,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.797999,14.13151,6.3,2018-09-21,,MaStR,Arkona Becken Süd-Ost,0,95.1,mastr_offshore_units.csv.xz
 DE-SEE940192313642,Germany,Bard Offshore 1,German Bight north of 54.3N,North Sea,54.406771,6.018208,5.5,2013-02-27,,MaStR,Bard Offshore 1 - C1 - 51573657505,1,100.5,mastr_offshore_units.csv.xz
 DE-SEE940342746108,Germany,Merkur Offshore (MEG Offshore I),German Bight south of 54.3N,North Sea,54.01157,6.55589,6.15,2018-07-29,,MaStR,Merkur Offshore,0,45.6,mastr_offshore_units.csv.xz
@@ -827,7 +827,7 @@ DE-SEE945824674429,Germany,EnBW Windpark Baltic 2,Kriegers Flak and Baltic 1/2,S
 DE-SEE945830103432,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.265953,6.838131,4.2,2016-10-05,,MaStR,OWP Sandbank,0,86.9,mastr_offshore_units.csv.xz
 DE-SEE945921103884,Germany,Butendiek,German Bight north of 54.3N,North Sea,55.012496,7.772237,3.6,2015-02-14,,MaStR,Butendiek,0,36.8,mastr_offshore_units.csv.xz
 DE-SEE946094268790,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.03782,6.11835,11.55,2025-12-12,,MaStR,Borkum Riffgrund 3,0,62.2,mastr_offshore_units.csv.xz
-DE-SEE946177776556,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.903625,14.051816,15.0,2026-08-24,,MaStR,OWP Windanker,3819,98.3,mastr_offshore_units.csv.xz
+DE-SEE946177776556,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.903625,14.051816,15.0,2026-08-24,,MaStR,OWP Windanker,3819,98.3,mastr_offshore_units.csv.xz
 DE-SEE946201988634,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.04688,6.17843,11.55,2026-03-03,,MaStR,Borkum Riffgrund 3,0,60.7,mastr_offshore_units.csv.xz
 DE-SEE946203335894,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.262344,6.807211,4.2,2016-12-16,,MaStR,OWP Sandbank,0,88.9,mastr_offshore_units.csv.xz
 DE-SEE946205995522,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.169212,6.874127,4.2,2017-01-17,,MaStR,OWP Sandbank,0,88.4,mastr_offshore_units.csv.xz
@@ -950,7 +950,7 @@ DE-SEE953148085487,Germany,Global Tech I,German Bight north of 54.3N,North Sea,5
 DE-SEE953260844498,Germany,Gode Wind 01,German Bight south of 54.3N,North Sea,54.036338,6.968914,6.264,2016-07-14,,MaStR,Gode Wind 1,0,38.0,mastr_offshore_units.csv.xz
 DE-SEE953325996100,Germany,Amrumbank West,German Bight north of 54.3N,North Sea,54.517171,7.703883,3.78,2015-09-27,,MaStR,Amrumbank-West,0,40.0,mastr_offshore_units.csv.xz
 DE-SEE953449671655,Germany,Trianel Windpark Borkum Phase 2,German Bight south of 54.3N,North Sea,54.088293,6.4753,6.33,2019-12-18,,MaStR,"Trianel Windpark Borkum, Bauphase 2",0,55.6,mastr_offshore_units.csv.xz
-DE-SEE953495185281,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.866929,14.012747,15.0,2026-08-22,,MaStR,OWP Windanker,2334,93.8,mastr_offshore_units.csv.xz
+DE-SEE953495185281,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.866929,14.012747,15.0,2026-08-22,,MaStR,OWP Windanker,2334,93.8,mastr_offshore_units.csv.xz
 DE-SEE953518902390,Germany,Riffgat,German Bight south of 54.3N,North Sea,53.687242,6.438725,3.78,2014-02-28,,MaStR,RIFFGAT,2,19.5,mastr_offshore_units.csv.xz
 DE-SEE953575278629,Germany,Nordsee Ost,German Bight north of 54.3N,North Sea,54.428034,7.668565,6.15,2015-05-04,,MaStR,OWP Nordsee Ost 1,0,31.7,mastr_offshore_units.csv.xz
 DE-SEE953749377837,Germany,Borkum Riffgrund 2,German Bight south of 54.3N,North Sea,53.92417,6.547653,8.3,2018-09-28,,MaStR,Borkum Riffgrund 2,0,37.7,mastr_offshore_units.csv.xz
@@ -964,7 +964,7 @@ DE-SEE954229210972,Germany,Veja Mate,German Bight south of 54.3N,North Sea,54.27
 DE-SEE954247613335,Germany,EnBW He Dreiht,German Bight north of 54.3N,North Sea,54.34682,6.201794,15.0,2026-03-01,,MaStR,EnBW He Dreiht,11244,89.4,mastr_offshore_units.csv.xz
 DE-SEE954288609311,Germany,EnBW Windpark Baltic 2,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,54.988497,13.14818,3.78,2015-05-12,,MaStR,Baltic 2,0,43.5,mastr_offshore_units.csv.xz
 DE-SEE954315066100,Germany,Merkur Offshore (MEG Offshore I),German Bight south of 54.3N,North Sea,54.0281,6.5426,6.15,2019-02-02,,MaStR,Merkur Offshore,0,47.6,mastr_offshore_units.csv.xz
-DE-SEE954361698188,Germany,Gode Wind 01,German Bight south of 54.3N,North Sea,54.026962,7.044292,15.0,2026-09-15,,MaStR,NC 1,1195,35.7,mastr_offshore_units.csv.xz
+DE-SEE954361698188,Germany,Gode Wind 3,German Bight south of 54.3N,North Sea,54.026962,7.044292,15.0,2026-09-15,,MaStR,NC 1,1195,35.7,mastr_offshore_units.csv.xz
 DE-SEE954419921961,Germany,Gode Wind 3,German Bight south of 54.3N,North Sea,54.00589,7.0764,11.55,2024-08-13,,MaStR,Gode Wind 3,1,33.0,mastr_offshore_units.csv.xz
 DE-SEE954492825392,Germany,Kaskasi II,German Bight north of 54.3N,North Sea,54.487138,7.726045,9.0,2022-07-31,,MaStR,OWP Kaskasi,0,36.4,mastr_offshore_units.csv.xz
 DE-SEE954527536378,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.05572,6.24485,11.55,2025-12-25,,MaStR,Borkum Riffgrund 3,0,59.1,mastr_offshore_units.csv.xz
@@ -1010,11 +1010,11 @@ DE-SEE956466610416,Germany,EnBW He Dreiht,German Bight north of 54.3N,North Sea,
 DE-SEE956510161277,Germany,Bard Offshore 1,German Bight north of 54.3N,North Sea,54.387299,5.939595,5.5,2013-08-01,,MaStR,Bard Offshore 1 - C5 - 51573657555,0,101.0,mastr_offshore_units.csv.xz
 DE-SEE956610212619,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.03772,6.09422,11.55,2025-12-05,,MaStR,Borkum Riffgrund 3,2,63.2,mastr_offshore_units.csv.xz
 DE-SEE956636546699,Germany,Trianel Windpark Borkum Phase 1,German Bight south of 54.3N,North Sea,54.015884,6.461102,5.0,2015-04-04,,MaStR,Trianel Windpark Borkum,0,49.1,mastr_offshore_units.csv.xz
-DE-SEE956688133816,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.89685,14.026072,15.0,2026-08-24,,MaStR,OWP Windanker,4044,96.6,mastr_offshore_units.csv.xz
+DE-SEE956688133816,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.89685,14.026072,15.0,2026-08-24,,MaStR,OWP Windanker,4044,96.6,mastr_offshore_units.csv.xz
 DE-SEE956713993651,Germany,Borkum Riffgrund 2,German Bight south of 54.3N,North Sea,53.980419,6.456961,8.3,2018-09-05,,MaStR,Borkum Riffgrund 2,0,45.5,mastr_offshore_units.csv.xz
-DE-SEE956742892048,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.921458,14.030167,15.0,2026-08-29,,MaStR,OWP Windanker,6221,98.7,mastr_offshore_units.csv.xz
+DE-SEE956742892048,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.921458,14.030167,15.0,2026-08-29,,MaStR,OWP Windanker,6221,98.7,mastr_offshore_units.csv.xz
 DE-SEE956749757418,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.126881,6.906628,4.2,2016-09-24,,MaStR,OWP Sandbank,1,87.6,mastr_offshore_units.csv.xz
-DE-SEE956837862925,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.879447,14.0294,15.0,2026-08-22,,MaStR,OWP Windanker,2425,95.5,mastr_offshore_units.csv.xz
+DE-SEE956837862925,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.879447,14.0294,15.0,2026-08-22,,MaStR,OWP Windanker,2425,95.5,mastr_offshore_units.csv.xz
 DE-SEE956901092579,Germany,Nordergründe,German Bight south of 54.3N,North Sea,53.828731,8.182909,6.15,2017-11-26,,MaStR,OWP Nordergründe,5,18.6,mastr_offshore_units.csv.xz
 DE-SEE956940278347,Germany,Alpha Ventus,German Bight south of 54.3N,North Sea,54.007503,6.60711,5.0,2009-08-05,,MaStR,alpha ventus,0,43.4,mastr_offshore_units.csv.xz
 DE-SEE956953405204,Germany,Bard Offshore 1,German Bight north of 54.3N,North Sea,54.345256,5.949504,5.5,2013-08-26,,MaStR,Bard Offshore 1 - C6 - 51573657563,0,96.7,mastr_offshore_units.csv.xz
@@ -1028,7 +1028,7 @@ DE-SEE957606512058,Germany,Butendiek,German Bight north of 54.3N,North Sea,55.02
 DE-SEE957759462743,Germany,Kaskasi II,German Bight north of 54.3N,North Sea,54.478086,7.725029,9.0,2022-11-26,,MaStR,OWP Kaskasi,0,35.4,mastr_offshore_units.csv.xz
 DE-SEE957800907780,Germany,EnBW Windpark Baltic 1,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,54.612806,12.667139,2.3,2011-04-10,,MaStR,Baltic 1,0,19.6,mastr_offshore_units.csv.xz
 DE-SEE957925285947,Germany,Riffgat,German Bight south of 54.3N,North Sea,53.697609,6.512171,3.78,2014-02-23,,MaStR,RIFFGAT,1,16.7,mastr_offshore_units.csv.xz
-DE-SEE958156335036,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.913915,14.013296,15.0,2026-08-24,,MaStR,OWP Windanker,6075,97.3,mastr_offshore_units.csv.xz
+DE-SEE958156335036,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.913915,14.013296,15.0,2026-08-24,,MaStR,OWP Windanker,6075,97.3,mastr_offshore_units.csv.xz
 DE-SEE958194208347,Germany,Global Tech I,German Bight north of 54.3N,North Sea,54.485885,6.367082,5.0,2014-10-16,,MaStR,Global Tech I,0,98.1,mastr_offshore_units.csv.xz
 DE-SEE958323106612,Germany,Butendiek,German Bight north of 54.3N,North Sea,55.0358,7.791143,3.6,2015-04-27,,MaStR,Butendiek,0,36.7,mastr_offshore_units.csv.xz
 DE-SEE958355312814,Germany,Veja Mate,German Bight south of 54.3N,North Sea,54.275,5.910106,6.3,2017-05-16,,MaStR,OWP Veja Mate,0,91.5,mastr_offshore_units.csv.xz
@@ -1060,7 +1060,7 @@ DE-SEE959825946355,Germany,DanTysk,German Bight north of 54.3N,North Sea,55.0819
 DE-SEE959861452193,Germany,EnBW Hohe See,German Bight north of 54.3N,North Sea,54.40989,6.374406,7.35,2019-08-20,,MaStR,Windpark Hohe See,0,90.2,mastr_offshore_units.csv.xz
 DE-SEE959897777345,Germany,Meerwind Sued/Ost,German Bight north of 54.3N,North Sea,54.407886,7.686036,3.78,2014-09-03,,MaStR,Meerwind Süd|Ost,0,29.2,mastr_offshore_units.csv.xz
 DE-SEE959924804518,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.852242,14.067419,5.23,2017-11-20,,MaStR,WIKINGER,0,95.4,mastr_offshore_units.csv.xz
-DE-SEE959999772286,Germany,Trianel Windpark Borkum Phase 2,German Bight south of 54.3N,North Sea,54.060802,6.430945,5.0,2015-02-01,,MaStR,Trianel Windpark Borkum,0,54.5,mastr_offshore_units.csv.xz
+DE-SEE959999772286,Germany,Trianel Windpark Borkum Phase 1,German Bight south of 54.3N,North Sea,54.060802,6.430945,5.0,2015-02-01,,MaStR,Trianel Windpark Borkum,0,54.5,mastr_offshore_units.csv.xz
 DE-SEE960012982162,Germany,Trianel Windpark Borkum Phase 2,German Bight south of 54.3N,North Sea,54.088706,6.509169,6.33,2019-11-17,,MaStR,"Trianel Windpark Borkum, Bauphase 2",0,54.5,mastr_offshore_units.csv.xz
 DE-SEE960078708294,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.844359,14.119046,5.23,2017-11-13,,MaStR,WIKINGER,7,97.5,mastr_offshore_units.csv.xz
 DE-SEE960091807516,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.06826,6.13791,11.55,2026-02-17,,MaStR,Borkum Riffgrund 3,1,64.1,mastr_offshore_units.csv.xz
@@ -1077,7 +1077,7 @@ DE-SEE960736344628,Germany,Meerwind Sued/Ost,German Bight north of 54.3N,North S
 DE-SEE960825197302,Germany,Global Tech I,German Bight north of 54.3N,North Sea,54.528651,6.364219,5.0,2015-07-18,,MaStR,Global Tech I,0,102.6,mastr_offshore_units.csv.xz
 DE-SEE960890844446,Germany,Nordsee Ost,German Bight north of 54.3N,North Sea,54.427704,7.640376,6.15,2015-08-02,,MaStR,OWP Nordsee Ost 1,2,32.5,mastr_offshore_units.csv.xz
 DE-SEE960924399607,Germany,DanTysk,German Bight north of 54.3N,North Sea,55.231861,7.185703,3.78,2015-02-13,,MaStR,OWP DanTysk,0,67.5,mastr_offshore_units.csv.xz
-DE-SEE960946826587,Germany,Trianel Windpark Borkum Phase 2,German Bight south of 54.3N,North Sea,54.039271,6.487383,5.0,2015-05-24,,MaStR,Trianel Windpark Borkum,0,50.7,mastr_offshore_units.csv.xz
+DE-SEE960946826587,Germany,Trianel Windpark Borkum Phase 1,German Bight south of 54.3N,North Sea,54.039271,6.487383,5.0,2015-05-24,,MaStR,Trianel Windpark Borkum,0,50.7,mastr_offshore_units.csv.xz
 DE-SEE961029147148,Germany,Borkum Riffgrund 1,German Bight south of 54.3N,North Sea,53.967361,6.502727,4.2,2015-06-23,,MaStR,Borkum Riffgrund 1,0,43.1,mastr_offshore_units.csv.xz
 DE-SEE961104009422,Germany,Meerwind Sued/Ost,German Bight north of 54.3N,North Sea,54.415402,7.763062,3.78,2015-01-20,,MaStR,Meerwind Süd|Ost,0,28.0,mastr_offshore_units.csv.xz
 DE-SEE961140291966,Germany,DanTysk,German Bight north of 54.3N,North Sea,55.208664,7.193658,3.78,2015-03-13,,MaStR,OWP DanTysk,0,67.5,mastr_offshore_units.csv.xz
@@ -1124,7 +1124,7 @@ DE-SEE963568982921,Germany,Bard Offshore 1,German Bight north of 54.3N,North Sea
 DE-SEE963712621553,Germany,Nordsee One,German Bight south of 54.3N,North Sea,53.993911,6.74768,6.15,2017-07-16,,MaStR,Nordsee One,0,38.1,mastr_offshore_units.csv.xz
 DE-SEE963851789220,Germany,Butendiek,German Bight north of 54.3N,North Sea,55.026563,7.781254,3.6,2015-03-25,,MaStR,Butendiek,0,36.8,mastr_offshore_units.csv.xz
 DE-SEE963889094785,Germany,Global Tech I,German Bight north of 54.3N,North Sea,54.522525,6.391888,5.0,2015-04-11,,MaStR,Global Tech I,0,101.3,mastr_offshore_units.csv.xz
-DE-SEE963952113825,Germany,Arkona Becken Süd-Ost,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.245574,14.17682,6.3,2018-10-22,,MaStR,Arkona Becken Süd-Ost,56556,77.5,mastr_offshore_units.csv.xz
+DE-SEE963952113825,Germany,Arkona-Becken Südost,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.245574,14.17682,6.3,2018-10-22,,MaStR,Arkona Becken Süd-Ost,56556,77.5,mastr_offshore_units.csv.xz
 DE-SEE963985963800,Germany,Arkona-Becken Südost,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.770771,14.081253,6.3,2018-09-15,,MaStR,Arkona Becken Süd-Ost,0,90.8,mastr_offshore_units.csv.xz
 DE-SEE964017077441,Germany,Borkum Riffgrund 1,German Bight south of 54.3N,North Sea,53.960667,6.571299,4.2,2015-04-25,,MaStR,Borkum Riffgrund 1,0,40.4,mastr_offshore_units.csv.xz
 DE-SEE964127068940,Germany,Nordsee One,German Bight south of 54.3N,North Sea,53.979129,6.842848,6.15,2017-05-28,,MaStR,Nordsee One,0,34.8,mastr_offshore_units.csv.xz
@@ -1288,7 +1288,7 @@ DE-SEE973142155108,Germany,Amrumbank West,German Bight north of 54.3N,North Sea,
 DE-SEE973153748870,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.258875,6.856992,4.2,2016-10-27,,MaStR,OWP Sandbank,3,86.1,mastr_offshore_units.csv.xz
 DE-SEE973199906937,Germany,Riffgat,German Bight south of 54.3N,North Sea,53.685469,6.465305,3.78,2014-02-13,,MaStR,RIFFGAT,0,18.0,mastr_offshore_units.csv.xz
 DE-SEE973220806380,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.01964,6.15241,11.55,2026-05-19,,MaStR,Borkum Riffgrund 3,1,59.2,mastr_offshore_units.csv.xz
-DE-SEE973268043396,Germany,Gode Wind 02,German Bight south of 54.3N,North Sea,54.046625,7.053361,15.0,2026-09-11,,MaStR,NC 1,1400,37.8,mastr_offshore_units.csv.xz
+DE-SEE973268043396,Germany,Gode Wind 3,German Bight south of 54.3N,North Sea,54.046625,7.053361,15.0,2026-09-11,,MaStR,NC 1,1400,37.8,mastr_offshore_units.csv.xz
 DE-SEE973297666818,Germany,Veja Mate,German Bight north of 54.3N,North Sea,54.372462,5.901753,6.3,2017-02-05,,MaStR,OWP Veja Mate,0,100.9,mastr_offshore_units.csv.xz
 DE-SEE973308581420,Germany,Gode Wind 02,German Bight south of 54.3N,North Sea,54.074436,7.038288,6.264,2016-06-12,,MaStR,Gode Wind 2,0,41.0,mastr_offshore_units.csv.xz
 DE-SEE973429775937,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.823419,14.103328,5.23,2017-11-29,,MaStR,WIKINGER,0,95.3,mastr_offshore_units.csv.xz
@@ -1298,7 +1298,7 @@ DE-SEE973560086497,Germany,Kaskasi II,German Bight north of 54.3N,North Sea,54.5
 DE-SEE973583595174,Germany,Borkum Riffgrund 2,German Bight south of 54.3N,North Sea,53.97393,6.434121,8.3,2018-10-09,,MaStR,Borkum Riffgrund 2,0,45.4,mastr_offshore_units.csv.xz
 DE-SEE973594758933,Germany,Borkum Riffgrund 1,German Bight south of 54.3N,North Sea,53.980836,6.491251,4.2,2015-05-15,,MaStR,Borkum Riffgrund 1,3,44.8,mastr_offshore_units.csv.xz
 DE-SEE973624065284,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.031,6.27321,11.55,2026-03-11,,MaStR,Borkum Riffgrund 3,0,55.8,mastr_offshore_units.csv.xz
-DE-SEE973769363061,Germany,Gode Wind 02,German Bight south of 54.3N,North Sea,54.05588,7.066273,15.0,2026-09-11,,MaStR,NC 1,1778,38.6,mastr_offshore_units.csv.xz
+DE-SEE973769363061,Germany,Gode Wind 3,German Bight south of 54.3N,North Sea,54.05588,7.066273,15.0,2026-09-11,,MaStR,NC 1,1778,38.6,mastr_offshore_units.csv.xz
 DE-SEE973834798125,Germany,Global Tech I,German Bight north of 54.3N,North Sea,54.522556,6.318142,5.0,2015-06-14,,MaStR,Global Tech I,0,103.1,mastr_offshore_units.csv.xz
 DE-SEE973914818842,Germany,Nordsee One,German Bight south of 54.3N,North Sea,53.987792,6.75851,6.15,2017-09-26,,MaStR,Nordsee One,0,37.2,mastr_offshore_units.csv.xz
 DE-SEE973944897206,Germany,EnBW Windpark Baltic 2,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,54.990935,13.214256,3.78,2015-06-16,,MaStR,Baltic 2,0,47.7,mastr_offshore_units.csv.xz
@@ -1324,7 +1324,7 @@ DE-SEE975239397002,Germany,Baltic Eagle,Other German Baltic farms,Skagerrak-Katt
 DE-SEE975248600179,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.07871,6.27382,11.55,2026-05-05,,MaStR,Borkum Riffgrund 3,0,60.4,mastr_offshore_units.csv.xz
 DE-SEE975283682673,Germany,Borkum Riffgrund 3,German Bight south of 54.3N,North Sea,54.02903,6.15089,11.55,2026-04-24,,MaStR,Borkum Riffgrund 3,0,60.1,mastr_offshore_units.csv.xz
 DE-SEE975317182971,Germany,Merkur Offshore (MEG Offshore I),German Bight south of 54.3N,North Sea,54.03631,6.60601,6.15,2019-05-08,,MaStR,Merkur Offshore,0,46.2,mastr_offshore_units.csv.xz
-DE-SEE975320044594,Germany,Trianel Windpark Borkum Phase 2,German Bight south of 54.3N,North Sea,54.061307,6.417115,5.0,2015-04-27,,MaStR,Trianel Windpark Borkum,0,54.8,mastr_offshore_units.csv.xz
+DE-SEE975320044594,Germany,Trianel Windpark Borkum Phase 1,German Bight south of 54.3N,North Sea,54.061307,6.417115,5.0,2015-04-27,,MaStR,Trianel Windpark Borkum,0,54.8,mastr_offshore_units.csv.xz
 DE-SEE975401075868,Germany,Butendiek,German Bight north of 54.3N,North Sea,55.053912,7.799922,3.6,2015-05-24,,MaStR,Butendiek,0,37.0,mastr_offshore_units.csv.xz
 DE-SEE975422450163,Germany,Butendiek,German Bight north of 54.3N,North Sea,54.973768,7.799922,3.6,2015-06-14,,MaStR,Butendiek,0,33.8,mastr_offshore_units.csv.xz
 DE-SEE975427286736,Germany,DanTysk,German Bight north of 54.3N,North Sea,55.146139,7.228142,3.78,2015-03-15,,MaStR,OWP DanTysk,0,67.4,mastr_offshore_units.csv.xz
@@ -1481,7 +1481,7 @@ DE-SEE983040469238,Germany,Butendiek,German Bight north of 54.3N,North Sea,54.98
 DE-SEE983077453002,Germany,Arkona-Becken Südost,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.771791,14.139915,6.3,2018-10-08,,MaStR,Arkona Becken Süd-Ost,0,94.0,mastr_offshore_units.csv.xz
 DE-SEE983087427321,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.118419,6.909539,4.2,2016-09-25,,MaStR,OWP Sandbank,1,87.7,mastr_offshore_units.csv.xz
 DE-SEE983099104197,Germany,Borkum Riffgrund 2,German Bight south of 54.3N,North Sea,53.973977,6.473747,8.3,2018-09-03,,MaStR,Borkum Riffgrund 2,0,44.4,mastr_offshore_units.csv.xz
-DE-SEE983115595657,Germany,Trianel Windpark Borkum Phase 2,German Bight south of 54.3N,North Sea,54.060978,6.444762,5.0,2015-02-01,,MaStR,Trianel Windpark Borkum,0,54.2,mastr_offshore_units.csv.xz
+DE-SEE983115595657,Germany,Trianel Windpark Borkum Phase 1,German Bight south of 54.3N,North Sea,54.060978,6.444762,5.0,2015-02-01,,MaStR,Trianel Windpark Borkum,0,54.2,mastr_offshore_units.csv.xz
 DE-SEE983177687970,Germany,Nordsee One,German Bight south of 54.3N,North Sea,53.992491,6.832096,6.15,2017-08-24,,MaStR,Nordsee One,0,36.4,mastr_offshore_units.csv.xz
 DE-SEE983178668107,Germany,Global Tech I,German Bight north of 54.3N,North Sea,54.516447,6.318216,5.0,2015-03-09,,MaStR,Global Tech I,0,102.5,mastr_offshore_units.csv.xz
 DE-SEE983331954016,Germany,Gode Wind 02,German Bight south of 54.3N,North Sea,54.08613,7.036945,6.264,2016-06-09,,MaStR,Gode Wind 2,0,42.3,mastr_offshore_units.csv.xz
@@ -1651,7 +1651,7 @@ DE-SEE991490102278,Germany,Bard Offshore 1,German Bight north of 54.3N,North Sea
 DE-SEE991492858999,Germany,EnBW He Dreiht,German Bight north of 54.3N,North Sea,54.383436,6.212502,15.0,2026-03-02,,MaStR,EnBW He Dreiht,7995,92.5,mastr_offshore_units.csv.xz
 DE-SEE991541548147,Germany,EnBW Hohe See,German Bight north of 54.3N,North Sea,54.451929,6.329225,7.35,2019-08-18,,MaStR,Windpark Hohe See,0,95.7,mastr_offshore_units.csv.xz
 DE-SEE991641520722,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.867455,14.063056,5.23,2017-12-12,,MaStR,WIKINGER,0,96.3,mastr_offshore_units.csv.xz
-DE-SEE991647612681,Germany,Trianel Windpark Borkum Phase 2,German Bight south of 54.3N,North Sea,54.016386,6.447281,5.0,2015-04-07,,MaStR,Trianel Windpark Borkum,0,49.5,mastr_offshore_units.csv.xz
+DE-SEE991647612681,Germany,Trianel Windpark Borkum Phase 1,German Bight south of 54.3N,North Sea,54.016386,6.447281,5.0,2015-04-07,,MaStR,Trianel Windpark Borkum,0,49.5,mastr_offshore_units.csv.xz
 DE-SEE991702160683,Germany,Borkum Riffgrund 1,German Bight south of 54.3N,North Sea,53.987582,6.514111,4.2,2015-02-21,,MaStR,Borkum Riffgrund 1,0,45.1,mastr_offshore_units.csv.xz
 DE-SEE991717116569,Germany,Gode Wind 01,German Bight south of 54.3N,North Sea,54.05983,6.957921,6.264,2016-07-17,,MaStR,Gode Wind 1,0,40.7,mastr_offshore_units.csv.xz
 DE-SEE991793212667,Germany,Nordsee Ost,German Bight north of 54.3N,North Sea,54.449428,7.654587,6.15,2015-03-12,,MaStR,OWP Nordsee Ost 1,0,34.2,mastr_offshore_units.csv.xz
@@ -1676,7 +1676,7 @@ DE-SEE992516223724,Germany,Bard Offshore 1,German Bight north of 54.3N,North Sea
 DE-SEE992578529895,Germany,EnBW Windpark Baltic 2,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,55.007864,13.195248,3.78,2015-06-01,,MaStR,Baltic 2,0,46.6,mastr_offshore_units.csv.xz
 DE-SEE992611719054,Germany,Nordergründe,German Bight south of 54.3N,North Sea,53.822889,8.16856,6.15,2017-11-03,,MaStR,OWP Nordergründe,0,17.5,mastr_offshore_units.csv.xz
 DE-SEE992630401015,Germany,Bard Offshore 1,German Bight north of 54.3N,North Sea,54.402037,5.972921,5.5,2013-07-08,,MaStR,Bard Offshore 1 - C4 - 51573657547,0,101.4,mastr_offshore_units.csv.xz
-DE-SEE992642198675,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.896325,14.060573,15.0,2026-08-22,,MaStR,OWP Windanker,2839,98.2,mastr_offshore_units.csv.xz
+DE-SEE992642198675,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.896325,14.060573,15.0,2026-08-22,,MaStR,OWP Windanker,2839,98.2,mastr_offshore_units.csv.xz
 DE-SEE992672559583,Germany,Borkum Riffgrund 2,German Bight south of 54.3N,North Sea,53.931746,6.539585,8.3,2018-08-26,,MaStR,Borkum Riffgrund 2,0,38.6,mastr_offshore_units.csv.xz
 DE-SEE992678690372,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.855108,14.10769,5.23,2017-11-29,,MaStR,WIKINGER,15,97.6,mastr_offshore_units.csv.xz
 DE-SEE992770002318,Germany,Gode Wind 01,German Bight south of 54.3N,North Sea,54.021281,6.95672,6.264,2016-07-29,,MaStR,Gode Wind 1,0,36.7,mastr_offshore_units.csv.xz
@@ -1713,7 +1713,7 @@ DE-SEE994734145147,Germany,DanTysk,German Bight north of 54.3N,North Sea,55.1147
 DE-SEE994749457228,Germany,EnBW Windpark Baltic 2,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,54.972073,13.110516,3.78,2015-06-09,,MaStR,Baltic 2,0,41.1,mastr_offshore_units.csv.xz
 DE-SEE994771729485,Germany,Borkum Riffgrund 1,German Bight south of 54.3N,North Sea,53.980862,6.514108,4.2,2015-04-12,,MaStR,Borkum Riffgrund 1,0,44.3,mastr_offshore_units.csv.xz
 DE-SEE994777026625,Germany,EnBW Windpark Baltic 1,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,54.627139,12.6795,2.3,2011-04-10,,MaStR,Baltic 1,0,21.4,mastr_offshore_units.csv.xz
-DE-SEE994857621290,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.876251,14.00973,15.0,2026-08-22,,MaStR,OWP Windanker,3108,94.3,mastr_offshore_units.csv.xz
+DE-SEE994857621290,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.876251,14.00973,15.0,2026-08-22,,MaStR,OWP Windanker,3108,94.3,mastr_offshore_units.csv.xz
 DE-SEE995000956481,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.153392,6.896406,4.2,2016-10-03,,MaStR,OWP Sandbank,0,87.4,mastr_offshore_units.csv.xz
 DE-SEE995087270258,Germany,Veja Mate,German Bight south of 54.3N,North Sea,54.295244,5.856657,6.3,2017-04-05,,MaStR,OWP Veja Mate,0,95.4,mastr_offshore_units.csv.xz
 DE-SEE995089146223,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.823058,14.066255,5.23,2017-11-09,,MaStR,WIKINGER,0,93.4,mastr_offshore_units.csv.xz
@@ -1749,11 +1749,11 @@ DE-SEE996566911969,Germany,Sandbank,German Bight north of 54.3N,North Sea,55.165
 DE-SEE996607727351,Germany,Borkum Riffgrund 1,German Bight south of 54.3N,North Sea,53.96066,6.605588,4.2,2015-06-09,,MaStR,Borkum Riffgrund 1,0,39.1,mastr_offshore_units.csv.xz
 DE-SEE996793207125,Germany,Baltic Eagle,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.807939,13.826762,9.525,2024-07-01,,MaStR,Baltic Eagle,0,80.5,mastr_offshore_units.csv.xz
 DE-SEE996794060361,Germany,Borkum Riffgrund 2,German Bight south of 54.3N,North Sea,53.980436,6.473729,8.3,2018-08-31,,MaStR,Borkum Riffgrund 2,0,45.1,mastr_offshore_units.csv.xz
-DE-SEE996842234270,Germany,OWP Windanker,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.885216,14.00022,15.0,2026-08-25,,MaStR,OWP Windanker,4228,94.5,mastr_offshore_units.csv.xz
+DE-SEE996842234270,Germany,Wikinger,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.885216,14.00022,15.0,2026-08-25,,MaStR,OWP Windanker,4228,94.5,mastr_offshore_units.csv.xz
 DE-SEE996845314085,Germany,Gode Wind 02,German Bight south of 54.3N,North Sea,54.073973,7.016292,6.264,2016-05-12,,MaStR,Gode Wind 2,0,41.2,mastr_offshore_units.csv.xz
 DE-SEE996874948558,Germany,Borkum Riffgrund 2,German Bight south of 54.3N,North Sea,53.920999,6.525379,8.3,2018-09-13,,MaStR,Borkum Riffgrund 2,0,37.7,mastr_offshore_units.csv.xz
 DE-SEE997018057495,Germany,ARCADIS Ost 1,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.792818,13.720634,9.525,2023-04-16,,MaStR,Arcadis Ost I,0,74.5,mastr_offshore_units.csv.xz
-DE-SEE997019166226,Germany,Trianel Windpark Borkum Phase 2,German Bight south of 54.3N,North Sea,54.080009,6.471113,5.0,2015-05-04,,MaStR,Trianel Windpark Borkum,0,55.0,mastr_offshore_units.csv.xz
+DE-SEE997019166226,Germany,Trianel Windpark Borkum Phase 1,German Bight south of 54.3N,North Sea,54.080009,6.471113,5.0,2015-05-04,,MaStR,Trianel Windpark Borkum,0,55.0,mastr_offshore_units.csv.xz
 DE-SEE997044217061,Germany,ARCADIS Ost 1,Other German Baltic farms,Skagerrak-Kattegat-Baltic,54.827864,13.612993,9.525,2023-03-06,,MaStR,Arcadis Ost I,0,72.9,mastr_offshore_units.csv.xz
 DE-SEE997054121754,Germany,Butendiek,German Bight north of 54.3N,North Sea,55.015658,7.737943,3.6,2015-07-23,,MaStR,Butendiek,0,39.0,mastr_offshore_units.csv.xz
 DE-SEE997068630129,Germany,Global Tech I,German Bight north of 54.3N,North Sea,54.534772,6.33344,5.0,2015-06-28,,MaStR,Global Tech I,0,104.0,mastr_offshore_units.csv.xz
@@ -1807,17 +1807,17 @@ DE-SEE999565442069,Germany,Merkur Offshore (MEG Offshore I),German Bight south o
 DE-SEE999599787044,Germany,EnBW Hohe See,German Bight north of 54.3N,North Sea,54.403645,6.372612,7.35,2019-08-13,,MaStR,Windpark Hohe See,0,89.6,mastr_offshore_units.csv.xz
 DE-SEE999748753111,Germany,EnBW Hohe See,German Bight north of 54.3N,North Sea,54.456072,6.26597,7.35,2019-08-01,,MaStR,Windpark Hohe See,0,97.9,mastr_offshore_units.csv.xz
 DE-SEE999869615442,Germany,Riffgat,German Bight south of 54.3N,North Sea,53.695309,6.495845,3.78,2014-02-25,,MaStR,RIFFGAT,0,17.4,mastr_offshore_units.csv.xz
-DK-570714700000001659,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.97323,11.12212,0.45,1991-09-01,2017-02-20,ENS,,42334,8.4,ens_historiske_vinddata.xlsx
-DK-570714700000001666,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.971154,11.125106,0.45,1991-09-01,2017-02-20,ENS,,42601,8.1,ens_historiske_vinddata.xlsx
-DK-570714700000001673,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.96909,11.128085,0.45,1991-09-01,2017-02-20,ENS,,42866,7.9,ens_historiske_vinddata.xlsx
-DK-570714700000001680,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.967011,11.131079,0.45,1991-09-01,2017-02-20,ENS,,43134,7.6,ens_historiske_vinddata.xlsx
-DK-570714700000001697,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.964923,11.134054,0.45,1991-09-01,2017-02-20,ENS,,43403,7.4,ens_historiske_vinddata.xlsx
-DK-570714700000001703,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.976026,11.124312,0.45,1991-09-01,2017-02-20,ENS,,42060,8.7,ens_historiske_vinddata.xlsx
-DK-570714700000001710,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.973887,11.127165,0.45,1991-09-01,2017-02-20,ENS,,42332,8.4,ens_historiske_vinddata.xlsx
-DK-570714700000001727,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.971817,11.130127,0.45,1991-09-01,2017-02-20,ENS,,42599,8.2,ens_historiske_vinddata.xlsx
-DK-570714700000001734,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.969759,11.133208,0.45,1991-09-01,2017-02-20,ENS,,42866,7.9,ens_historiske_vinddata.xlsx
-DK-570714700000001741,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.967672,11.136176,0.45,1991-09-01,2017-02-20,ENS,,43135,7.7,ens_historiske_vinddata.xlsx
-DK-570714700000001758,Denmark,unmatched,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.965593,11.13916,0.45,1991-09-01,2017-02-20,ENS,,43404,7.4,ens_historiske_vinddata.xlsx
+DK-570714700000001659,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.97323,11.12212,0.45,1991-09-01,2017-02-20,ENS,,42334,8.4,ens_historiske_vinddata.xlsx
+DK-570714700000001666,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.971154,11.125106,0.45,1991-09-01,2017-02-20,ENS,,42601,8.1,ens_historiske_vinddata.xlsx
+DK-570714700000001673,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.96909,11.128085,0.45,1991-09-01,2017-02-20,ENS,,42866,7.9,ens_historiske_vinddata.xlsx
+DK-570714700000001680,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.967011,11.131079,0.45,1991-09-01,2017-02-20,ENS,,43134,7.6,ens_historiske_vinddata.xlsx
+DK-570714700000001697,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.964923,11.134054,0.45,1991-09-01,2017-02-20,ENS,,43403,7.4,ens_historiske_vinddata.xlsx
+DK-570714700000001703,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.976026,11.124312,0.45,1991-09-01,2017-02-20,ENS,,42060,8.7,ens_historiske_vinddata.xlsx
+DK-570714700000001710,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.973887,11.127165,0.45,1991-09-01,2017-02-20,ENS,,42332,8.4,ens_historiske_vinddata.xlsx
+DK-570714700000001727,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.971817,11.130127,0.45,1991-09-01,2017-02-20,ENS,,42599,8.2,ens_historiske_vinddata.xlsx
+DK-570714700000001734,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.969759,11.133208,0.45,1991-09-01,2017-02-20,ENS,,42866,7.9,ens_historiske_vinddata.xlsx
+DK-570714700000001741,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.967672,11.136176,0.45,1991-09-01,2017-02-20,ENS,,43135,7.7,ens_historiske_vinddata.xlsx
+DK-570714700000001758,Denmark,Vindeby,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,54.965593,11.13916,0.45,1991-09-01,2017-02-20,ENS,,43404,7.4,ens_historiske_vinddata.xlsx
 DK-570714700000003592,Denmark,Middelgrunden,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,55.706965,12.668374,2.0,2000-12-27,,ENS,743E77AA-D4B4-4D3E-B59E-CBF6CE50A62F,0,6.2,ens_vinddata.xlsx
 DK-570714700000003608,Denmark,Middelgrunden,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,55.705344,12.668851,2.0,2000-12-27,,ENS,743E77AA-D4B4-4D3E-B59E-CBF6CE50A62F,0,6.2,ens_vinddata.xlsx
 DK-570714700000003615,Denmark,Middelgrunden,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,55.703719,12.669275,2.0,2000-12-27,,ENS,743E77AA-D4B4-4D3E-B59E-CBF6CE50A62F,0,6.1,ens_vinddata.xlsx

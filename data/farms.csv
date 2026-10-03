@@ -1,5 +1,5 @@
 farm,country,group,sea,points,mw_total,mw_end_2025,first,last,decommissioned_points,min_km_to_station,source
-unmatched,Denmark,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,11,5.0,0.0,1991-09-01,1991-09-01,11,7.4,ENS
+Vindeby,Denmark,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,11,5.0,0.0,1991-09-01,1991-09-01,11,7.4,ENS
 Tunø Knob,Denmark,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,10,5.0,5.0,1995-05-30,1995-05-30,0,4.9,ENS
 Middelgrunden,Denmark,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,20,40.0,40.0,2000-12-27,2000-12-27,0,5.9,ENS
 Horns Rev I,Denmark,Horns Rev,North Sea,80,160.0,160.0,2002-07-29,2002-12-11,0,16.0,ENS
@@ -14,37 +14,35 @@ Sprogo,Denmark,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,7,21.0,2
 Avedøre Holme,Denmark,Other Danish inner-water farms,Skagerrak-Kattegat-Baltic,3,10.8,10.8,2009-11-23,2011-09-26,0,1.7,ENS
 Rodsand II,Denmark,Nysted and Rødsand,Skagerrak-Kattegat-Baltic,90,207.0,207.0,2010-04-01,2010-08-03,0,4.0,ENS
 Bard Offshore 1,Germany,German Bight north of 54.3N,North Sea,80,440.0,440.0,2010-12-10,2013-09-07,0,90.8,MaStR
-EnBW Windpark Baltic 1,Germany,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,20,46.0,46.0,2011-04-03,2011-05-01,0,15.8,MaStR
-EnBW Baltic I,Germany,Other German Baltic farms,Skagerrak-Kattegat-Baltic,1,2.3,2.3,2011-04-13,2011-04-13,0,22.1,MaStR
+EnBW Windpark Baltic 1,Germany,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,21,48.3,48.3,2011-04-03,2011-05-01,0,15.8,MaStR
 Anholt,Denmark,Anholt,Skagerrak-Kattegat-Baltic,111,404.0,404.0,2012-09-21,2013-06-18,0,19.4,ENS
 Riffgat,Germany,German Bight south of 54.3N,North Sea,30,113.4,113.4,2014-02-13,2014-03-02,0,16.3,MaStR
 Meerwind Sued/Ost,Germany,German Bight north of 54.3N,North Sea,80,302.4,302.4,2014-09-01,2015-02-17,0,24.9,MaStR
 Global Tech I,Germany,German Bight north of 54.3N,North Sea,80,400.0,400.0,2014-09-06,2015-07-27,0,95.0,MaStR
 Nordsee Ost,Germany,German Bight north of 54.3N,North Sea,48,295.2,295.2,2014-11-21,2015-08-15,0,30.0,MaStR
 DanTysk,Germany,German Bight north of 54.3N,North Sea,80,302.4,302.4,2014-12-02,2015-03-26,0,66.1,MaStR
-Trianel Windpark Borkum Phase 2,Germany,German Bight south of 54.3N,North Sea,40,242.6,242.6,2015-02-01,2020-07-01,0,47.7,MaStR
-Trianel Windpark Borkum Phase 1,Germany,German Bight south of 54.3N,North Sea,32,160.0,160.0,2015-02-03,2015-07-16,0,46.9,MaStR
+Trianel Windpark Borkum Phase 1,Germany,German Bight south of 54.3N,North Sea,40,200.0,200.0,2015-02-01,2015-07-16,0,46.9,MaStR
 Butendiek,Germany,German Bight north of 54.3N,North Sea,80,288.0,288.0,2015-02-04,2015-08-03,0,33.7,MaStR
 Borkum Riffgrund 1,Germany,German Bight south of 54.3N,North Sea,78,327.4,327.4,2015-02-16,2015-07-14,0,36.8,MaStR
 Amrumbank West,Germany,German Bight north of 54.3N,North Sea,80,302.4,302.4,2015-04-12,2015-10-10,0,37.8,MaStR
 EnBW Windpark Baltic 2,Germany,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,80,302.4,302.4,2015-04-24,2015-07-15,0,39.6,MaStR
-Gode Wind 02,Germany,German Bight south of 54.3N,North Sea,45,308.1,263.1,2016-02-16,2026-09-11,0,37.1,MaStR
+Gode Wind 02,Germany,German Bight south of 54.3N,North Sea,42,263.1,263.1,2016-02-16,2016-07-17,0,38.1,MaStR
 Buitengaats / Gemini I,Netherlands,Dutch farms,North Sea,140,300.0,300.0,2016-03-11,2016-10-15,0,60.7,polygon grid 500 m
 ZeeEnergie / Gemini II,Netherlands,Dutch farms,North Sea,135,300.0,300.0,2016-03-11,2016-10-15,0,67.8,polygon grid 500 m
-Gode Wind 01,Germany,German Bight south of 54.3N,North Sea,57,374.5,344.5,2016-05-28,2026-09-15,0,32.3,MaStR
+Gode Wind 01,Germany,German Bight south of 54.3N,North Sea,55,344.5,344.5,2016-05-28,2016-08-12,0,32.3,MaStR
 Sandbank,Germany,German Bight north of 54.3N,North Sea,72,302.4,302.4,2016-09-06,2017-01-25,0,85.4,MaStR
 Veja Mate,Germany,German Bight north of 54.3N,North Sea,67,422.1,422.1,2017-01-18,2017-05-31,0,91.5,MaStR
 Nordsee One,Germany,German Bight south of 54.3N,North Sea,54,332.1,332.1,2017-03-30,2017-09-26,0,33.6,MaStR
-Wikinger,Germany,Other German Baltic farms,Skagerrak-Kattegat-Baltic,74,426.1,366.1,2017-10-06,2026-08-22,0,90.2,MaStR
+Wikinger,Germany,Other German Baltic farms,Skagerrak-Kattegat-Baltic,90,666.1,366.1,2017-10-06,2026-09-08,0,90.2,MaStR
 Nordergründe,Germany,German Bight south of 54.3N,North Sea,18,110.7,110.7,2017-11-03,2017-12-17,0,17.0,MaStR
 Nissum Bredning,Denmark,Other Danish inner-water farms,North Sea,4,28.0,28.0,2018-02-17,2018-02-17,0,3.2,ENS
 Merkur Offshore (MEG Offshore I),Germany,German Bight south of 54.3N,North Sea,66,405.9,405.9,2018-07-23,2019-05-16,0,44.4,MaStR
 Borkum Riffgrund 2,Germany,German Bight south of 54.3N,North Sea,56,464.8,464.8,2018-08-04,2018-11-08,0,36.6,MaStR
-Arkona-Becken Südost,Germany,Other German Baltic farms,Skagerrak-Kattegat-Baltic,59,371.7,371.7,2018-09-15,2018-10-22,0,89.7,MaStR
-Arkona Becken Süd-Ost,Germany,Other German Baltic farms,Skagerrak-Kattegat-Baltic,1,6.3,6.3,2018-10-22,2018-10-22,0,77.5,MaStR
+Arkona-Becken Südost,Germany,Other German Baltic farms,Skagerrak-Kattegat-Baltic,60,378.0,378.0,2018-09-15,2018-10-22,0,77.5,MaStR
 Horns Rev III,Denmark,Horns Rev,North Sea,49,406.7,406.7,2018-12-23,2018-12-23,0,24.7,ENS
 EnBW Hohe See,Germany,German Bight north of 54.3N,North Sea,71,521.9,521.9,2019-07-15,2019-10-01,0,88.3,MaStR
 Deutsche Bucht,Germany,German Bight south of 54.3N,North Sea,31,260.4,260.4,2019-07-26,2019-09-25,0,95.6,MaStR
+Trianel Windpark Borkum Phase 2,Germany,German Bight south of 54.3N,North Sea,32,202.6,202.6,2019-09-03,2020-07-01,0,48.5,MaStR
 Albatros,Germany,German Bight north of 54.3N,North Sea,16,117.6,117.6,2020-01-05,2020-01-09,0,99.4,MaStR
 Kriegers Flak K2-K3,Denmark,Kriegers Flak and Baltic 1/2,Skagerrak-Kattegat-Baltic,72,604.8,604.8,2021-02-01,2021-06-05,0,18.5,ENS
 Kaskasi II,Germany,German Bight north of 54.3N,North Sea,38,342.0,342.0,2022-07-31,2022-12-15,0,35.2,MaStR
@@ -52,9 +50,7 @@ ARCADIS Ost 1,Germany,Other German Baltic farms,Skagerrak-Kattegat-Baltic,27,257
 Vesterhav Syd,Denmark,Vesterhav,North Sea,20,168.0,168.0,2023-11-10,2023-12-26,0,9.4,ENS
 Vesterhav Nord,Denmark,Vesterhav,North Sea,21,176.4,176.4,2024-02-18,2024-03-12,0,6.0,ENS
 Baltic Eagle,Germany,Other German Baltic farms,Skagerrak-Kattegat-Baltic,50,476.2,476.2,2024-05-02,2024-09-21,0,79.8,MaStR
-Gode Wind 3,Germany,German Bight south of 54.3N,North Sea,27,325.7,265.7,2024-05-07,2026-08-15,0,32.8,MaStR
+Gode Wind 3,Germany,German Bight south of 54.3N,North Sea,33,415.7,265.7,2024-05-07,2026-09-15,0,32.8,MaStR
 EnBW He Dreiht,Germany,German Bight north of 54.3N,North Sea,58,870.0,195.0,2025-11-25,2026-09-17,0,84.8,MaStR
 Borkum Riffgrund 3,Germany,German Bight south of 54.3N,North Sea,83,958.6,323.4,2025-12-03,2026-08-17,0,54.3,MaStR
 Thor,Denmark,Thor,North Sea,72,1058.4,0.0,2026-02-23,2026-09-06,0,24.4,ENS
-OWP Windanker,Germany,Other German Baltic farms,Skagerrak-Kattegat-Baltic,16,240.0,0.0,2026-08-22,2026-09-08,0,93.8,MaStR
-NC 1,Germany,German Bight south of 54.3N,North Sea,1,15.0,0.0,2026-09-07,2026-09-07,0,37.8,MaStR

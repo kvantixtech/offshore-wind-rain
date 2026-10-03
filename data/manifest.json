@@ -1,13 +1,18 @@
 {
  "files": {
+  "farm_names_extra.csv": {
+   "bytes": 278,
+   "sha256": "6f6f1d317b56dcfa7659392ce2ebe7a71b69827ab50ba8dd5faaa71044302f5f",
+   "what": "Names, with sources, for register turbines outside every EMODnet polygon"
+  },
   "farms.csv": {
-   "bytes": 6732,
-   "sha256": "6f69008037c5fcabc5086439a2fda20d14dae02c4d036e0605bcca43750a2d81",
+   "bytes": 6264,
+   "sha256": "b8c44cfa97f17d7121ca772f352b147db2c10826d1fa1ceed9f028dc1a6a8da0",
    "what": "Farm table: capacity, first and last commissioning, distance to the nearest station"
   },
   "farms_check.json": {
-   "bytes": 13112,
-   "sha256": "db938a407909ff67468a1d59e195b6006b809b85ec2a3733077d1b50d7e46584",
+   "bytes": 13267,
+   "sha256": "21512b0315ce9f6bf3bc72bdeea4048365944ff1c522ab639094032af9694c2e",
    "what": "Check 1 inputs: farms without turbines, national totals, what was left out"
   },
   "farms_manual.csv": {
@@ -17,35 +22,35 @@
   },
   "raw/emodnet_windfarmspoly.geojson.xz": {
    "bytes": 365160,
-   "fetched_utc": "2026-10-03T09:36:19Z",
-   "sha256": "3395fb5cc05878ee9ba9488b78f118d1120e6f4f2722bb4c923177e85605b749",
+   "fetched_utc": "2026-10-03T09:39:28Z",
+   "sha256": "0d3211b30b797c6b54fbfd5e1383fb131c1272e24e7fbf9e9ecaea22771c05d7",
    "source": "https://ows.emodnet-humanactivities.eu/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=emodnet%3Awindfarmspoly&outputFormat=application%2Fjson&srsName=EPSG%3A4326",
    "what": "EMODnet Human Activities, wind farm polygons (WFS GetFeature, GeoJSON), xz-compressed"
   },
   "raw/ens_historiske_vinddata.xlsx": {
    "bytes": 1280243,
-   "fetched_utc": "2026-10-03T09:35:53Z",
+   "fetched_utc": "2026-10-03T09:39:03Z",
    "sha256": "e08632169f78cbfe6cbe6eb9c8c15cc21ac4c1bab9c7478115a3c8afe9fe92b4",
    "source": "https://ens.dk/media/8746/download",
    "what": "Energistyrelsen, Stamdataregister for vindkraftanlæg (attachment; filename=\"Historiske vinddata.xlsx\")"
   },
   "raw/ens_vinddata.xlsx": {
    "bytes": 2503214,
-   "fetched_utc": "2026-10-03T09:35:49Z",
+   "fetched_utc": "2026-10-03T09:38:59Z",
    "sha256": "4667614be5e4750fae57e6325d7315d6424d0ab3a5aba628da015ca1cb7610df",
    "source": "https://ens.dk/media/8748/download",
    "what": "Energistyrelsen, Stamdataregister for vindkraftanlæg (attachment; filename=Vinddata.xlsx)"
   },
   "raw/mastr_offshore_units.csv.xz": {
    "bytes": 79260,
-   "fetched_utc": "2026-10-03T09:36:17Z",
+   "fetched_utc": "2026-10-03T09:39:26Z",
    "sha256": "29e9319c0696ba9d33909eb176fc6c6719c9fc29aadd715d2d4d2f5d73a7923a",
    "source": "https://download.marktstammdatenregister.de/Gesamtdatenexport_20261003_26.2.zip",
    "what": "Marktstammdatenregister full export, member EinheitenWind.xml (CRC bce996bd, 206460776 bytes): every unit with WindAnLandOderAufSee = 889, all fields, unchanged"
   },
   "turbines.csv": {
-   "bytes": 504868,
-   "sha256": "ba994e5fdbf76468f3cb1011d2091476a1d1de77f986a60d7ca61aa8140a8a9d",
+   "bytes": 504779,
+   "sha256": "06fb91e61f375afce4f1567c1cea0491e7be4b12303f9cee321c1948edc0c8eb",
    "what": "Every offshore turbine point with capacity, dates, farm and group (tools/farms.py)"
   }
  }
