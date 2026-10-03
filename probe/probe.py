@@ -4,7 +4,7 @@ sys.path.insert(0, "probe")
 UA = "kvantixtech offshore-wind-rain probe (github actions; validation@kvantix.tech)"
 log = {"run_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
 import subprocess
-subprocess.run([sys.executable, "-m", "pip", "install", "-q", "openpyxl"], check=True)
+subprocess.run([sys.executable, "-m", "pip", "install", "-q", "--break-system-packages", "openpyxl"], check=True)
 import openpyxl
 def get(url):
     with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=300) as r:
