@@ -124,7 +124,7 @@ def dmi():
             p = f["properties"]
             fl[(str(p.get("qcStatus")), str(p.get("validity")))] += 1
             frm, to = p.get("from", ""), p.get("to", "")
-            wi[(frm[11:19], to[11:19])] += 1
+            wi[(frm[10:], to[10:])] += 1      # time of day and UTC offset of the window, e.g. T00:00:00Z
             if p.get("value") is not None:
                 days.append(frm[:10])
         return sid, days, fl, wi
@@ -166,6 +166,7 @@ def dwd():
     log(f"DWD: {len(stations)} stations in the box overlapping {Y0}-{Y1}, {sum(len(v) for v in files.values())} files")
 
     flags, windows, series, counts = Counter(), Counter(), [], defaultdict(Counter)
+    rs_windows = set()
     param_text = {}
 
     def parse_meta(text):
@@ -176,7 +177,7 @@ def dwd():
         return head, [[c.strip() for c in r] for r in rows[1:] if len(r) >= len(head) - 1 and r[0].strip().isdigit()]
 
     def one(sid):
-        geo, dev, days = [], [], defaultdict(set)
+        geo, dev, days, rsw = [], [], defaultdict(set), set()
         fl = Counter()
         ptxt = None
         for url in sorted(files.get(sid, [])):
@@ -195,8 +196,13 @@ def dwd():
                         d = dict(zip(h, r))
                         dev.append((d.get("Von_Datum") or d.get("von_datum", ""), d.get("Bis_Datum") or d.get("bis_datum", "") or "29991231",
                                     d.get("Geraetetyp Name") or d.get("Geraetetyp_Name") or ""))
-                elif n.startswith("Metadaten_Parameter") and ptxt is None:
-                    ptxt = t
+                elif n.startswith("Metadaten_Parameter"):
+                    if ptxt is None:
+                        ptxt = t
+                    for row in re.findall(r"<tr>(.*?)</tr>", t, flags=re.S):
+                        c = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<td[^>]*>(.*?)</td>", row, flags=re.S)]
+                        if len(c) >= 9 and c[4] == "RS":
+                            rsw.add((sid, c[1], c[2], c[8], c[7]))
                 elif n.startswith("produkt_nieder_tag"):
                     lines = t.splitlines()
                     h = [c.strip() for c in lines[0].split(";")]
@@ -211,11 +217,12 @@ def dwd():
                         fl[c[i_q]] += 1
                         if c[i_rs] != "-999":          # the only test made on a value: is it the missing-value code?
                             days[c[i_q]].add(day)
-        return sid, geo, dev, days, fl, ptxt
+        return sid, geo, dev, days, fl, ptxt, rsw
 
     with ThreadPoolExecutor(max_workers=6) as ex:
-        for n, (sid, geo, dev, days, fl, ptxt) in enumerate(ex.map(one, sorted(files)), 1):
+        for n, (sid, geo, dev, days, fl, ptxt, rsw) in enumerate(ex.map(one, sorted(files)), 1):
             flags.update(fl)
+            rs_windows.update(rsw)
             if ptxt and not param_text:
                 param_text["example_station"] = sid; param_text["text"] = ptxt
             # versions: geography periods intersected with instrument periods
@@ -238,7 +245,11 @@ def dwd():
                 log(f"DWD files read for {n}/{len(files)} stations")
     if param_text:
         open(os.path.join(META, f"dwd_Metadaten_Parameter_example_{param_text['example_station']}.txt"), "w", encoding="utf-8").write(param_text["text"])
-    return series, counts, {"QN_6": dict(flags.most_common())}, {"see": "Metadaten_Parameter and the DESCRIPTION pdf in data/gauges/meta"}
+    with open(os.path.join(OUT, "dwd_rs_windows.csv"), "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, lineterminator="\n"); w.writerow(["station_id", "von", "bis", "zusatz_info", "datenquelle"]); w.writerows(sorted(rs_windows))
+    summary = Counter(r[3] for r in rs_windows)
+    return series, counts, {"QN_6": dict(flags.most_common())}, {"RS Zusatz-Info (station periods)": dict(summary.most_common()),
+                                                                 "per station": "data/gauges/dwd_rs_windows.csv"}
 
 
 def main():

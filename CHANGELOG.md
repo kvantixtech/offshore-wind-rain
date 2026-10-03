@@ -77,3 +77,9 @@ Changes to the method are written here, with the reason, before they take effect
 - DWD: series are split at every change of precipitation instrument type and at every such move.
 
 **First and last period of a DMI station.** DMI's metadata versions can start after the station began. The first period therefore starts at the earliest `operationFrom`, and the last period ends at the latest `operationTo`.
+- **First run (commit `4598d52`), and what it led to:**
+  - **What was counted.** 882 DMI stations and 427 DWD stations in the box. 1,954 gauge series, of which 1,384 have at least 3 complete years (660 DMI, 724 DWD).
+  - **Splits.** DMI's metadata has 476 location changes of more than 1 km under the same station number, so 402 DMI series start with a move. DWD has 165 moves and 346 instrument changes.
+  - **DMI flags.** The flags present are only qcStatus `manual` or `none`, with validity `True`. Nothing is flagged invalid, so no DMI value is dropped on flags.
+  - **DWD flags.** QN_6 is 9, 3 or 1 (and `-999` on 9 rows). All released levels are kept. Only the missing code `-999` in `RS` is dropped.
+  - **The day window is not settled yet.** DWD gives it per station and period in `Metadaten_Parameter`. For example, at station 52 until 2001 it reads "07:30 – 07:30 FT. GZ": 07:30 legal local time to 07:30 on the following day. The script is therefore extended to keep the RS window text for every station period, and DMI's window with its UTC offset. This is metadata only. The window rule is fixed here before any value is read (check 2).
