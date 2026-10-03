@@ -83,3 +83,28 @@ Changes to the method are written here, with the reason, before they take effect
   - **DMI flags.** The flags present are only qcStatus `manual` or `none`, with validity `True`. Nothing is flagged invalid, so no DMI value is dropped on flags.
   - **DWD flags.** QN_6 is 9, 3 or 1 (and `-999` on 9 rows). All released levels are kept. Only the missing code `-999` in `RS` is dropped.
   - **The day window is not settled yet.** DWD gives it per station and period in `Metadaten_Parameter`. For example, at station 52 until 2001 it reads "07:30 – 07:30 FT. GZ": 07:30 legal local time to 07:30 on the following day. The script is therefore extended to keep the RS window text for every station period, and DMI's window with its UTC offset. This is metadata only. The window rule is fixed here before any value is read (check 2).
+
+## 2026-10-03: day windows fixed (check 2), before any value is read
+
+From the second run (commit `3797cb7`), metadata only.
+
+**DMI**
+- Every daily value runs from 00:00 to 00:00 Danish local time. The API states the offsets: `+01:00` in winter, `+02:00` in summer, and mixed on the days the clock changes.
+- A DMI day D is therefore D 00:00 to D+1 00:00 local time.
+
+**DWD**
+- The window for `RS` is stated for every station period in `Metadaten_Parameter`, and kept in `data/gauges/dwd_rs_windows.csv`.
+
+| Text in the file | Window for date D |
+|---|---|
+| `05:51 - 05:50 FT. UTC` and `06:00 - 06 FT. UTC (05:51-05:50 FT.UTC)` (automatic) | D 06:00 UTC to D+1 06:00 UTC |
+| `… sonst 07:30 - 07:30 FT. GZ`, and `… sonst 07:30 GZ` (manual stations) | D 07:30 to D+1 07:30 legal local time (CET/CEST) |
+
+"FT" is Folgetag (the following day) and "GZ" is Gesetzliche Zeit (legal local time). The `NBL 07:00` rule applies only before 1991 and is not used.
+
+**The rule for ERA5 (step 3)**
+- ERA5's hourly values are the amount in the hour *ending* at their timestamp.
+- For each gauge day, the window start is converted to UTC and rounded to the nearest whole hour, with halves rounded down. For example, 07:30 CET is 06:30 UTC, which becomes 06:00 UTC.
+- R is the sum of the 24 ERA5 hours whose end times lie in the window (start, start + 24 h]. On days when the clock changes, a local-time window has 23 or 25 hours, and the sum covers them all.
+- The 850 hPa wind direction is the vector mean over the same hours.
+- The window check in METHOD.md (best shift of −1, 0 or +1 day) still runs before the main analysis and catches any day assigned wrongly.
