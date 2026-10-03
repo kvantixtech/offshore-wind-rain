@@ -3,13 +3,13 @@ name: probe
 on:
   push:
     branches: ["probe"]
-    paths: ["probe/probe.py", ".github/workflows/probe.yml"]
+    paths: ["probe/*.py", ".github/workflows/probe.yml"]
 permissions:
   contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - run: python3 probe/probe.py
