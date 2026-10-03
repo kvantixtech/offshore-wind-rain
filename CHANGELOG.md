@@ -56,3 +56,24 @@ Changes to the method are written here, with the reason, before they take effect
   - **Danish total.** 2,632 MW. The national figure to compare with is still to be found; check 1 is not passed until it is.
   - **Danish dates are per park.** The register gives one connection date for all turbines of most Danish parks, for example Horns Rev 3: 2018-12-23. The capacity of such a park therefore starts on one day.
 - **The coverage check follows the fix.** After the renaming, the EMODnet layer's second polygon for Baltic 1 ("EnBW Baltic I", the same 48 MW farm as "EnBW Windpark Baltic 1") was reported as missing. The check now counts a polygon as covered when any turbine point lies within 2 km of it, whatever name the turbine carries.
+
+## 2026-10-03: step 2, gauge list and day counts (no precipitation amount is output)
+
+`tools/gauges.py` downloads:
+- DMI's station metadata and DWD's station files: location history, instrument history and parameter description.
+- The daily precipitation files, from which it counts the days that have a value per gauge series and year.
+
+**What a "value" means:**
+- **DWD:** any `RS` that is not the missing-value code `-999`.
+- **DMI:** any daily feature with a value. Missing days are absent from DMI's API.
+
+**What is kept and what is not:**
+- Only counts are kept, together with flag counts, the start and end times of DMI's daily values, and the SHA-256 of every download.
+- The downloaded values are discarded.
+- The values are fetched again in step 5, for 1991–2001 only, and in step 6.
+
+**Series splits:**
+- DMI: one station number is one series. It is split if the station moves more than 1 km or 20 m in height.
+- DWD: series are split at every change of precipitation instrument type and at every such move.
+
+**First and last period of a DMI station.** DMI's metadata versions can start after the station began. The first period therefore starts at the earliest `operationFrom`, and the last period ends at the latest `operationTo`.
