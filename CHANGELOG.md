@@ -24,3 +24,24 @@ Changes to the method are written here, with the reason, before they take effect
   - placebos that contain no real exposure
   - a Part B coefficient for the new farms only, with no reading at interim runs.
 - `METHOD.md` committed. No rain-gauge value has been downloaded.
+
+## 2026-10-03: step 1, turbines and farms (no rain data)
+
+- **Danish register.** Energistyrelsen publishes the register as two files:
+  - `Vinddata.xlsx` (turbines in the register now): `https://ens.dk/media/8748/download`
+  - `Historiske vinddata.xlsx` (decommissioned turbines): `https://ens.dk/media/8746/download`
+
+  Offshore turbines are those with "Type af placering" = `HAV`. In `Vinddata.xlsx` the headers "Kommune" and "Type af placering" are swapped relative to the values, so the column is found by its values (`LAND`/`HAV`). The page states no licence, only a disclaimer. The files are kept unchanged in `data/raw/`.
+- **German register.** The Marktstammdatenregister full export is 3.2 GB. Only its member `EinheitenWind.xml` is read, with HTTP range requests, and the zip member's CRC is recorded.
+  - Offshore = `WindAnLandOderAufSee` 889 ("Windenergie auf See").
+  - Sea = `Seelage` 640 (Nordsee) or 639 (Ostsee).
+  - Capacity = `Nettonennleistung`. Start = `Inbetriebnahmedatum`. End = `DatumEndgueltigeStilllegung`.
+  - Units without a position or a commissioning date (planned units) are left out and listed in `data/farms_check.json`.
+- **Farms without a turbine register here.** These are Gemini I/II (NL) and Lillgrund (SE), the only non-Danish, non-German farms within 150 km of a station. Their dates and sources are in `data/farms_manual.csv`. Rules for dates:
+  - When a source gives only a month, the 15th is used.
+  - When it gives only a year, capacity rises over that whole year.
+- **Lillgrund.** The operator (Vattenfall) says "commissioned in 2007". Power Technology says June 2008. The operator is used, as METHOD.md says, and both sources are in the file.
+- **Which farms count.** Farms in the EMODnet layer with status Production, Construction or Dismantled within 150 km of any DMI or DWD precipitation station in the box (station metadata only). The exact gauge set comes in step 2. Exposure is computed only from farms within 100 km (150 km in R1) of each gauge.
+- **Farm names and groups.**
+  - A register turbine gets the name of the EMODnet farm whose polygon contains it, or lies within 2 km. Otherwise it keeps the register's own park name.
+  - Groups for the randomization inference follow METHOD.md. German North Sea farms are split at 54.3° N.
