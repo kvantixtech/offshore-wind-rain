@@ -27,7 +27,12 @@
   },
   "gauges/downloads.csv": {
    "bytes": 365089,
-   "sha256": "b863639ff46462abbd57998fce8d682ef794da3bbf99f3b24d1741fe4531dc7f",
+   "sha256": "560e09494ef510080b8e9217788bc9a62c793a00431d7e8d9fdbac8f6e4f0be3",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/dwd_rs_windows.csv": {
+   "bytes": 209783,
+   "sha256": "87037a7be2a8432d6678058282a90f65f6a42fe4269bc755f018c02ed9ff1f6d",
    "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
   },
   "gauges/flags.json": {
@@ -37,7 +42,7 @@
   },
   "gauges/meta/dmi_climate_stations.json": {
    "bytes": 3042041,
-   "sha256": "8c8d29b5277ce41423d750ea3d30c7271561bc3eef9f7058e784ea4c205b8f5f",
+   "sha256": "73409c4d7b372f6115ff47f76e8da1625a46e5534b67b43d153de33eba2511d1",
    "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
   },
   "gauges/meta/dwd_BESCHREIBUNG_obsgermany-climate-daily-more_precip_de.pdf": {
@@ -71,8 +76,8 @@
    "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
   },
   "gauges/windows.json": {
-   "bytes": 137,
-   "sha256": "25095e864bcfb313a53875d60f7f76a08eedcaf3567e0737954de1a091b3eebb",
+   "bytes": 541,
+   "sha256": "6e4612f9353c625a5f162fddf905b8884ba555d748aef541a50927e5f6eb62fa",
    "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
   },
   "raw/emodnet_windfarmspoly.geojson.xz": {

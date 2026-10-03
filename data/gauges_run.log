@@ -23,4 +23,4 @@ DWD files read for 300/427 stations
 DWD files read for 400/427 stations
 series: {'DMI': 1113, 'DWD': 841}; valid (>=3 complete years): {'DMI': 660, 'DWD': 724}
 split reasons: {('DMI', 'first'): 711, ('DMI', 'moved'): 402, ('DWD', 'first'): 330, ('DWD', 'moved'): 165, ('DWD', 'instrument'): 346}
-done in 342 s
+done in 343 s
