@@ -3,9 +3,10 @@
 
   python3 tools/era5.py prepare      land-sea mask, and the cells: nearest land cell (R) and nearest cell (wind) for every
                                      valid gauge series, and every cell holding a turbine point (100 m wind for R13)
-  python3 tools/era5.py run 300      fetch whole years one at a time (CDS limits queued requests per dataset), reduce each
-                                     year to day windows once the next year is in, and stop when the time budget is used;
-                                     the next scheduled run carries on from the GitHub Actions cache
+  python3 tools/era5.py run 225      fetch whole years one at a time (CDS limits queued requests per dataset), reduce each
+                                     year to day windows once the next year is in; no new request starts after the time
+                                     budget. Every finished download is kept in the GitHub Actions cache at once, so the
+                                     next scheduled run carries on from the last finished request, also inside a year
 
 Reads no rain-gauge value. ERA5 comes from the Copernicus Climate Data Store (CC BY 4.0); the key is the GitHub secret
 CDSAPI_KEY and is never written to the repository. The raw hourly downloads are too large to keep (about 4 GB): their
@@ -142,7 +143,12 @@ def prepare():
 
 # ------------------------------------------------------------------ hourly years, fetched one at a time
 RAWDIR = os.path.join(ROOT, "era5_raw")          # GitHub Actions cache between runs, never committed
+PARTS = os.path.join(RAWDIR, "parts")            # each finished request, kept until its year is complete
 QUEUE_MSG = "Number queued requests"
+
+
+class Budget(Exception):
+    """No new CDS request once the run's time budget is used. Finished requests stay in the cache for the next run."""
 
 
 def retrieve_patient(client, dataset, req, tag, downloads, deadline):
@@ -155,6 +161,8 @@ def retrieve_patient(client, dataset, req, tag, downloads, deadline):
             msg = str(e)
             if QUEUE_MSG in msg and time.time() + 900 < deadline:
                 log(f"  {tag}: CDS queue limit, waiting 10 min"); time.sleep(600); continue
+            if QUEUE_MSG in msg:
+                raise Budget(tag)
             raise
 
 
@@ -173,10 +181,24 @@ def fetch_split(client, dataset, extra, y, months, tag, downloads, deadline):
     """Months of year y from one dataset. CDS caps the size of one request ("cost limits exceeded"): a rejected
     selection is split in two by months, as often as needed. Returns one Dataset."""
     import xarray as xr
+    label = f"{tag} {y} {months[0]:02d}-{months[-1]:02d}"
+    part = os.path.join(PARTS, f"{y}_{tag}_{months[0]:02d}-{months[-1]:02d}.bin")
+    if os.path.exists(part):
+        b = open(part, "rb").read()
+        downloads.append([label, dataset, len(b), hashlib.sha256(b).hexdigest()])
+        log(f"  {label}: {len(b) / 1e6:.1f} MB, fetched by an earlier run")
+        return open_nc(b)
+    if time.time() > deadline:
+        raise Budget(label)
     days = ["01"] if y == 2026 else [f"{d:02d}" for d in range(1, 32)]
     req = base_req({"year": [str(y)], "month": [f"{m:02d}" for m in months], "day": days, **extra})
     try:
-        return open_nc(retrieve_patient(client, dataset, req, f"{tag} {y} {months[0]:02d}-{months[-1]:02d}", downloads, deadline))
+        b = retrieve_patient(client, dataset, req, label, downloads, deadline)
+        os.makedirs(PARTS, exist_ok=True)
+        with open(part + ".tmp", "wb") as fh:
+            fh.write(b)
+        os.replace(part + ".tmp", part)
+        return open_nc(b)
     except Exception as e:
         if "cost limits exceeded" in str(e) and len(months) > 1:
             h = len(months) // 2
@@ -201,6 +223,9 @@ def fetch(client, y, deadline):
     ds.to_netcdf(os.path.join(RAWDIR, f"{y}.nc"))
     with open(os.path.join(RAWDIR, f"downloads_{y}.csv"), "w", newline="") as fh:
         w = csv.writer(fh, lineterminator="\n"); w.writerow(["tag", "dataset", "bytes", "sha256"]); w.writerows(sorted(downloads))
+    for f in os.listdir(PARTS) if os.path.isdir(PARTS) else []:
+        if f.startswith(f"{y}_"):
+            os.unlink(os.path.join(PARTS, f))
     log(f"year {y} fetched: {ds.sizes.get('time')} hours")
 
 
@@ -261,7 +286,8 @@ def process(y):
 
 
 def run(budget_min):
-    """Fetch and process years in order until the time budget is used; the next run carries on."""
+    """Fetch and process years in order. No new request starts after the time budget; the next run carries on from the
+    last finished request."""
     deadline = time.time() + budget_min * 60
     client = cds_client()
     done = lambda y: os.path.exists(os.path.join(OUT, f"gauge_days_{y}.csv.xz"))
@@ -269,9 +295,10 @@ def run(budget_min):
     for y in range(1991, 2027):
         need = (y <= 2025 and not done(y)) or (y - 1 >= 1991 and not done(y - 1))
         if need and not raw(y):
-            if time.time() > deadline - 90 * 60:
-                log("time budget used: stopping before a new year"); break
-            fetch(client, y, deadline)
+            try:
+                fetch(client, y, deadline)
+            except Budget as e:
+                log(f"time budget used: stopping before {e}; finished downloads are kept for the next run"); break
         if y - 1 >= 1991 and not done(y - 1) and raw(y - 1) and raw(y):
             process(y - 1)
         if y - 1 >= 1991 and done(y - 1) and raw(y - 1):
