@@ -1,129 +1,50 @@
 {
+ "kvx-pulse.js v=20261004q": "033294d644c3",
+ "kvx-pulse.js v=20261004p": "033294d644c3",
+ "kvx-pulse.js v=check4": "033294d644c3",
+ "front loaders": [
+  "kvx-pulse.js?v=20261004q"
+ ],
+ "front csp": null,
  "/": {
-  "status": 200,
-  "versions": [
-   "kvx-pulse.js?v=20261004p"
+  "csp": null,
+  "csp_ro": "",
+  "info": {
+   "vital": [
+    "HIDDEN "
+   ],
+   "css": true,
+   "pulseScripts": [
+    "https://kvantix.tech/wp-content/uploads/kvx/kvx-pulse.js?v=20261004q"
+   ],
+   "orgHud": null,
+   "feed": ""
+  },
+  "pulse_requests": [
+   "https://kvantix.tech/?nocache=pulse3",
+   "https://kvantix.tech/wp-content/uploads/kvx/kvx-pulse.js?v=20261004q"
   ],
-  "pulse_attrs": [
-   "data-kvx-pulse-"
-  ],
-  "vital_class": 1,
-  "pulse_loader": [
-   "kvx-pulse.js?v=20261004p"
-  ]
+  "logs": []
  },
  "/playground/": {
-  "status": 200,
-  "versions": [
-   "kvx-hub.js?v=20261004p",
-   "kvx-pulse.js?v=20261004p",
-   "kvx-weather.js?v=20261004p"
+  "csp": null,
+  "csp_ro": "",
+  "info": {
+   "vital": [
+    "shown Live lab \u00b7 8 investigations, 4 at work \u00b7 last event 36 min ago"
+   ],
+   "css": true,
+   "pulseScripts": [
+    "https://kvantix.tech/wp-content/uploads/kvx/kvx-pulse.js?v=20261004p"
+   ],
+   "orgHud": "Live \u00b7 the pulse is checked every two minutesLast change 25 min ago",
+   "feed": "Last 24 hoursTimes in your time zone. Every line links to its source.Today14:30Price listDay 5 sealed: 10 price-list checks locked, chain intact13:26CO\u2082 forecas"
+  },
+  "pulse_requests": [
+   "https://kvantix.tech/playground/?nocache=pulse3",
+   "https://kvantix.tech/wp-content/uploads/kvx/kvx-pulse.js?v=20261004p",
+   "https://raw.githubusercontent.com/kvantixtech/kvantixtech/main/pulse/pulse.json?t=14926053"
   ],
-  "pulse_attrs": [
-   "data-kvx-pulse-cells",
-   "data-kvx-pulse-dot",
-   "data-kvx-pulse-feed",
-   "data-kvx-pulse-milestones",
-   "data-kvx-pulse-organism",
-   "data-kvx-pulse-vital"
-  ],
-  "vital_class": 2,
-  "pulse_loader": [
-   "kvx-pulse.js?v=20261004p"
-  ]
- },
- "/playground/weather/": {
-  "status": 200,
-  "versions": [
-   "kvx-pulse.js?v=20261004p",
-   "kvx-weather.js?v=20261004p"
-  ],
-  "pulse_attrs": [
-   "data-kvx-pulse-strip"
-  ],
-  "vital_class": 0,
-  "pulse_loader": [
-   "kvx-pulse.js?v=20261004p"
-  ]
- },
- "/playground/energy/": {
-  "status": 200,
-  "versions": [
-   "kvx-energy.js?v=20261004p",
-   "kvx-pulse.js?v=20261004p"
-  ],
-  "pulse_attrs": [
-   "data-kvx-pulse-strip"
-  ],
-  "vital_class": 0,
-  "pulse_loader": [
-   "kvx-pulse.js?v=20261004p"
-  ]
- },
- "/playground/experts/": {
-  "status": 200,
-  "versions": [
-   "kvx-experts.js?v=20261004p",
-   "kvx-pulse.js?v=20261004p"
-  ],
-  "pulse_attrs": [
-   "data-kvx-pulse-strip"
-  ],
-  "vital_class": 0,
-  "pulse_loader": [
-   "kvx-pulse.js?v=20261004p"
-  ]
- },
- "/playground/wastewater/": {
-  "status": 200,
-  "versions": [
-   "kvx-pulse.js?v=20261004p",
-   "kvx-wastewater.js?v=20261004p"
-  ],
-  "pulse_attrs": [
-   "data-kvx-pulse-strip"
-  ],
-  "vital_class": 0,
-  "pulse_loader": [
-   "kvx-pulse.js?v=20261004p"
-  ]
- },
- "/playground/nitrogen/": {
-  "status": 200,
-  "versions": [
-   "kvx-nitrogen.js?v=20261004p",
-   "kvx-pulse.js?v=20261004p"
-  ],
-  "pulse_attrs": [
-   "data-kvx-pulse-strip"
-  ],
-  "vital_class": 0,
-  "pulse_loader": [
-   "kvx-pulse.js?v=20261004p"
-  ]
- },
- "/playground/wind-rain/": {
-  "status": 200,
-  "versions": [
-   "kvx-pulse.js?v=20261004p",
-   "kvx-windrain.js?v=20261004p"
-  ],
-  "pulse_attrs": [
-   "data-kvx-pulse-strip"
-  ],
-  "vital_class": 0,
-  "pulse_loader": [
-   "kvx-pulse.js?v=20261004p"
-  ]
- },
- "kvx-pulse.js v=20261004p": {
-  "status": 200,
-  "bytes": 50673,
-  "sha256": "033294d644c3b99c87c1fea004e60a7ea172d7e216619d664caefc43290cddcd"
- },
- "kvx-pulse.js v=check3": {
-  "status": 200,
-  "bytes": 50673,
-  "sha256": "033294d644c3b99c87c1fea004e60a7ea172d7e216619d664caefc43290cddcd"
+  "logs": []
  }
 }
