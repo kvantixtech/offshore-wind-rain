@@ -1,37 +1,83 @@
 {
+ "/playground/wind-rain/": {
+  "status": 200,
+  "versions": [
+   "20260927a",
+   "20261004a"
+  ],
+  "wind_card": true,
+  "title": "Do offshore wind farms take the rain from the coast? | Kvantix Data Playground",
+  "og": [
+   [
+    "description",
+    "A 2026 study projects 10–15 % less coastal rain after a huge North Sea wind build-out. We test today&#039;s farms against 35 years of rain gauges, every rule locked first."
+   ],
+   [
+    "og:title",
+    "Do offshore wind farms take the rain?"
+   ],
+   [
+    "og:description",
+    "55 offshore farms, 1,384 rain gauges, 0 rain values read so far. The method was locked before the data, including a test of Thor before it is finished."
+   ],
+   [
+    "og:image",
+    "https://kvantix.tech/wp-content/uploads/2026/10/kvantix-og-windrain.jpg"
+   ],
+   [
+    "twitter:image",
+    "https://kvantix.tech/wp-content/uploads/2026/10/kvantix-og-windrain.jpg"
+   ]
+  ],
+  "trackers": [
+   "umami"
+  ],
+  "has_cards": true,
+  "privacy_link": true
+ },
  "/playground/": {
   "status": 200,
-  "has_nitrogen_card": true,
-  "kvx_versions": [
+  "versions": [
    "20260927a",
    "20261002a"
-  ]
+  ],
+  "wind_card": false,
+  "title": "Data Playground: Which Weather Forecast Is Right? &#045; Kvantix",
+  "og": [
+   [
+    "description",
+    "Our validation method tested in public. First experiment: DMI, MET Norway, OpenWeatherMap and the pilots&#039; TAF, locked before the weather happens."
+   ],
+   [
+    "og:title",
+    "Data Playground: Which Weather Forecast Is Right? &#045; Kvantix"
+   ],
+   [
+    "og:description",
+    "Our validation method tested in public. First experiment: DMI, MET Norway, OpenWeatherMap and the pilots&#039; TAF, locked before the weather happens."
+   ],
+   [
+    "og:image",
+    "https://kvantix.tech/wp-content/uploads/2026/09/kvantix-og-playground.jpg"
+   ],
+   [
+    "twitter:image",
+    "https://kvantix.tech/wp-content/uploads/2026/09/kvantix-og-playground.jpg"
+   ]
+  ],
+  "trackers": [
+   "umami"
+  ],
+  "has_cards": false,
+  "privacy_link": true
  },
- "/playground/nitrogen/": {
+ "js": {
   "status": 200,
-  "has_nitrogen_card": true,
-  "kvx_versions": [
-   "20260927a",
-   "20261002a"
-  ]
+  "bytes": 37387,
+  "sha256_matches": true
  },
- "/playground/wastewater/": {
+ "github_api": {
   "status": 200,
-  "has_nitrogen_card": true,
-  "kvx_versions": [
-   "20260927a",
-   "20261002a"
-  ]
- },
- "/playground/wind-rain/": {
-  "error": "HTTP Error 404: Not Found"
- },
- "/playground/energy/": {
-  "status": 200,
-  "has_nitrogen_card": false,
-  "kvx_versions": [
-   "20260927a",
-   "20260930a"
-  ]
+  "files": 8
  }
 }
