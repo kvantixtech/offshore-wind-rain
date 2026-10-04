@@ -38,3 +38,16 @@ Traceback (most recent call last):
 requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
 cost limits exceeded
 Your request is too large, please reduce your selection.
+  single 1991: too large, splitting 01-12
+  single 1991: too large, splitting 01-06
+  p850 1991: too large, splitting 01-12
+  p850 1991 01-06: 16.8 MB in 21 min
+  p850 1991 07-12: 16.8 MB in 31 min
+  single 1991 01-03: 19.2 MB in 106 min
+  single 1991 04-06: 19.5 MB in 61 min
+  single 1991: too large, splitting 07-12
+  single 1991 07-09: 19.5 MB in 80 min
+  single 1991 10-12: 19.6 MB in 96 min
+year 1991 fetched: 8760 hours
+time budget used: stopping before a new year
+years done: 
