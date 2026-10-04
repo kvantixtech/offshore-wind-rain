@@ -1,429 +1,116 @@
 {
- "sha": {
-  "kvx-windrain.js v=20261004t": [
-   200,
-   "25d8e544ead6",
-   180272
-  ],
-  "kvx-windrain.js v=check6": [
-   200,
-   "25d8e544ead6",
-   180272
-  ],
-  "kvx-noise.js v=20261004n": [
-   200,
-   "dfb7668eb903",
-   29700
-  ],
-  "kvx-noise.js v=check6": [
-   200,
-   "dfb7668eb903",
-   29700
-  ]
- },
  "html": {
-  "/playground/wind-rain/": {
-   "status": 200,
-   "title": "Do offshore wind farms take the rain from the coast? | Kvantix Data Playground",
-   "og_image": "https://kvantix.tech/wp-content/uploads/2026/10/kvantix-og-windrain.jpg",
-   "loaders": [
-    "kvx-pulse.js?v=20261004t",
-    "kvx-windrain.js?v=20261004t"
-   ],
-   "has_time_machine": true,
-   "noise_links": 0
-  },
-  "/playground/noise-machine/": {
-   "status": 200,
-   "title": "The noise machine: 1,000 forecasters, no skill",
-   "og_image": "https://kvantix.tech/wp-content/uploads/2026/10/kvantix-og-noise.jpg",
-   "loaders": [
-    "kvx-noise.js?v=20261004n"
-   ],
-   "has_time_machine": false,
-   "noise_links": 1
-  },
-  "/playground/": {
-   "status": 200,
-   "title": "Data Playground: Which Weather Forecast Is Right? &#045; Kvantix",
-   "og_image": "https://kvantix.tech/wp-content/uploads/2026/09/kvantix-og-playground.jpg",
-   "loaders": [
-    "kvx-hub.js?v=20261004n",
-    "kvx-pulse.js?v=20261004n",
-    "kvx-weather.js?v=20261004n"
-   ],
-   "has_time_machine": false,
-   "noise_links": 1
-  }
- },
- "wind-rain desktop": {
-  "present": 1,
-  "mid": {
-   "year": "2007",
-   "date": "28 Feb 2007",
-   "ns": "171 MW",
-   "all": "430 MW",
-   "n": "214",
-   "farms": "9",
-   "gauge": "Gauge at 55.55\u00b0 N, 8.11\u00b0 E. Click any gauge on the map to choose another.",
-   "upwind": "160 MW",
-   "upwind_line": "80 turbines within 100 km, in a 45\u00b0 sector towards the wind, on 28 Feb 2007",
-   "dir": "247\u00b0 (WSW)",
-   "beat": null,
-   "canvas": [
-    882,
-    780
-   ],
-   "pulse_strip": true
-  },
-  "end": {
-   "year": "2026",
-   "date": "17 Sep 2026",
-   "ns": "12.18 GW",
-   "all": "15.90 GW",
-   "n": "2,848",
-   "farms": "54",
-   "gauge": "Gauge at 55.55\u00b0 N, 8.11\u00b0 E. Click any gauge on the map to choose another.",
-   "upwind": "765 MW",
-   "upwind_line": "232 turbines within 100 km, in a 45\u00b0 sector towards the wind, on 17 Sep 2026",
-   "dir": "247\u00b0 (WSW)",
-   "beat": "Today: 12.2 GW in the North Sea and 2,848 turbines on the map. Each of them enters the test on its own first day.",
-   "canvas": [
-    882,
-    780
-   ],
-   "pulse_strip": true
-  },
-  "scrub": {
-   "year": "2016",
-   "date": "31 Mar 2016",
-   "ns": "3.58 GW",
-   "all": "4.92 GW",
-   "n": "1,374",
-   "farms": "30",
-   "gauge": "Gauge at 55.55\u00b0 N, 8.11\u00b0 E. Click any gauge on the map to choose another.",
-   "upwind": "462 MW",
-   "upwind_line": "160 turbines within 100 km, in a 45\u00b0 sector towards the wind, on 31 Mar 2016",
-   "dir": "247\u00b0 (WSW)",
-   "beat": "ZeeEnergie / Gemini II switches on: 300 MW, 68 km from the nearest gauge.",
-   "canvas": [
-    882,
-    780
-   ],
-   "pulse_strip": true
-  },
-  "scripts": [
-   "https://kvantix.tech/wp-content/uploads/kvx/kvantix-site.js?v=20260927a",
-   "https://kvantix.tech/wp-content/uploads/kvx/kvx-windrain.js?v=20261004t",
-   "https://kvantix.tech/wp-content/uploads/kvx/kvx-pulse.js?v=20261004t",
-   "https://kvantix.tech/wp-content/uploads/kvx/three.min.js"
-  ],
-  "logs": [
-   "warning: []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.",
-   "warning: []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.",
-   "warning: [.WebGL-0x76c0013c400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
-   "warning: [.WebGL-0x76c0013c400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
-   "warning: [.WebGL-0x76c0013c400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
-   "warning: [.WebGL-0x76c0013c400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
-  ]
- },
- "wind-rain phone": {
-  "end": {
-   "year": "2026",
-   "date": "17 Sep 2026",
-   "ns": "12.18 GW",
-   "all": "15.90 GW",
-   "n": "2,848",
-   "farms": "54",
-   "gauge": "Gauge at 55.55\u00b0 N, 8.11\u00b0 E. Click any gauge on the map to choose another.",
-   "upwind": "765 MW",
-   "upwind_line": "232 turbines within 100 km, in a 45\u00b0 sector towards the wind, on 17 Sep 2026",
-   "dir": "247\u00b0 (WSW)",
-   "beat": "Today: 12.2 GW in the North Sea and 2,848 turbines on the map. Each of them enters the test on its own first day.",
-   "canvas": [
-    704,
-    880
-   ],
-   "pulse_strip": true
-  },
-  "logs": [
-   "warning: []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.",
-   "warning: []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content."
-  ]
- },
- "noise desktop": {
   "status": 200,
-  "present": 1,
-  "says": [
-   "Season over. All calls counted. 37 of 1,000 forecasters beat chance at the usual 5 % level, roughly the 44 you'd expect from coins.",
-   "The ten best. #0461 was right on 152 of 250 days, 60.8 %. On its own, a coin does that well about 1 in 2,600 times. A fund would put that on its front page.",
-   "But there were 1,000 tries. The chance that at least one of 1,000 coins does as well as #0461 is 32 %. To beat chance across 1,000 tries, a record needs 62.8 %. Nobody clears it.",
-   "Season two: the ten locked stars were right on 52.4 % of days on average, the coin's 50 %, give or take. Season two crowned ten new stars, and 2 of them were stars in season one too. The hidden talent was #0129: 55.2 % a"
+  "title": "Data Playground: Which Weather Forecast Is Right? &#045; Kvantix",
+  "description": "Our validation method tested in public. First experiment: DMI, MET Norway, OpenWeatherMap and the pilots&#039; TAF, locked before the weather happens.",
+  "og:title": "Data Playground: Which Weather Forecast Is Right? &#045; Kvantix",
+  "og:description": "Our validation method tested in public. First experiment: DMI, MET Norway, OpenWeatherMap and the pilots&#039; TAF, locked before the weather happens.",
+  "og:image": "https://kvantix.tech/wp-content/uploads/2026/09/kvantix-og-playground.jpg",
+  "twitter:title": "Data Playground: Which Weather Forecast Is Right? &#045; Kvantix",
+  "canonical": "https://kvantix.tech/playground/",
+  "wx_fix_installed": true,
+  "old_wx_wrapper": false,
+  "loaders": [
+   "kvx-hub.js?v=20261004n",
+   "kvx-pulse.js?v=20261004n",
+   "kvx-weather.js?v=20261004n"
   ],
-  "read": "250 + 250\ndays called\n60.8 %\nbest record so far, #0461\n37 of 1,000\n\u201cbeat chance\u201d at the usual 5 % level\n0 of 1,000\npass once 1,000 tries are counted",
-  "logs": [
-   "warning: []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.",
-   "warning: []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content."
-  ]
+  "h2": [
+   "What the lab did today",
+   "Three steps, every experiment",
+   "Which weather forecast is right most often?",
+   "In the lab"
+  ],
+  "og_bytes": 112395
  },
- "hub": {
-  "noise_card": 1,
-  "card_text": "1 of 1,000\nThe noise machine NEW\n\nA thousand forecasters who flip coins. Run a season and some look brilliant. Then watch our method take them apart, step by step, and see how long it takes to spot th",
-  "weather_section_dom": [
-   [
-    "div.kvx-wrap",
-    100,
-    329,
-    1240,
-    1753,
-    "static",
-    "block",
-    "none"
-   ],
-   [
-    "div.kvx-sh",
-    128,
-    329,
-    1184,
-    92,
-    "static",
-    "flex",
-    "none"
-   ],
-   [
-    "div.kvx-rec-grid",
-    128,
-    466,
-    1184,
-    407,
-    "static",
-    "grid",
-    "572px 572px"
-   ],
-   [
-    "div.kvx-card",
-    128,
-    466,
-    572,
-    407,
-    "static",
-    "block",
-    "none"
-   ],
-   [
-    "ul.kvx-pg-list",
-    157,
-    559,
-    514,
-    204,
-    "static",
-    "flex",
-    "none"
-   ],
-   [
-    "li",
-    157,
-    559,
-    514,
-    48,
-    "relative",
-    "list-item",
-    "none"
-   ],
-   [
-    "li",
-    157,
-    619,
-    514,
-    48,
-    "relative",
-    "list-item",
-    "none"
-   ],
-   [
-    "li",
-    157,
-    679,
-    514,
-    24,
-    "relative",
-    "list-item",
-    "none"
-   ],
-   [
-    "li",
-    157,
-    715,
-    514,
-    48,
-    "relative",
-    "list-item",
-    "none"
-   ],
-   [
-    "ol.kvx-timeline",
-    740,
-    466,
-    572,
-    362,
-    "relative",
-    "block",
-    "none"
-   ],
-   [
-    "li",
-    766,
-    466,
-    546,
-    91,
-    "relative",
-    "list-item",
-    "none"
-   ],
-   [
-    "li",
-    766,
-    557,
-    546,
-    67,
-    "relative",
-    "list-item",
-    "none"
-   ],
-   [
-    "li.now",
-    766,
-    624,
-    546,
-    91,
-    "relative",
-    "list-item",
-    "none"
-   ],
-   [
-    "li",
-    766,
-    715,
-    546,
-    67,
-    "relative",
-    "list-item",
-    "none"
-   ],
-   [
-    "li",
-    766,
-    783,
-    546,
-    45,
-    "relative",
-    "list-item",
-    "none"
-   ],
-   [
-    "div.kvx-pg-wx-live",
-    128,
-    865,
-    640,
-    601,
-    "static",
-    "block",
-    "none"
-   ],
-   [
-    "div.kvx-exhibit",
-    128,
-    865,
-    640,
-    601,
-    "static",
-    "block",
-    "none"
-   ],
-   [
-    "div.kvx-exhibit-head",
-    139,
-    876,
-    618,
-    40,
-    "static",
-    "flex",
-    "none"
-   ],
-   [
-    "a.kvx-verdict",
-    139,
-    916,
-    618,
-    275,
-    "static",
-    "block",
-    "none"
-   ],
-   [
-    "div.kvx-verdict-top",
-    162,
-    937,
-    572,
-    51,
-    "static",
-    "flex",
-    "none"
-   ],
-   [
-    "div",
-    162,
-    937,
-    440,
-    51,
-    "static",
-    "block",
-    "none"
-   ],
-   [
-    "div.kvx-dots.kvx-pg-src",
-    162,
-    1005,
-    572,
-    6,
-    "static",
-    "flex",
-    "none"
-   ],
-   [
-    "ul.kvx-facts",
-    162,
-    1025,
-    572,
-    109,
-    "static",
-    "flex",
-    "none"
-   ],
-   [
-    "li",
-    162,
-    1025,
-    572,
-    22,
-    "relative",
-    "list-item",
-    "none"
-   ],
-   [
-    "li",
-    162,
-    1054,
-    572,
-    22,
-    "relative",
-    "list-item",
-    "none"
+ "links": {
+  "https://github.com/kvantixtech": 200,
+  "https://github.com/kvantixtech/weather-forecast-test": 200,
+  "https://github.com/kvantixtech/weather-forecast-test/commits/main": 200,
+  "https://kvantix.tech/": 200,
+  "https://kvantix.tech/comments/feed/": 200,
+  "https://kvantix.tech/feed/": 200,
+  "https://kvantix.tech/playground/": 200,
+  "https://kvantix.tech/playground/energy/": 200,
+  "https://kvantix.tech/playground/experts/": 200,
+  "https://kvantix.tech/playground/lock-your-prediction/": 200,
+  "https://kvantix.tech/playground/luck-or-skill/": 200,
+  "https://kvantix.tech/playground/nitrogen/": 200,
+  "https://kvantix.tech/playground/noise-machine/": 200,
+  "https://kvantix.tech/playground/track-record/": 200,
+  "https://kvantix.tech/playground/wastewater/": 200,
+  "https://kvantix.tech/playground/weather/": 200,
+  "https://kvantix.tech/playground/wind-rain/": 200,
+  "https://kvantix.tech/privacy/": 200,
+  "https://kvantix.tech/wp-content/cache/minify/16271.css": 200,
+  "https://kvantix.tech/wp-content/cache/minify/d8c48.css": 200,
+  "https://kvantix.tech/wp-content/uploads/2026/03/cropped-kvantix_logo-180x180.png": 200,
+  "https://kvantix.tech/wp-content/uploads/2026/03/cropped-kvantix_logo-192x192.png": 200,
+  "https://kvantix.tech/wp-content/uploads/2026/03/cropped-kvantix_logo-32x32.png": 200,
+  "https://kvantix.tech/wp-content/uploads/kvantix-data-guide.html": 200,
+  "https://kvantix.tech/wp-json/": 200,
+  "https://kvantix.tech/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkvantix.tech%2Fplayground%2F": 200,
+  "https://kvantix.tech/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkvantix.tech%2Fplayground%2F&": 200,
+  "https://kvantix.tech/wp-json/wp/v2/pages/610": 200,
+  "https://kvantix.tech/xmlrpc.php?rsd": 403,
+  "https://portal.kvantix.tech/login": 200
+ },
+ "tour desk": {
+  "page": {
+   "scroller": "kvx-root",
+   "height": 7905,
+   "client": 1000,
+   "hscroll": false,
+   "wideBody": false
+  },
+  "checks": {
+   "overlaps": [],
+   "outside_viewport": [],
+   "broken_images": [],
+   "vital": "Live lab \u00b7 8 investigations, 4 at work \u00b7 last event 2 hours ago",
+   "hud": "Live \u00b7 the pulse is checked every two minutesLast change 1 hour ago",
+   "feed": "Last 24 hoursTimes in your time zone. Every line links to its source.Today18:04Wind & rain \u00b7 change to code or methodAdd files via upload18:03Wind & rain \u00b7 change to code or methodAdd files via upload",
+   "wx_state": "COLLECTING",
+   "wx_day": "7",
+   "wx_runs": "472",
+   "wx_chain": "intact",
+   "hub_live": [
+    "wr-n: ERA5: 0 of 35 years",
+    "wr-live: \u25cf live \u00b7 4 of 8 steps done \u00b7 0 rain values read \u00b7 last change 12 hours ago",
+    "en-n: 119 downloads locked",
+    "en-live: \u25cf live \u00b7 109 CO\u2082 downloads and 10 price-list checks locked, last anchor 2026-10-04"
    ]
-  ],
-  "logs": [
-   "warning: []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content.",
-   "warning: []Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader flag to opt in to lower security guarantees for trusted content."
-  ]
+  },
+  "shots": 9,
+  "logs": []
+ },
+ "tour mob": {
+  "page": {
+   "scroller": "kvx-root",
+   "height": 13799,
+   "client": 844,
+   "hscroll": false,
+   "wideBody": false
+  },
+  "checks": {
+   "overlaps": [],
+   "outside_viewport": [],
+   "broken_images": [],
+   "vital": "Live lab \u00b7 8 investigations, 4 at work \u00b7 last event 2 hours ago",
+   "hud": "Reading the pulse\u20261 hour ago",
+   "feed": "Last 24 hoursTimes in your time zone. Every line links to its source.Today18:04Wind & rain \u00b7 change to code or methodAdd files via upload18:03Wind & rain \u00b7 change to code or methodAdd files via upload",
+   "wx_state": "COLLECTING",
+   "wx_day": "7",
+   "wx_runs": "472",
+   "wx_chain": "intact",
+   "hub_live": [
+    "wr-n: ERA5: 0 of 35 years",
+    "wr-live: \u25cf live \u00b7 4 of 8 steps done \u00b7 0 rain values read \u00b7 last change 12 hours ago",
+    "en-n: 119 downloads locked",
+    "en-live: \u25cf live \u00b7 109 CO\u2082 downloads and 10 price-list checks locked, last anchor 2026-10-04"
+   ]
+  },
+  "shots": 19,
+  "logs": []
  }
 }
