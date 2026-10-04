@@ -1,0 +1,37 @@
+{
+ "/playground/": {
+  "status": 200,
+  "has_nitrogen_card": true,
+  "kvx_versions": [
+   "20260927a",
+   "20261002a"
+  ]
+ },
+ "/playground/nitrogen/": {
+  "status": 200,
+  "has_nitrogen_card": true,
+  "kvx_versions": [
+   "20260927a",
+   "20261002a"
+  ]
+ },
+ "/playground/wastewater/": {
+  "status": 200,
+  "has_nitrogen_card": true,
+  "kvx_versions": [
+   "20260927a",
+   "20261002a"
+  ]
+ },
+ "/playground/wind-rain/": {
+  "error": "HTTP Error 404: Not Found"
+ },
+ "/playground/energy/": {
+  "status": 200,
+  "has_nitrogen_card": false,
+  "kvx_versions": [
+   "20260927a",
+   "20260930a"
+  ]
+ }
+}
