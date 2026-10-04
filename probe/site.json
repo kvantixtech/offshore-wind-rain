@@ -1,83 +1,37 @@
 {
- "/playground/wind-rain/": {
-  "status": 200,
-  "versions": [
-   "20260927a",
-   "20261004a"
-  ],
-  "wind_card": true,
-  "title": "Do offshore wind farms take the rain from the coast? | Kvantix Data Playground",
-  "og": [
-   [
-    "description",
-    "A 2026 study projects 10–15 % less coastal rain after a huge North Sea wind build-out. We test today&#039;s farms against 35 years of rain gauges, every rule locked first."
-   ],
-   [
-    "og:title",
-    "Do offshore wind farms take the rain?"
-   ],
-   [
-    "og:description",
-    "55 offshore farms, 1,384 rain gauges, 0 rain values read so far. The method was locked before the data, including a test of Thor before it is finished."
-   ],
-   [
-    "og:image",
-    "https://kvantix.tech/wp-content/uploads/2026/10/kvantix-og-windrain.jpg"
-   ],
-   [
-    "twitter:image",
-    "https://kvantix.tech/wp-content/uploads/2026/10/kvantix-og-windrain.jpg"
-   ]
-  ],
-  "trackers": [
-   "umami"
-  ],
-  "has_cards": true,
-  "privacy_link": true
- },
  "/playground/": {
   "status": 200,
   "versions": [
-   "20260927a",
-   "20261002a"
+   "20261004c"
   ],
-  "wind_card": false,
-  "title": "Data Playground: Which Weather Forecast Is Right? &#045; Kvantix",
-  "og": [
-   [
-    "description",
-    "Our validation method tested in public. First experiment: DMI, MET Norway, OpenWeatherMap and the pilots&#039; TAF, locked before the weather happens."
-   ],
-   [
-    "og:title",
-    "Data Playground: Which Weather Forecast Is Right? &#045; Kvantix"
-   ],
-   [
-    "og:description",
-    "Our validation method tested in public. First experiment: DMI, MET Norway, OpenWeatherMap and the pilots&#039; TAF, locked before the weather happens."
-   ],
-   [
-    "og:image",
-    "https://kvantix.tech/wp-content/uploads/2026/09/kvantix-og-playground.jpg"
-   ],
-   [
-    "twitter:image",
-    "https://kvantix.tech/wp-content/uploads/2026/09/kvantix-og-playground.jpg"
-   ]
+  "scripts": [
+   "kvx-hub.js",
+   "kvx-weather.js"
   ],
-  "trackers": [
-   "umami"
-  ],
-  "has_cards": false,
-  "privacy_link": true
+  "hub_hooks": 4,
+  "wr_hooks": 0,
+  "wind_card": true
  },
- "js": {
+ "/playground/wind-rain/": {
   "status": 200,
-  "bytes": 37387,
+  "versions": [
+   "20261004b"
+  ],
+  "scripts": [
+   "kvx-windrain.js"
+  ],
+  "hub_hooks": 0,
+  "wr_hooks": 9,
+  "wind_card": true
+ },
+ "kvx-hub.js": {
+  "status": 200,
+  "bytes": 4298,
   "sha256_matches": true
  },
- "github_api": {
+ "kvx-windrain.js": {
   "status": 200,
-  "files": 8
+  "bytes": 38331,
+  "sha256_matches": true
  }
 }
