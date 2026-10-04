@@ -8,7 +8,9 @@ This repository checks the claim with open measurements:
 
 The method was written and committed before any rain-gauge data were read: [`METHOD.md`](METHOD.md). Every change after that, and why, is in [`CHANGELOG.md`](CHANGELOG.md).
 
-**Status:** method committed. No data downloaded yet.
+**Status:** method committed; turbines, gauge list and day windows done; ERA5 being fetched. No rain-gauge value has been read.
+
+**Live status page:** <https://kvantix.tech/playground/wind-rain/>
 
 Sources:
 - DMI open data (CC BY 4.0)
