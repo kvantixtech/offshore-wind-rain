@@ -1,148 +1,130 @@
-"""Temporary probe: the wind time machine and the noise machine in a real browser on the live site."""
-import json, hashlib, re, urllib.request, asyncio
+"""Temporary probe: the whole hub (/playground/) as a visitor sees it, desktop and phone, plus its links and meta tags."""
+import json, re, os, glob, urllib.request, urllib.error, asyncio
 from playwright.async_api import async_playwright
 UA = "kvantixtech/site-audit check (github actions)"
-NC = "?nocache=wt1"
-out = {"sha": {}, "html": {}}
+NC = "?nocache=hub3"
+HUB = "https://kvantix.tech/playground/"
+out = {}
+for f in glob.glob("probe/*.png") + glob.glob("probe/*.jpg"):
+    os.remove(f)
 
 
-def get(url):
-    r = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=60)
+def get(url, timeout=40):
+    r = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=timeout)
     return r.status, r.read()
 
 
-for f, q in (("kvx-windrain.js", "v=20261004t"), ("kvx-windrain.js", "v=check6"), ("kvx-noise.js", "v=20261004n"), ("kvx-noise.js", "v=check6")):
-    try:
-        st, b = get("https://kvantix.tech/wp-content/uploads/kvx/" + f + "?" + q)
-        out["sha"][f + " " + q] = [st, hashlib.sha256(b).hexdigest()[:12], len(b)]
-    except Exception as e:
-        out["sha"][f + " " + q] = str(e)[:160]
+st, b = get(HUB + NC)
+t = b.decode("utf-8", "replace")
 
-for path in ("/playground/wind-rain/", "/playground/noise-machine/", "/playground/"):
-    try:
-        st, b = get("https://kvantix.tech" + path + NC)
-        t = b.decode("utf-8", "replace")
-        out["html"][path] = {
-            "status": st,
-            "title": (re.findall(r"<title>(.*?)</title>", t, re.S) or [""])[0][:120],
-            "og_image": (re.findall(r'property="og:image" content="([^"]+)"', t) or [None])[0],
-            "loaders": sorted(set(re.findall(r"kvx-[a-z]+\.js\?v=\w+", t))),
-            "has_time_machine": 'id="kvx-wt"' in t,
-            "noise_links": len(re.findall(r'href="[^"]*/playground/noise-machine/', t)),
-        }
-    except Exception as e:
-        out["html"][path] = str(e)[:200]
 
-SCROLL = """(top) => { var e = document.getElementById('kvx-wt') || document.getElementById('kvx-noise'), p = e.parentElement;
-  while (p && !(p.scrollHeight > p.clientHeight + 5 && /(auto|scroll)/.test(getComputedStyle(p).overflowY))) p = p.parentElement;
-  p = p || document.scrollingElement; p.scrollTop += e.getBoundingClientRect().top - top; }"""
-READ_WT = """() => { var g = id => (document.getElementById(id) || {}).textContent || null;
-  return { year: g('kvx-wt-y'), date: g('kvx-wt-d'), ns: g('kvx-wt-ns'), all: g('kvx-wt-all'), n: g('kvx-wt-n'), farms: g('kvx-wt-f'),
-           gauge: g('kvx-wt-gname'), upwind: g('kvx-wt-e'), upwind_line: g('kvx-wt-el'), dir: g('kvx-wt-dirv'), beat: g('kvx-wt-beat'),
-           canvas: (() => { var c = document.getElementById('kvx-wt-map'); return c ? [c.width, c.height] : null; })(),
-           pulse_strip: !!document.querySelector('.kvx-pulse-strip, [data-kvx-pulse-strip], .kvx-pstrip') }; }"""
+def meta(attr, name):
+    a = re.findall(r'<meta[^>]+%s="%s"[^>]*content="([^"]*)"' % (attr, re.escape(name)), t)
+    b_ = re.findall(r'<meta[^>]+content="([^"]*)"[^>]*%s="%s"' % (attr, re.escape(name)), t)
+    return (a or b_ or [None])[0]
+
+
+out["html"] = {
+    "status": st,
+    "title": (re.findall(r"<title>(.*?)</title>", t, re.S) or [""])[0].strip(),
+    "description": meta("name", "description"),
+    "og:title": meta("property", "og:title"),
+    "og:description": meta("property", "og:description"),
+    "og:image": meta("property", "og:image"),
+    "twitter:title": meta("name", "twitter:title"),
+    "canonical": (re.findall(r'<link[^>]+rel="canonical"[^>]+href="([^"]+)"', t) or [None])[0],
+    "wx_fix_installed": "kvx-pg-wx-left" in t,
+    "old_wx_wrapper": 'kvx-pg-wx-live" style="max-width:640px' in t,
+    "loaders": sorted(set(re.findall(r"kvx-[a-z]+\.js\?v=\w+", t))),
+    "h2": [re.sub(r"<[^>]+>", "", h).strip() for h in re.findall(r"<h2[^>]*>(.*?)</h2>", t, re.S)],
+}
+if out["html"]["og:image"]:
+    try:
+        _, img = get(out["html"]["og:image"])
+        open("probe/og_playground.jpg", "wb").write(img)
+        out["html"]["og_bytes"] = len(img)
+    except Exception as e:
+        out["html"]["og_err"] = str(e)[:200]
+
+# every link on the hub that points at our own pages or repos
+links = sorted(set(u for u in re.findall(r'href="(https://[^"#]+)', t)
+                   if u.startswith(("https://kvantix.tech", "https://github.com/kvantixtech", "https://portal.kvantix.tech"))))
+out["links"] = {}
+for u in links[:60]:
+    try:
+        s_, _ = get(u, timeout=25)
+        out["links"][u] = s_
+    except urllib.error.HTTPError as e:
+        out["links"][u] = e.code
+    except Exception as e:
+        out["links"][u] = str(e)[:80]
+
+FIND = """() => { window.__kvxS = () => {
+  const c = [document.getElementById('kvx-root'), ...document.querySelectorAll('body *')].filter(Boolean);
+  for (const e of c) { const cs = getComputedStyle(e); if (e.scrollHeight > e.clientHeight + 50 && /(auto|scroll)/.test(cs.overflowY)) return e; }
+  return document.scrollingElement; }; const s = window.__kvxS();
+  return { scroller: s.id || s.tagName, height: s.scrollHeight, client: s.clientHeight, hscroll: s.scrollWidth > s.clientWidth + 1,
+           wideBody: document.documentElement.scrollWidth > window.innerWidth + 1 }; }"""
+CHECKS = """() => { const s = window.__kvxS(), off = s.scrollTop;
+  const sel = '.kvx-card, .kvx-exhibit, .kvx-trap, .kvx-case, .kvx-verdict, .kvx-pulse-host, .kvx-timeline, .kvx-sh';
+  const els = Array.from(document.querySelectorAll(sel)).filter(e => e.offsetParent !== null);
+  const R = els.map(e => { const r = e.getBoundingClientRect(); return { e, x: r.left, y: r.top + off, w: r.width, h: r.height }; });
+  const name = e => e.tagName.toLowerCase() + '.' + String(e.className).trim().split(/\\s+/).slice(0, 2).join('.') + ' "' + (e.textContent || '').trim().replace(/\\s+/g, ' ').slice(0, 40) + '"';
+  const overlaps = [];
+  for (let i = 0; i < R.length; i++) for (let j = i + 1; j < R.length; j++) {
+    const a = R[i], b = R[j];
+    if (a.e.contains(b.e) || b.e.contains(a.e)) continue;
+    const ix = Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x), iy = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+    if (ix > 4 && iy > 4) overlaps.push([name(a.e), name(b.e), Math.round(ix), Math.round(iy), Math.round(Math.max(a.y, b.y))]);
+  }
+  const W = window.innerWidth;
+  const wide = Array.from(document.querySelectorAll('#kvx-root *')).filter(e => { const r = e.getBoundingClientRect(); return r.width > 0 && (r.right > W + 1 || r.left < -1) && getComputedStyle(e).position !== 'fixed'; })
+     .slice(0, 12).map(e => name(e) + ' ' + Math.round(e.getBoundingClientRect().left) + '..' + Math.round(e.getBoundingClientRect().right));
+  const badImg = Array.from(document.images).filter(i => i.complete && i.naturalWidth === 0).map(i => i.src).slice(0, 10);
+  const g = s2 => (document.querySelector(s2) || {}).textContent || null;
+  return { overlaps: overlaps.slice(0, 20), outside_viewport: wide, broken_images: badImg,
+           vital: g('a.kvx-pulse-vital'), hud: (g('.kvx-pulse-hud') || '').slice(0, 160), feed: (g('[data-kvx-pulse-feed]') || '').trim().slice(0, 200),
+           wx_state: g('[data-kvx-ws="state"]'), wx_day: g('[data-kvx-ws="day"]'), wx_runs: g('[data-kvx-ws="runs"]'), wx_chain: g('[data-kvx-ws="chain"]'),
+           hub_live: Array.from(document.querySelectorAll('[data-kvx-hub]')).map(e => e.getAttribute('data-kvx-hub') + ': ' + e.textContent.trim()).slice(0, 12) }; }"""
 
 
 def watch(page, logs):
-    page.on("console", lambda m: logs.append(m.type + ": " + m.text[:200]) if m.type in ("error", "warning") else None)
+    page.on("console", lambda m: logs.append(m.type + ": " + m.text[:200]) if m.type == "error" else None)
     page.on("pageerror", lambda e: logs.append("PAGEERROR: " + str(e)[:200]))
-    page.on("requestfailed", lambda r: logs.append("FAILED " + r.url[:120] + " " + str(r.failure)) if "kvantix" in r.url else None)
+    page.on("requestfailed", lambda r: logs.append("FAILED " + r.url[:120] + " " + str(r.failure)) if "kvantix" in r.url or "github" in r.url else None)
+    page.on("response", lambda r: logs.append(f"HTTP {r.status} {r.url[:120]}") if r.status >= 400 else None)
+
+
+async def tour(b, tag, vw, vh, dpr, mobile):
+    ctx = await b.new_context(viewport={"width": vw, "height": vh}, device_scale_factor=dpr, is_mobile=mobile, has_touch=mobile,
+                              user_agent=UA + (" chrome mobile" if mobile else " chrome"))
+    page = await ctx.new_page(); logs = []; watch(page, logs)
+    await page.goto(HUB + NC, wait_until="load")
+    await page.wait_for_timeout(13000)              # the organism replays the last 24 hours first
+    r = {"page": await page.evaluate(FIND)}
+    r["checks"] = await page.evaluate(CHECKS)
+    n, pos = 0, 0
+    while n < 45:
+        await page.evaluate("(y) => { window.__kvxS().scrollTop = y; }", pos)
+        await page.wait_for_timeout(650)
+        await page.screenshot(path=f"probe/hub_{tag}_{n:02d}.jpg", type="jpeg", quality=72)
+        top, H, C = await page.evaluate("() => { const s = window.__kvxS(); return [s.scrollTop, s.scrollHeight, s.clientHeight]; }")
+        if top + C >= H - 2:
+            break
+        pos = top + C - 110; n += 1
+    r["shots"] = n + 1
+    r["logs"] = logs[:20]
+    out["tour " + tag] = r
+    await ctx.close()
 
 
 async def main():
     async with async_playwright() as p:
         b = await p.chromium.launch(channel="chrome")
-        # 1. wind-rain, desktop: autoplay, end state, scrub
-        ctx = await b.new_context(viewport={"width": 1440, "height": 1000}, user_agent=UA + " chrome")
-        page = await ctx.new_page(); logs = []; watch(page, logs)
-        await page.goto("https://kvantix.tech/playground/wind-rain/" + NC, wait_until="load")
-        await page.wait_for_timeout(2500)
-        r = {"present": await page.locator("#kvx-wt").count()}
-        if r["present"]:
-            await page.locator("#kvx-wt").scroll_into_view_if_needed()
-            await page.wait_for_timeout(9000)
-            r["mid"] = await page.evaluate(READ_WT)
-            await page.locator("#kvx-wt").screenshot(path="probe/wt_desk_mid.png")
-            await page.wait_for_timeout(26000)
-            r["end"] = await page.evaluate(READ_WT)
-            await page.locator("#kvx-wt").screenshot(path="probe/wt_desk_end.png")
-            bb = await page.locator("#kvx-wt-bars").bounding_box()
-            await page.mouse.click(bb["x"] + bb["width"] * 0.62, bb["y"] + bb["height"] * 0.5)
-            await page.wait_for_timeout(600)
-            r["scrub"] = await page.evaluate(READ_WT)
-        r["scripts"] = await page.evaluate("Array.from(document.scripts).map(s => s.src).filter(s => s.includes('/kvx/'))")
-        r["logs"] = logs[:15]
-        out["wind-rain desktop"] = r
-        await ctx.close()
-
-        # 2. wind-rain, phone
-        ctx = await b.new_context(viewport={"width": 390, "height": 844}, device_scale_factor=2, is_mobile=True, has_touch=True, user_agent=UA + " chrome mobile")
-        page = await ctx.new_page(); logs = []; watch(page, logs)
-        await page.goto("https://kvantix.tech/playground/wind-rain/" + NC, wait_until="load")
-        await page.wait_for_timeout(2500)
-        r = {}
-        if await page.locator("#kvx-wt").count():
-            await page.locator("#kvx-wt").scroll_into_view_if_needed()
-            await page.evaluate(SCROLL, 90)
-            await page.wait_for_timeout(36000)
-            await page.evaluate(SCROLL, 90)
-            await page.wait_for_timeout(400)
-            r["end"] = await page.evaluate(READ_WT)
-            await page.screenshot(path="probe/wt_mob_end.png")
-        r["logs"] = logs[:15]
-        out["wind-rain phone"] = r
-        await ctx.close()
-
-        # 3. noise machine, desktop: all four steps
-        ctx = await b.new_context(viewport={"width": 1440, "height": 1000}, user_agent=UA + " chrome")
-        page = await ctx.new_page(); logs = []; watch(page, logs)
-        resp = await page.goto("https://kvantix.tech/playground/noise-machine/" + NC + "#seed=424242&n=1000&talent=1", wait_until="load")
-        await page.wait_for_timeout(2500)
-        r = {"status": resp.status if resp else None, "present": await page.locator("#kvx-noise").count()}
-        if r["present"]:
-            m = page.locator("#kvx-noise"); await m.scroll_into_view_if_needed()
-            go = page.locator("#kvx-nz-go")
-            says = []
-            await go.click(); await page.wait_for_function("!document.getElementById('kvx-nz-go').disabled", timeout=40000)
-            says.append(await page.inner_text("#kvx-nz-say"))
-            await go.click(); await page.wait_for_timeout(900); says.append(await page.inner_text("#kvx-nz-say"))
-            await go.click(); await page.wait_for_timeout(2200); says.append(await page.inner_text("#kvx-nz-say"))
-            await go.click(); await page.wait_for_function("!document.getElementById('kvx-nz-go').disabled", timeout=45000)
-            await page.wait_for_timeout(600); says.append(await page.inner_text("#kvx-nz-say"))
-            r["says"] = [s[:220] for s in says]
-            r["read"] = (await page.inner_text("#kvx-nz-read"))[:300]
-            await m.screenshot(path="probe/nz_desk_end.png")
-        r["logs"] = logs[:15]
-        out["noise desktop"] = r
-        await ctx.close()
-
-        # 4. hub: the new card
-        ctx = await b.new_context(viewport={"width": 1440, "height": 1000}, user_agent=UA + " chrome")
-        page = await ctx.new_page(); logs = []; watch(page, logs)
-        await page.goto("https://kvantix.tech/playground/" + NC, wait_until="load")
-        await page.wait_for_timeout(4000)
-        card = page.locator("a[href*='/playground/noise-machine/']").first
-        r = {"noise_card": await page.locator("a[href*='/playground/noise-machine/']").count()}
-        if r["noise_card"]:
-            await card.scroll_into_view_if_needed(); await page.wait_for_timeout(500)
-            r["card_text"] = (await card.inner_text())[:200]
-            await page.screenshot(path="probe/hub_noise_card.png")
-        wq = page.get_by_text("Four questions anyone can follow").first
-        if await wq.count():
-            await wq.scroll_into_view_if_needed(); await page.wait_for_timeout(800)
-            await page.screenshot(path="probe/hub_weather_section.png", full_page=False)
-            r["weather_section_dom"] = await page.evaluate("""() => { var h = Array.from(document.querySelectorAll('h3,h4')).find(x => /Four questions/.test(x.textContent));
-              var sec = h && h.closest('section'); if (!sec) return null;
-              return Array.from(sec.querySelectorAll('*')).filter(e => e.children.length && e.getBoundingClientRect().width > 300).slice(0, 25).map(e => {
-                var b = e.getBoundingClientRect(), cs = getComputedStyle(e);
-                return [e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\\s+/).slice(0, 3).join('.') : ''),
-                        Math.round(b.x), Math.round(b.y), Math.round(b.width), Math.round(b.height), cs.position, cs.display, cs.gridTemplateColumns || ''];
-              }); }""")
-        r["logs"] = logs[:15]
-        out["hub"] = r
-        await ctx.close()
+        await tour(b, "desk", 1440, 1000, 1, False)
+        await tour(b, "mob", 390, 844, 2, True)
         await b.close()
 
 asyncio.run(main())
 json.dump(out, open("probe/site.json", "w"), indent=1)
-print(json.dumps(out, indent=1))
+print(json.dumps(out, indent=1)[:6000])
