@@ -169,17 +169,33 @@ def retrieve_once(client, dataset, req, tag, downloads):
     return b
 
 
+def fetch_split(client, dataset, extra, y, months, tag, downloads, deadline):
+    """Months of year y from one dataset. CDS caps the size of one request ("cost limits exceeded"): a rejected
+    selection is split in two by months, as often as needed. Returns one Dataset."""
+    import xarray as xr
+    days = ["01"] if y == 2026 else [f"{d:02d}" for d in range(1, 32)]
+    req = base_req({"year": [str(y)], "month": [f"{m:02d}" for m in months], "day": days, **extra})
+    try:
+        return open_nc(retrieve_patient(client, dataset, req, f"{tag} {y} {months[0]:02d}-{months[-1]:02d}", downloads, deadline))
+    except Exception as e:
+        if "cost limits exceeded" in str(e) and len(months) > 1:
+            h = len(months) // 2
+            log(f"  {tag} {y}: too large, splitting {months[0]:02d}-{months[-1]:02d}")
+            return xr.concat([fetch_split(client, dataset, extra, y, months[:h], tag, downloads, deadline),
+                              fetch_split(client, dataset, extra, y, months[h:], tag, downloads, deadline)], dim="time")
+        raise
+
+
 def fetch(client, y, deadline):
     """Year y in full (y = 2026: only 1 January, which the 31 December windows of 2025 reach into).
-    One request per dataset; the two datasets run side by side."""
-    t = {"year": [str(y)], "month": ["01"], "day": ["01"]} if y == 2026 else \
-        {"year": [str(y)], "month": [f"{m:02d}" for m in range(1, 13)], "day": [f"{d:02d}" for d in range(1, 32)]}
+    The two datasets run side by side; within a dataset, requests go one at a time."""
+    months = [1] if y == 2026 else list(range(1, 13))
     downloads = []
     with ThreadPoolExecutor(max_workers=2) as ex:
-        fs = ex.submit(retrieve_patient, client, "reanalysis-era5-single-levels", base_req({**t, "variable": SINGLE}), f"single {y}", downloads, deadline)
-        fp = ex.submit(retrieve_patient, client, "reanalysis-era5-pressure-levels",
-                       base_req({**t, "variable": ["u_component_of_wind", "v_component_of_wind"], "pressure_level": ["850"]}), f"p850 {y}", downloads, deadline)
-        a, b = open_nc(fs.result()), open_nc(fp.result()).rename({"u": "u850", "v": "v850"})
+        fs = ex.submit(fetch_split, client, "reanalysis-era5-single-levels", {"variable": SINGLE}, y, months, "single", downloads, deadline)
+        fp = ex.submit(fetch_split, client, "reanalysis-era5-pressure-levels",
+                       {"variable": ["u_component_of_wind", "v_component_of_wind"], "pressure_level": ["850"]}, y, months, "p850", downloads, deadline)
+        a, b = fs.result(), fp.result().rename({"u": "u850", "v": "v850"})
     ds = a.merge(b[["u850", "v850"]], compat="override", join="inner")
     os.makedirs(RAWDIR, exist_ok=True)
     ds.to_netcdf(os.path.join(RAWDIR, f"{y}.nc"))

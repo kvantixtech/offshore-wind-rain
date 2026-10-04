@@ -145,3 +145,4 @@ From the second run (commit `3797cb7`), metadata only.
   - The hourly files wait between runs in the GitHub Actions cache. They are never committed.
   - An hourly schedule carries on until 1991–2025 are all in.
   - Nothing about what is computed changes.
+- **Request size.** A whole year of single-level data was refused ("cost limits exceeded"). A refused selection is now split in two by months, as often as needed. The data are the same.
