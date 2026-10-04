@@ -11,6 +11,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - run: pip install -q --break-system-packages playwright==1.48.0
       - run: python3 probe/probe.py
       - if: always()
         run: |
