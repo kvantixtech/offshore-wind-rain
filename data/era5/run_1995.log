@@ -1,0 +1,12 @@
+  retry single 1995-03: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/879da13c-0a12-418b-9f6b-31ed2f479295/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1995-02: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/5a638bc1-9d17-4c91-9485-4a7898581c18/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1995-04: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/e21bf05e-f7e9-4d7a-85ca-263016a5f4a0/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1995-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/e6082aa2-6832-4e3c-b048-d9eabcd5f9e2/results
+The job has been rejected
+Number queued requests for this dat

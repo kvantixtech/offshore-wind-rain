@@ -1,0 +1,124 @@
+  retry single 1993-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/19836833-2068-4d3f-90f0-cac9bac01993/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-02: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/11c0716e-7a69-43b2-b8b5-48e9b71ac516/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-03: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/b2889580-af00-4602-94d6-b116ceaea421/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-04: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/b56809fb-4ffa-4cc7-a0a4-b7a510e033a3/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/06985c16-28be-455b-b2a9-3439e5a0ba60/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-03: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/09e5d821-43b6-4491-a52d-c6ec32d5466c/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-04: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/248b42b4-894f-4bc5-82fe-bb6ef28b2d84/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-02: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/9c616b35-882e-479a-89bc-644208459f30/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-03: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/85930dd3-4709-4361-a4b6-14f4c7d755e7/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-04: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/d5db75c5-642a-4c7c-9e5e-2a93ca9fcfee/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/fd1796bd-c2ef-4691-b68b-1a485b7bc6ed/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-02: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/90ae90af-f676-4d6a-b9e0-18a4337e72a6/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-03: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/8bdb2036-06d3-4fe9-82d7-0bb66092942c/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/c5925901-e36d-491c-8eb2-043527f1fcac/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-02: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/2eb01fce-d453-466f-869a-fc339ea56ffb/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-05: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/6e3308d2-d4f5-47ff-bd7c-08cdedb83e76/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-04: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/cd7bfd7a-96fd-4bfd-84db-56af0fd3b5fc/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-06: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/80a933fb-8b86-4587-afec-daead52580b4/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-05: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/8b712b1a-c352-45e2-a230-a7f89b1479dd/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-06: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/e7e4c147-fa11-4a7f-a90c-633a4ae8fbf1/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-05: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/e363803f-0e32-4c20-a3e9-ff1016395152/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-06: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/a3edfa7b-fd41-47ce-8a09-7f8c393cd0bc/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-05: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/1886b31a-ca6d-43ab-a709-c0855796de3f/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 1993-06: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/4c58b209-230c-4493-9044-d5cdd165916b/results
+The job has been rejected
+Number queued requests for this dat
+Traceback (most recent call last):
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 239, in <module>
+    year(int(sys.argv[2]))
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 187, in year
+    parts = list(ex.map(one, jobs))
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 178, in one
+    s = retrieve(client, "reanalysis-era5-single-levels", base_req({**t, "variable": SINGLE}), "single " + tag, downloads)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 71, in retrieve
+    client.retrieve(dataset, req, path)
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/legacy_client.py", line 168, in retrieve
+    submitted = self.client.submit_and_wait_on_results(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/client.py", line 431, in submit_and_wait_on_results
+    return self._retrieve_api.submit(collection_id, request).get_results()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 496, in get_results
+    return self._make_results(wait=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 480, in _make_results
+    self._wait_on_results()
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 458, in _wait_on_results
+    while not self.results_ready:
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 472, in results_ready
+    results = self._make_results(wait=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 486, in _make_results
+    results = Results.from_request("get", results_url, **self._request_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 177, in from_request
+    cads_raise_for_status(response)
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 100, in cads_raise_for_status
+    raise requests.HTTPError(message, response=response)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/c5925901-e36d-491c-8eb2-043527f1fcac/results
+The job has been rejected
+Number queued requests for this dataset is temporarily limited. Please configure your scripts accordingly 

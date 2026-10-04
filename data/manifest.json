@@ -1,5 +1,60 @@
 {
  "files": {
+  "era5/RERUN": {
+   "bytes": 2,
+   "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
+  "era5/downloads_prepare.csv": {
+   "bytes": 130,
+   "sha256": "4ea67177d2319b91d80ebd8781980553c8b26607dfd358946446c0131bb05798",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
+  "era5/farm_cells.csv": {
+   "bytes": 317,
+   "sha256": "94b964deac68fbd3b41c216dac0c6655e741652899d2e9a78ae2b00f64114706",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
+  "era5/grid.csv": {
+   "bytes": 19380,
+   "sha256": "340fd3ec397c32fe67f19c88ddedfd5081e4dfcb406fe5faf797855d9ff50df7",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
+  "era5/prepare_run.log": {
+   "bytes": 74,
+   "sha256": "0a2fce83f4625da4d9f426b086c495c4cd5fd61d554c9b82b7c61523118afd2d",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
+  "era5/run_1991.log": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
+  "era5/run_1992.log": {
+   "bytes": 4950,
+   "sha256": "2287ae12f18c1b0f4deb6e0d18832788c46a359f7fcd7e77084246dc291b747d",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
+  "era5/run_1993.log": {
+   "bytes": 9104,
+   "sha256": "643d7c1e622b900aa995e8723214f7d1d3cd1a38824ba140695dc526b33dc1bd",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
+  "era5/run_1994.log": {
+   "bytes": 3687,
+   "sha256": "41e933fd125912af6cb91bffed4c7d116663f7b43c5e0c57cf86439f45fb1758",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
+  "era5/run_1995.log": {
+   "bytes": 900,
+   "sha256": "ab3d2cfb7ac9f157e5c815a3609a9518dba001903312aea049a84642becd355e",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
+  "era5/series_cells.csv": {
+   "bytes": 38367,
+   "sha256": "966f0ae6892293d18dded1df119f11143b9c781f0b6fd886f865ea1fdea11b2c",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
   "farm_names_extra.csv": {
    "bytes": 278,
    "sha256": "6f6f1d317b56dcfa7659392ce2ebe7a71b69827ab50ba8dd5faaa71044302f5f",
