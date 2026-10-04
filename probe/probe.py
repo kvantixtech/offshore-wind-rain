@@ -3,10 +3,10 @@ import json, hashlib, re, urllib.request, asyncio
 from playwright.async_api import async_playwright
 UA = "kvantixtech/site-audit check (github actions)"
 out = {}
-for q in ("v=20261004q", "v=20261004p", "v=check4"):
+for q in ("v=20261004q", "v=20261004p", "v=check5"):
     b = urllib.request.urlopen(urllib.request.Request("https://kvantix.tech/wp-content/uploads/kvx/kvx-pulse.js?" + q, headers={"User-Agent": UA}), timeout=60).read()
     out["kvx-pulse.js " + q] = hashlib.sha256(b).hexdigest()[:12]
-t = urllib.request.urlopen(urllib.request.Request("https://kvantix.tech/?nocache=pulse3", headers={"User-Agent": UA}), timeout=60).read().decode("utf-8", "replace")
+t = urllib.request.urlopen(urllib.request.Request("https://kvantix.tech/?nocache=pulse4", headers={"User-Agent": UA}), timeout=60).read().decode("utf-8", "replace")
 out["front loaders"] = re.findall(r"kvx-pulse\.js\?v=\d{8}[a-z]", t)
 out["front csp"] = None
 
@@ -21,7 +21,7 @@ async def main():
             reqs = []
             page.on("requestfinished", lambda r: reqs.append(r.url) if "pulse" in r.url else None)
             page.on("requestfailed", lambda r: logs.append("FAILED " + r.url[:120] + " " + str(r.failure)))
-            resp = await page.goto("https://kvantix.tech" + path + "?nocache=pulse3", wait_until="load")
+            resp = await page.goto("https://kvantix.tech" + path + "?nocache=pulse4", wait_until="load")
             await page.wait_for_timeout(wait)
             info = await page.evaluate("""() => ({
               vital: Array.from(document.querySelectorAll('a.kvx-pulse-vital')).map(a => (a.hidden ? 'HIDDEN ' : 'shown ') + a.textContent.trim()),
