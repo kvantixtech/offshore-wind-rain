@@ -137,3 +137,11 @@ From the second run (commit `3797cb7`), metadata only.
 - This is the "compressed extract of the region" allowed in METHOD.md.
 
 **Key.** The CDS key is a GitHub secret (`CDSAPI_KEY`) and is never written to the repository.
+- **First attempt failed, and the fetching was changed (no data affected).**
+  - What happened: the first run sent up to 32 monthly requests at once. CDS rejected most of them with "Number queued requests for this dataset is temporarily limited", and the script's retries made it worse. The logs are in `data/era5/first_attempt/`.
+  - What changed: whole years are now fetched one at a time, with one request per dataset, the two datasets side by side.
+  - A rejection for the queue limit now means waiting 10 minutes before trying again.
+  - Each year is reduced to day windows once the next year (its 1 January) is in.
+  - The hourly files wait between runs in the GitHub Actions cache. They are never committed.
+  - An hourly schedule carries on until 1991–2025 are all in.
+  - Nothing about what is computed changes.

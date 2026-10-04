@@ -1,78 +1,48 @@
 name: era5
 # Step 3 of the order of work in METHOD.md: ERA5 reduced to gauge-network day windows. Reads no rain-gauge value.
-# Rerun (only years not yet committed are fetched): change data/era5/RERUN.
+# CDS allows only a few queued requests per dataset, so whole years are fetched one at a time; each run works for up to
+# about 5 hours and the hourly schedule carries on until every year 1991-2025 is in. Then runs end within a minute.
 on:
   push:
     branches: ["main"]
     paths: ["tools/era5.py", ".github/workflows/era5.yml", "data/era5/RERUN"]
+  schedule:
+    - cron: "23 * * * *"
 permissions:
   contents: write
 concurrency:
   group: era5
   cancel-in-progress: false
 jobs:
-  prepare:
+  era5:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
-    outputs:
-      years: ${{ steps.todo.outputs.years }}
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
-      - run: pip install -q --break-system-packages cdsapi xarray netCDF4 numpy
-      - run: python3 tools/era5.py prepare 2>&1 | tee data/era5/prepare_run.log; exit ${PIPESTATUS[0]}
-        shell: bash
-        env:
-          CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
       - id: todo
         run: |
-          Y=$(python3 -c "import os,json; print(json.dumps([y for y in range(1991,2026) if not os.path.exists(f'data/era5/gauge_days_{y}.csv.xz')]))")
-          echo "years=$Y" >> "$GITHUB_OUTPUT"; echo "to fetch: $Y"
-      - uses: actions/upload-artifact@v4
+          N=$(python3 -c "import os; print(sum(1 for y in range(1991,2026) if not os.path.exists(f'data/era5/gauge_days_{y}.csv.xz')))")
+          echo "missing=$N" >> "$GITHUB_OUTPUT"; echo "years missing: $N"
+      - if: steps.todo.outputs.missing != '0'
+        uses: actions/cache/restore@v4
         with:
-          name: era5-prepare
-          path: data/era5/
-  year:
-    needs: prepare
-    if: needs.prepare.outputs.years != '[]'
-    runs-on: ubuntu-latest
-    timeout-minutes: 340
-    strategy:
-      fail-fast: false
-      max-parallel: 4
-      matrix:
-        year: ${{ fromJSON(needs.prepare.outputs.years) }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          name: era5-prepare
-          path: data/era5/
-      - run: pip install -q --break-system-packages cdsapi xarray netCDF4 numpy
-      - run: python3 tools/era5.py year ${{ matrix.year }} 2>&1 | tee data/era5/run_${{ matrix.year }}.log; exit ${PIPESTATUS[0]}
+          path: era5_raw
+          key: era5-raw-${{ github.run_id }}
+          restore-keys: era5-raw-
+      - if: steps.todo.outputs.missing != '0'
+        run: pip install -q --break-system-packages cdsapi xarray netCDF4 numpy
+      - if: steps.todo.outputs.missing != '0'
+        run: python3 tools/era5.py run 300 2>&1 | tee -a data/era5/run.log; exit ${PIPESTATUS[0]}
         shell: bash
         env:
           CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
-      - if: always()
-        uses: actions/upload-artifact@v4
+      - if: always() && steps.todo.outputs.missing != '0'
+        uses: actions/cache/save@v4
         with:
-          name: era5-${{ matrix.year }}
-          path: |
-            data/era5/gauge_days_${{ matrix.year }}.csv.xz
-            data/era5/farm_days_${{ matrix.year }}.csv.xz
-            data/era5/downloads_${{ matrix.year }}.csv
-            data/era5/run_${{ matrix.year }}.log
-          if-no-files-found: ignore
-  collect:
-    needs: [prepare, year]
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          path: data/era5/
-          merge-multiple: true
-      - run: |
+          path: era5_raw
+          key: era5-raw-${{ github.run_id }}
+      - if: always() && steps.todo.outputs.missing != '0'
+        run: |
           python3 - <<'PY'
           import hashlib, json, os
           mp = "data/manifest.json"; man = json.load(open(mp))

@@ -3,7 +3,9 @@
 
   python3 tools/era5.py prepare      land-sea mask, and the cells: nearest land cell (R) and nearest cell (wind) for every
                                      valid gauge series, and every cell holding a turbine point (100 m wind for R13)
-  python3 tools/era5.py year 1991    hourly ERA5 for one year (plus the hours either side), reduced to day windows
+  python3 tools/era5.py run 300      fetch whole years one at a time (CDS limits queued requests per dataset), reduce each
+                                     year to day windows once the next year is in, and stop when the time budget is used;
+                                     the next scheduled run carries on from the GitHub Actions cache
 
 Reads no rain-gauge value. ERA5 comes from the Copernicus Climate Data Store (CC BY 4.0); the key is the GitHub secret
 CDSAPI_KEY and is never written to the repository. The raw hourly downloads are too large to keep (about 4 GB): their
@@ -63,22 +65,6 @@ def cds_client():
     return cdsapi.Client(url="https://cds.climate.copernicus.eu/api", key=key, quiet=True, progress=False)
 
 
-def retrieve(client, dataset, req, tag, downloads):
-    for attempt in range(4):
-        try:
-            with tempfile.NamedTemporaryFile(suffix=".dl", delete=False) as fh:
-                path = fh.name
-            client.retrieve(dataset, req, path)
-            b = open(path, "rb").read(); os.unlink(path)
-            downloads.append([tag, dataset, len(b), hashlib.sha256(b).hexdigest()])
-            return b
-        except Exception as e:
-            log(f"  retry {tag}: {str(e)[:200]}")
-            if attempt == 3:
-                raise
-            time.sleep(60 * (attempt + 1))
-
-
 def open_nc(b):
     """CDS NetCDF, possibly zipped (one file per step type). Returns one merged xarray Dataset."""
     import xarray as xr
@@ -114,7 +100,7 @@ def prepare():
     os.makedirs(OUT, exist_ok=True)
     client = cds_client()
     downloads = []
-    b = retrieve(client, "reanalysis-era5-single-levels",
+    b = retrieve_once(client, "reanalysis-era5-single-levels",
                  base_req({"variable": ["land_sea_mask"], "year": ["2020"], "month": ["01"], "day": ["01"], "time": ["00:00"]}),
                  "lsm", downloads)
     ds = open_nc(b)
@@ -154,50 +140,78 @@ def prepare():
         f"wind cells {len({r['cell_w'] for r in rows})}, farm cells {len(farm)}")
 
 
-# ------------------------------------------------------------------ one year
-def year(y):
-    import numpy as np
-    client = cds_client()
+# ------------------------------------------------------------------ hourly years, fetched one at a time
+RAWDIR = os.path.join(ROOT, "era5_raw")          # GitHub Actions cache between runs, never committed
+QUEUE_MSG = "Number queued requests"
+
+
+def retrieve_patient(client, dataset, req, tag, downloads, deadline):
+    """CDS allows only a few queued requests per dataset and user. A rejection for that reason is not a failure:
+    wait and submit again, until the run's deadline."""
+    while True:
+        try:
+            return retrieve_once(client, dataset, req, tag, downloads)
+        except Exception as e:
+            msg = str(e)
+            if QUEUE_MSG in msg and time.time() + 900 < deadline:
+                log(f"  {tag}: CDS queue limit, waiting 10 min"); time.sleep(600); continue
+            raise
+
+
+def retrieve_once(client, dataset, req, tag, downloads):
+    with tempfile.NamedTemporaryFile(suffix=".dl", delete=False) as fh:
+        path = fh.name
+    t0 = time.time()
+    client.retrieve(dataset, req, path)
+    b = open(path, "rb").read(); os.unlink(path)
+    downloads.append([tag, dataset, len(b), hashlib.sha256(b).hexdigest()])
+    log(f"  {tag}: {len(b) / 1e6:.1f} MB in {round((time.time() - t0) / 60)} min")
+    return b
+
+
+def fetch(client, y, deadline):
+    """Year y in full (y = 2026: only 1 January, which the 31 December windows of 2025 reach into).
+    One request per dataset; the two datasets run side by side."""
+    t = {"year": [str(y)], "month": ["01"], "day": ["01"]} if y == 2026 else \
+        {"year": [str(y)], "month": [f"{m:02d}" for m in range(1, 13)], "day": [f"{d:02d}" for d in range(1, 32)]}
+    downloads = []
+    with ThreadPoolExecutor(max_workers=2) as ex:
+        fs = ex.submit(retrieve_patient, client, "reanalysis-era5-single-levels", base_req({**t, "variable": SINGLE}), f"single {y}", downloads, deadline)
+        fp = ex.submit(retrieve_patient, client, "reanalysis-era5-pressure-levels",
+                       base_req({**t, "variable": ["u_component_of_wind", "v_component_of_wind"], "pressure_level": ["850"]}), f"p850 {y}", downloads, deadline)
+        a, b = open_nc(fs.result()), open_nc(fp.result()).rename({"u": "u850", "v": "v850"})
+    ds = a.merge(b[["u850", "v850"]], compat="override", join="inner")
+    os.makedirs(RAWDIR, exist_ok=True)
+    ds.to_netcdf(os.path.join(RAWDIR, f"{y}.nc"))
+    with open(os.path.join(RAWDIR, f"downloads_{y}.csv"), "w", newline="") as fh:
+        w = csv.writer(fh, lineterminator="\n"); w.writerow(["tag", "dataset", "bytes", "sha256"]); w.writerows(sorted(downloads))
+    log(f"year {y} fetched: {ds.sizes.get('time')} hours")
+
+
+def process(y):
+    """Day windows for year y, from the hourly files of y and y + 1."""
+    import numpy as np, xarray as xr
     sc = list(csv.DictReader(open(os.path.join(OUT, "series_cells.csv"))))
     kinds_r, kinds_w = {}, {}
     for r in sc:
         ks = ("DMI",) if r["network"] == "DMI" else ("DWD_UTC06", "DWD_LT0730")
         kinds_r.setdefault(r["cell_r"], set()).update(ks); kinds_w.setdefault(r["cell_w"], set()).update(ks)
     farm = [l.strip() for l in open(os.path.join(OUT, "farm_cells.csv")) if "_" in l]
-
-    # requests: the 12 months, plus 31 Dec of the year before and 1-2 Jan of the year after (windows reach across)
-    jobs = []
-    for m in range(1, 13):
-        jobs.append((f"{y}-{m:02d}", {"year": [str(y)], "month": [f"{m:02d}"], "day": [f"{d:02d}" for d in range(1, 32)]}))
-    jobs.append((f"{y - 1}-12-31", {"year": [str(y - 1)], "month": ["12"], "day": ["31"]}))
-    jobs.append((f"{y + 1}-01-01", {"year": [str(y + 1)], "month": ["01"], "day": ["01", "02"]}))
-    downloads, parts = [], []
-
-    def one(job):
-        tag, t = job
-        s = retrieve(client, "reanalysis-era5-single-levels", base_req({**t, "variable": SINGLE}), "single " + tag, downloads)
-        p = retrieve(client, "reanalysis-era5-pressure-levels", base_req({**t, "variable": ["u_component_of_wind", "v_component_of_wind"],
-                                                                            "pressure_level": ["850"]}), "p850 " + tag, downloads)
-        a, b = open_nc(s), open_nc(p).rename({"u": "u850", "v": "v850"})
-        log(f"  {tag}: {a.sizes.get('time')} h")
-        return a.merge(b[["u850", "v850"]], compat="override", join="inner")
-
-    import xarray as xr
-    with ThreadPoolExecutor(max_workers=4) as ex:
-        parts = list(ex.map(one, jobs))
-    ds = xr.concat(parts, dim="time").sortby("time")
+    a = xr.open_dataset(os.path.join(RAWDIR, f"{y}.nc")).load()
+    b = xr.open_dataset(os.path.join(RAWDIR, f"{y + 1}.nc")).load()
+    b = b.sel(time=b["time"] < np.datetime64(f"{y + 1}-01-02T00:00"))
+    ds = xr.concat([a, b], dim="time").sortby("time")
     _, idx = np.unique(ds["time"].values, return_index=True)
     ds = ds.isel(time=idx)
-    times = [dt.datetime.utcfromtimestamp(t.astype("datetime64[s]").astype(int)).replace(tzinfo=UTC) for t in ds["time"].values]
+    times = [dt.datetime.fromtimestamp(int(t.astype("datetime64[s]").astype("int64")), UTC) for t in ds["time"].values]
     pos = {t: k for k, t in enumerate(times)}
-    lat, lon = ds["latitude"].values, ds["longitude"].values
     arr = {v: ds[v].values for v in ("tp", "u10", "v10", "u100", "v100", "u850", "v850")}
     ws100 = np.hypot(arr["u100"], arr["v100"])
 
     def idx_for(kind, day):
-        a, b = window(kind, day)
-        out, t = [], a + dt.timedelta(hours=1)
-        while t <= b:
+        a_, b_ = window(kind, day)
+        out, t = [], a_ + dt.timedelta(hours=1)
+        while t <= b_:
             if t not in pos:
                 raise RuntimeError(f"missing ERA5 hour {t} for {kind} {day}")
             out.append(pos[t]); t += dt.timedelta(hours=1)
@@ -206,34 +220,51 @@ def year(y):
     days = [dt.date(y, 1, 1) + dt.timedelta(days=k) for k in range((dt.date(y + 1, 1, 1) - dt.date(y, 1, 1)).days)]
     win = {(k, d): idx_for(k, d) for k in TYPES for d in days}
     ij = lambda c: tuple(int(x) for x in c.split("_"))
-    gbuf, fbuf = io.StringIO(), io.StringIO()
-    gbuf.write("kind,cell,date,R_mm,u850,v850,u10,v10\n"); fbuf.write("kind,cell,date,ws100_mean,hours_3_25\n")
+    g, f = ["kind,cell,date,R_mm,u850,v850,u10,v10"], ["kind,cell,date,ws100_mean,hours_3_25"]
     gcells = sorted(set(kinds_r) | set(kinds_w))
     for c in gcells:
         i, j = ij(c)
         for k in sorted(kinds_r.get(c, set()) | kinds_w.get(c, set())):
             for d in days:
                 w = win[(k, d)]
-                r = arr["tp"][w, i, j].sum() * 1000.0
-                gbuf.write(f"{k},{c},{d.isoformat()},{r:.2f},{arr['u850'][w, i, j].mean():.2f},{arr['v850'][w, i, j].mean():.2f},"
-                           f"{arr['u10'][w, i, j].mean():.2f},{arr['v10'][w, i, j].mean():.2f}\n")
+                g.append(f"{k},{c},{d.isoformat()},{arr['tp'][w, i, j].sum() * 1000.0:.2f},{arr['u850'][w, i, j].mean():.2f},"
+                         f"{arr['v850'][w, i, j].mean():.2f},{arr['u10'][w, i, j].mean():.2f},{arr['v10'][w, i, j].mean():.2f}")
     for c in farm:
         i, j = ij(c)
         for k in TYPES:
             for d in days:
-                w = win[(k, d)]
-                s = ws100[w, i, j]
-                fbuf.write(f"{k},{c},{d.isoformat()},{s.mean():.2f},{int(((s >= 3) & (s <= 25)).sum())}\n")
-    os.makedirs(OUT, exist_ok=True)
-    open(os.path.join(OUT, f"gauge_days_{y}.csv.xz"), "wb").write(lzma.compress(gbuf.getvalue().encode(), preset=9))
-    open(os.path.join(OUT, f"farm_days_{y}.csv.xz"), "wb").write(lzma.compress(fbuf.getvalue().encode(), preset=9))
-    with open(os.path.join(OUT, f"downloads_{y}.csv"), "w", newline="") as fh:
-        w = csv.writer(fh, lineterminator="\n"); w.writerow(["tag", "dataset", "bytes", "sha256"]); w.writerows(sorted(downloads))
-    log(f"year {y}: {len(times)} hours, {len(gcells)} gauge cells, {len(farm)} farm cells")
+                s = ws100[win[(k, d)], i, j]
+                f.append(f"{k},{c},{d.isoformat()},{s.mean():.2f},{int(((s >= 3) & (s <= 25)).sum())}")
+    open(os.path.join(OUT, f"gauge_days_{y}.csv.xz"), "wb").write(lzma.compress(("\n".join(g) + "\n").encode(), preset=9))
+    open(os.path.join(OUT, f"farm_days_{y}.csv.xz"), "wb").write(lzma.compress(("\n".join(f) + "\n").encode(), preset=9))
+    for yy in (y, y + 1):
+        src = os.path.join(RAWDIR, f"downloads_{yy}.csv")
+        if os.path.exists(src):
+            open(os.path.join(OUT, f"downloads_{yy}.csv"), "w").write(open(src).read())
+    log(f"year {y} processed: {len(gcells)} gauge cells, {len(farm)} farm cells, {len(days)} days")
+
+
+def run(budget_min):
+    """Fetch and process years in order until the time budget is used; the next run carries on."""
+    deadline = time.time() + budget_min * 60
+    client = cds_client()
+    done = lambda y: os.path.exists(os.path.join(OUT, f"gauge_days_{y}.csv.xz"))
+    raw = lambda y: os.path.exists(os.path.join(RAWDIR, f"{y}.nc"))
+    for y in range(1991, 2027):
+        need = (y <= 2025 and not done(y)) or (y - 1 >= 1991 and not done(y - 1))
+        if need and not raw(y):
+            if time.time() > deadline - 90 * 60:
+                log("time budget used: stopping before a new year"); break
+            fetch(client, y, deadline)
+        if y - 1 >= 1991 and not done(y - 1) and raw(y - 1) and raw(y):
+            process(y - 1)
+        if y - 1 >= 1991 and done(y - 1) and raw(y - 1):
+            os.unlink(os.path.join(RAWDIR, f"{y - 1}.nc"))
+    log("years done: " + ",".join(str(y) for y in range(1991, 2026) if done(y)))
 
 
 if __name__ == "__main__":
     if sys.argv[1] == "prepare":
         prepare()
-    elif sys.argv[1] == "year":
-        year(int(sys.argv[2]))
+    elif sys.argv[1] == "run":
+        run(int(sys.argv[2]) if len(sys.argv) > 2 else 300)
