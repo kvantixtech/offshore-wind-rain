@@ -153,3 +153,23 @@ From the second run (commit `3797cb7`), metadata only.
 - It is built only from committed files and the git log. It never holds a rain-gauge value or a result. The result goes on the page by hand, after it has been checked.
 - The ERA5 workflow runs it after each commit. A `status` workflow runs it after changes pushed by hand.
 - The page at kvantix.tech/playground/wind-rain/ reads the file live.
+
+## 2026-10-04 (evening): ERA5 fetching made resumable (no data affected)
+
+What happened:
+- **1991** was fetched by one run in 343 minutes, just inside the job limit of 350.
+- **1992** was slower at CDS: three requests took 124, 219 and 238 minutes. The job was stopped at its 350-minute limit before the year was complete.
+- **What was lost:** The old script kept a year's downloads in memory, so those three downloads were lost. The 1991 hourly file was not lost; it is still in the cache.
+- **A second problem:** A run that waited in the queue started from the commit it was queued at, not from the newest one. At the end, its rebase onto main would have conflicted with the previous run's log lines, and it would have pushed nothing.
+  - To let the waiting job push, `data/era5/run.log` and `data/manifest.json` were set back to that job's starting point (19:59 CEST).
+  - The 13 log lines of the 1991 run are in commit `54808cb`.
+
+What changed (`tools/era5.py`, `.github/workflows/era5.yml`):
+- **Each finished request is cached at once.** A run that stops, or is stopped, loses at most the requests in flight. The next run carries on from the last finished request, also within a year.
+- **Time budget per request.** No new request starts after 225 minutes. The job limit is 358 minutes. Running into the CDS queue limit at the end of a run now stops the run cleanly instead of failing it.
+- **Every run starts from the newest main**, and publishes onto the newest main at the end:
+  - the day files are copied back
+  - the log is appended
+  - the manifest and the status are recomputed.
+
+Nothing about what is computed changes. The requests are the same, and no rain-gauge value is read.
