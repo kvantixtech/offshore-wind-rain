@@ -1,7 +1,7 @@
 {
- "kvx-pulse.js v=20261004q": "033294d644c3",
- "kvx-pulse.js v=20261004p": "033294d644c3",
- "kvx-pulse.js v=check4": "033294d644c3",
+ "kvx-pulse.js v=20261004q": "91f295283e70",
+ "kvx-pulse.js v=20261004p": "91f295283e70",
+ "kvx-pulse.js v=check5": "91f295283e70",
  "front loaders": [
   "kvx-pulse.js?v=20261004q"
  ],
@@ -11,7 +11,7 @@
   "csp_ro": "",
   "info": {
    "vital": [
-    "HIDDEN "
+    "shown Live lab \u00b7 8 investigations, 4 at work \u00b7 last event 41 min ago"
    ],
    "css": true,
    "pulseScripts": [
@@ -21,8 +21,9 @@
    "feed": ""
   },
   "pulse_requests": [
-   "https://kvantix.tech/?nocache=pulse3",
-   "https://kvantix.tech/wp-content/uploads/kvx/kvx-pulse.js?v=20261004q"
+   "https://kvantix.tech/?nocache=pulse4",
+   "https://kvantix.tech/wp-content/uploads/kvx/kvx-pulse.js?v=20261004q",
+   "https://raw.githubusercontent.com/kvantixtech/kvantixtech/main/pulse/pulse.json?t=14926056"
   ],
   "logs": []
  },
@@ -31,19 +32,19 @@
   "csp_ro": "",
   "info": {
    "vital": [
-    "shown Live lab \u00b7 8 investigations, 4 at work \u00b7 last event 36 min ago"
+    "shown Live lab \u00b7 8 investigations, 4 at work \u00b7 last event 41 min ago"
    ],
    "css": true,
    "pulseScripts": [
     "https://kvantix.tech/wp-content/uploads/kvx/kvx-pulse.js?v=20261004p"
    ],
-   "orgHud": "Live \u00b7 the pulse is checked every two minutesLast change 25 min ago",
+   "orgHud": "Live \u00b7 the pulse is checked every two minutesLast change 30 min ago",
    "feed": "Last 24 hoursTimes in your time zone. Every line links to its source.Today14:30Price listDay 5 sealed: 10 price-list checks locked, chain intact13:26CO\u2082 forecas"
   },
   "pulse_requests": [
-   "https://kvantix.tech/playground/?nocache=pulse3",
+   "https://kvantix.tech/playground/?nocache=pulse4",
    "https://kvantix.tech/wp-content/uploads/kvx/kvx-pulse.js?v=20261004p",
-   "https://raw.githubusercontent.com/kvantixtech/kvantixtech/main/pulse/pulse.json?t=14926053"
+   "https://raw.githubusercontent.com/kvantixtech/kvantixtech/main/pulse/pulse.json?t=14926056"
   ],
   "logs": []
  }
