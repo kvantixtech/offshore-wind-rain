@@ -1,112 +1,129 @@
 {
  "/": {
   "status": 200,
-  "versions": [],
-  "kvx_cta": 1,
-  "lede": 1,
-  "site_js": [
-   "kvantix-site.js\n",
-   "kvantix-site.js?v=20260929a"
+  "versions": [
+   "kvx-pulse.js?v=20261004p"
   ],
-  "pulse": 0
+  "pulse_attrs": [
+   "data-kvx-pulse-"
+  ],
+  "vital_class": 1,
+  "pulse_loader": [
+   "kvx-pulse.js?v=20261004p"
+  ]
  },
  "/playground/": {
   "status": 200,
   "versions": [
-   "kvx-hub.js?v=20261004c",
-   "kvx-weather.js?v=20261004c"
+   "kvx-hub.js?v=20261004p",
+   "kvx-pulse.js?v=20261004p",
+   "kvx-weather.js?v=20261004p"
   ],
-  "kvx_cta": 1,
-  "lede": 1,
-  "site_js": [
-   "kvantix-site.js",
-   "kvantix-site.js.",
-   "kvantix-site.js?v=20260927a"
+  "pulse_attrs": [
+   "data-kvx-pulse-cells",
+   "data-kvx-pulse-dot",
+   "data-kvx-pulse-feed",
+   "data-kvx-pulse-milestones",
+   "data-kvx-pulse-organism",
+   "data-kvx-pulse-vital"
   ],
-  "pulse": 0
+  "vital_class": 2,
+  "pulse_loader": [
+   "kvx-pulse.js?v=20261004p"
+  ]
  },
  "/playground/weather/": {
   "status": 200,
   "versions": [
-   "kvx-weather.js?v=20260929c"
+   "kvx-pulse.js?v=20261004p",
+   "kvx-weather.js?v=20261004p"
   ],
-  "kvx_cta": 0,
-  "lede": 1,
-  "site_js": [
-   "kvantix-site.js",
-   "kvantix-site.js.",
-   "kvantix-site.js?v=20260927a"
+  "pulse_attrs": [
+   "data-kvx-pulse-strip"
   ],
-  "pulse": 0
+  "vital_class": 0,
+  "pulse_loader": [
+   "kvx-pulse.js?v=20261004p"
+  ]
  },
  "/playground/energy/": {
   "status": 200,
   "versions": [
-   "kvx-energy.js?v=20260930a"
+   "kvx-energy.js?v=20261004p",
+   "kvx-pulse.js?v=20261004p"
   ],
-  "kvx_cta": 0,
-  "lede": 1,
-  "site_js": [
-   "kvantix-site.js",
-   "kvantix-site.js.",
-   "kvantix-site.js?v=20260927a"
+  "pulse_attrs": [
+   "data-kvx-pulse-strip"
   ],
-  "pulse": 0
+  "vital_class": 0,
+  "pulse_loader": [
+   "kvx-pulse.js?v=20261004p"
+  ]
  },
  "/playground/experts/": {
   "status": 200,
   "versions": [
-   "kvx-experts.js?v=20260929c"
+   "kvx-experts.js?v=20261004p",
+   "kvx-pulse.js?v=20261004p"
   ],
-  "kvx_cta": 0,
-  "lede": 1,
-  "site_js": [
-   "kvantix-site.js",
-   "kvantix-site.js.",
-   "kvantix-site.js?v=20260927a"
+  "pulse_attrs": [
+   "data-kvx-pulse-strip"
   ],
-  "pulse": 0
+  "vital_class": 0,
+  "pulse_loader": [
+   "kvx-pulse.js?v=20261004p"
+  ]
  },
  "/playground/wastewater/": {
   "status": 200,
   "versions": [
-   "kvx-wastewater.js?v=20261002a"
+   "kvx-pulse.js?v=20261004p",
+   "kvx-wastewater.js?v=20261004p"
   ],
-  "kvx_cta": 0,
-  "lede": 1,
-  "site_js": [
-   "kvantix-site.js",
-   "kvantix-site.js.",
-   "kvantix-site.js?v=20260927a"
+  "pulse_attrs": [
+   "data-kvx-pulse-strip"
   ],
-  "pulse": 0
+  "vital_class": 0,
+  "pulse_loader": [
+   "kvx-pulse.js?v=20261004p"
+  ]
  },
  "/playground/nitrogen/": {
   "status": 200,
   "versions": [
-   "kvx-nitrogen.js?v=20261002a"
+   "kvx-nitrogen.js?v=20261004p",
+   "kvx-pulse.js?v=20261004p"
   ],
-  "kvx_cta": 0,
-  "lede": 1,
-  "site_js": [
-   "kvantix-site.js",
-   "kvantix-site.js.",
-   "kvantix-site.js?v=20260927a"
+  "pulse_attrs": [
+   "data-kvx-pulse-strip"
   ],
-  "pulse": 0
+  "vital_class": 0,
+  "pulse_loader": [
+   "kvx-pulse.js?v=20261004p"
+  ]
  },
  "/playground/wind-rain/": {
   "status": 200,
   "versions": [
-   "kvx-windrain.js?v=20261004b"
+   "kvx-pulse.js?v=20261004p",
+   "kvx-windrain.js?v=20261004p"
   ],
-  "kvx_cta": 0,
-  "lede": 1,
-  "site_js": [
-   "kvantix-site.js",
-   "kvantix-site.js.",
-   "kvantix-site.js?v=20260927a"
+  "pulse_attrs": [
+   "data-kvx-pulse-strip"
   ],
-  "pulse": 0
+  "vital_class": 0,
+  "pulse_loader": [
+   "kvx-pulse.js?v=20261004p"
+  ]
+ },
+ "kvx-pulse.js v=20261004p": {
+  "status": 200,
+  "bytes": 50673,
+  "sha256": "033294d644c3b99c87c1fea004e60a7ea172d7e216619d664caefc43290cddcd"
+ },
+ "kvx-pulse.js v=check3": {
+  "status": 200,
+  "bytes": 50673,
+  "sha256": "033294d644c3b99c87c1fea004e60a7ea172d7e216619d664caefc43290cddcd"
  }
 }
