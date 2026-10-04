@@ -1,0 +1,88 @@
+name: era5
+# Step 3 of the order of work in METHOD.md: ERA5 reduced to gauge-network day windows. Reads no rain-gauge value.
+# Rerun (only years not yet committed are fetched): change data/era5/RERUN.
+on:
+  push:
+    branches: ["main"]
+    paths: ["tools/era5.py", ".github/workflows/era5.yml", "data/era5/RERUN"]
+permissions:
+  contents: write
+concurrency:
+  group: era5
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      years: ${{ steps.todo.outputs.years }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q --break-system-packages cdsapi xarray netCDF4 numpy
+      - run: python3 tools/era5.py prepare 2>&1 | tee data/era5/prepare_run.log; exit ${PIPESTATUS[0]}
+        shell: bash
+        env:
+          CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
+      - id: todo
+        run: |
+          Y=$(python3 -c "import os,json; print(json.dumps([y for y in range(1991,2026) if not os.path.exists(f'data/era5/gauge_days_{y}.csv.xz')]))")
+          echo "years=$Y" >> "$GITHUB_OUTPUT"; echo "to fetch: $Y"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: era5-prepare
+          path: data/era5/
+  year:
+    needs: prepare
+    if: needs.prepare.outputs.years != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        year: ${{ fromJSON(needs.prepare.outputs.years) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: era5-prepare
+          path: data/era5/
+      - run: pip install -q --break-system-packages cdsapi xarray netCDF4 numpy
+      - run: python3 tools/era5.py year ${{ matrix.year }} 2>&1 | tee data/era5/run_${{ matrix.year }}.log; exit ${PIPESTATUS[0]}
+        shell: bash
+        env:
+          CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: era5-${{ matrix.year }}
+          path: |
+            data/era5/gauge_days_${{ matrix.year }}.csv.xz
+            data/era5/farm_days_${{ matrix.year }}.csv.xz
+            data/era5/downloads_${{ matrix.year }}.csv
+            data/era5/run_${{ matrix.year }}.log
+          if-no-files-found: ignore
+  collect:
+    needs: [prepare, year]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: data/era5/
+          merge-multiple: true
+      - run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          mp = "data/manifest.json"; man = json.load(open(mp))
+          for f in sorted(os.listdir("data/era5")):
+              p = os.path.join("data/era5", f)
+              if os.path.isfile(p):
+                  man["files"]["era5/" + f] = {"sha256": hashlib.sha256(open(p, "rb").read()).hexdigest(), "bytes": os.path.getsize(p),
+                                               "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"}
+          json.dump(man, open(mp, "w"), indent=1, ensure_ascii=False, sort_keys=True); open(mp, "a").write("\n")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ && git commit -qm "era5: day windows (tools/era5.py)" && git pull -q --rebase && git push -q || echo "nothing to commit"

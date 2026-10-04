@@ -108,3 +108,32 @@ From the second run (commit `3797cb7`), metadata only.
 - R is the sum of the 24 ERA5 hours whose end times lie in the window (start, start + 24 h]. On days when the clock changes, a local-time window has 23 or 25 hours, and the sum covers them all.
 - The 850 hPa wind direction is the vector mean over the same hours.
 - The window check in METHOD.md (best shift of −1, 0 or +1 day) still runs before the main analysis and catches any day assigned wrongly.
+
+## 2026-10-04: step 3, ERA5 (no rain-gauge value is read)
+
+`tools/era5.py` fetches hourly ERA5 from the Copernicus Climate Data Store (CC BY 4.0):
+- **Variables:** total precipitation; 10 m and 100 m wind; 850 hPa wind; the land-sea mask (once).
+- **Area:** 52.8–58.5° N, 4.0–13.5° E.
+- **Period:** 1991–2025, plus the hours on either side.
+
+**Cells**
+- Each valid gauge series gets:
+  - its nearest cell with land-sea mask ≥ 0.5, for R
+  - its nearest cell of any kind, for the wind.
+- Every cell holding a turbine point is kept for the 100 m wind (R13).
+- The cell lists are in `data/era5/series_cells.csv` and `farm_cells.csv`.
+
+**What is kept**
+- The hourly values are summed or averaged over the day windows fixed on 3 October:
+  - `DMI`
+  - `DWD_UTC06`
+  - `DWD_LT0730`
+- Danish cells get the DMI window. German cells get both DWD windows. Which one applies to a series on a date follows `data/gauges/dwd_rs_windows.csv`.
+- For R13, the number of hours with 100 m wind of 3–25 m/s is kept for every farm cell and window.
+
+**What is not kept, and why**
+- The hourly downloads are about 4 GB, which is too large for the repository. Their SHA-256 is listed per year in `data/era5/downloads_<year>.csv`, and the reduced day values are committed.
+- ERA5 is a fixed archive. Only the newest months (ERA5T) can be revised, and 2025 was final by the time of download.
+- This is the "compressed extract of the region" allowed in METHOD.md.
+
+**Key.** The CDS key is a GitHub secret (`CDSAPI_KEY`) and is never written to the repository.
