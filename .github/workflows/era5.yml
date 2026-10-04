@@ -1,7 +1,9 @@
 name: era5
 # Step 3 of the order of work in METHOD.md: ERA5 reduced to gauge-network day windows. Reads no rain-gauge value.
-# CDS allows only a few queued requests per dataset, so whole years are fetched one at a time; each run works for up to
-# about 5 hours and the hourly schedule carries on until every year 1991-2025 is in. Then runs end within a minute.
+# CDS allows only a few queued requests per dataset, so whole years are fetched one at a time. No new request starts after
+# 3 h 45 min, every finished request is cached at once, and the hourly schedule carries on (also inside a year) until
+# every year 1991-2025 is in. Then runs end within a minute.
+# A run can wait hours in the queue behind another; it therefore starts from, and publishes onto, the newest main.
 on:
   push:
     branches: ["main"]
@@ -16,11 +18,13 @@ concurrency:
 jobs:
   era5:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 358
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: start from the newest main, not the commit this run was queued at
+        run: git fetch -q origin main && git reset -q --hard FETCH_HEAD && git log --oneline -1
       - id: todo
         run: |
           N=$(python3 -c "import os; print(sum(1 for y in range(1991,2026) if not os.path.exists(f'data/era5/gauge_days_{y}.csv.xz')))")
@@ -34,7 +38,7 @@ jobs:
       - if: steps.todo.outputs.missing != '0'
         run: pip install -q --break-system-packages cdsapi xarray netCDF4 numpy
       - if: steps.todo.outputs.missing != '0'
-        run: python3 tools/era5.py run 300 2>&1 | tee -a data/era5/run.log; exit ${PIPESTATUS[0]}
+        run: python3 tools/era5.py run 225 2>&1 | tee -a "$RUNNER_TEMP/era5.log"; exit ${PIPESTATUS[0]}
         shell: bash
         env:
           CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
@@ -45,7 +49,17 @@ jobs:
           key: era5-raw-${{ github.run_id }}
       - if: always() && steps.todo.outputs.missing != '0'
         run: |
-          python3 - <<'PY'
+          # Publish onto the newest main: other commits may have landed while this run worked or waited. The day files
+          # are written only by this workflow, the log is appended, the manifest and the status are recomputed on top.
+          mkdir -p "$RUNNER_TEMP/out"
+          cp data/era5/gauge_days_*.csv.xz data/era5/farm_days_*.csv.xz data/era5/downloads_*.csv "$RUNNER_TEMP/out/" 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch -q origin main && git reset -q --hard FETCH_HEAD
+            cp "$RUNNER_TEMP/out/"* data/era5/ 2>/dev/null || true
+            if [ -s "$RUNNER_TEMP/era5.log" ]; then cat "$RUNNER_TEMP/era5.log" >> data/era5/run.log; fi
+            python3 - <<'PY'
           import hashlib, json, os
           mp = "data/manifest.json"; man = json.load(open(mp))
           for f in sorted(os.listdir("data/era5")):
@@ -55,8 +69,8 @@ jobs:
                                                "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"}
           json.dump(man, open(mp, "w"), indent=1, ensure_ascii=False, sort_keys=True); open(mp, "a").write("\n")
           PY
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ && git commit -qm "era5: day windows (tools/era5.py)" || echo "no data change"
-          python3 tools/status.py && git add data/status.json && git commit -qm "status (tools/status.py)" || echo "no status change"
-          git pull -q --rebase && git push -q || echo "nothing to push"
+            git add data/ && git commit -qm "era5: day windows (tools/era5.py)" || echo "no data change"
+            python3 tools/status.py && git add data/status.json && git commit -qm "status (tools/status.py)" || echo "no status change"
+            if git push -q origin HEAD:main; then echo "pushed"; break; fi
+            echo "push refused (main moved), attempt $attempt"; sleep 20
+          done
