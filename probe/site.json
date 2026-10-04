@@ -1,37 +1,112 @@
 {
+ "/": {
+  "status": 200,
+  "versions": [],
+  "kvx_cta": 1,
+  "lede": 1,
+  "site_js": [
+   "kvantix-site.js\n",
+   "kvantix-site.js?v=20260929a"
+  ],
+  "pulse": 0
+ },
  "/playground/": {
   "status": 200,
   "versions": [
-   "20261004c"
+   "kvx-hub.js?v=20261004c",
+   "kvx-weather.js?v=20261004c"
   ],
-  "scripts": [
-   "kvx-hub.js",
-   "kvx-weather.js"
+  "kvx_cta": 1,
+  "lede": 1,
+  "site_js": [
+   "kvantix-site.js",
+   "kvantix-site.js.",
+   "kvantix-site.js?v=20260927a"
   ],
-  "hub_hooks": 4,
-  "wr_hooks": 0,
-  "wind_card": true
+  "pulse": 0
+ },
+ "/playground/weather/": {
+  "status": 200,
+  "versions": [
+   "kvx-weather.js?v=20260929c"
+  ],
+  "kvx_cta": 0,
+  "lede": 1,
+  "site_js": [
+   "kvantix-site.js",
+   "kvantix-site.js.",
+   "kvantix-site.js?v=20260927a"
+  ],
+  "pulse": 0
+ },
+ "/playground/energy/": {
+  "status": 200,
+  "versions": [
+   "kvx-energy.js?v=20260930a"
+  ],
+  "kvx_cta": 0,
+  "lede": 1,
+  "site_js": [
+   "kvantix-site.js",
+   "kvantix-site.js.",
+   "kvantix-site.js?v=20260927a"
+  ],
+  "pulse": 0
+ },
+ "/playground/experts/": {
+  "status": 200,
+  "versions": [
+   "kvx-experts.js?v=20260929c"
+  ],
+  "kvx_cta": 0,
+  "lede": 1,
+  "site_js": [
+   "kvantix-site.js",
+   "kvantix-site.js.",
+   "kvantix-site.js?v=20260927a"
+  ],
+  "pulse": 0
+ },
+ "/playground/wastewater/": {
+  "status": 200,
+  "versions": [
+   "kvx-wastewater.js?v=20261002a"
+  ],
+  "kvx_cta": 0,
+  "lede": 1,
+  "site_js": [
+   "kvantix-site.js",
+   "kvantix-site.js.",
+   "kvantix-site.js?v=20260927a"
+  ],
+  "pulse": 0
+ },
+ "/playground/nitrogen/": {
+  "status": 200,
+  "versions": [
+   "kvx-nitrogen.js?v=20261002a"
+  ],
+  "kvx_cta": 0,
+  "lede": 1,
+  "site_js": [
+   "kvantix-site.js",
+   "kvantix-site.js.",
+   "kvantix-site.js?v=20260927a"
+  ],
+  "pulse": 0
  },
  "/playground/wind-rain/": {
   "status": 200,
   "versions": [
-   "20261004b"
+   "kvx-windrain.js?v=20261004b"
   ],
-  "scripts": [
-   "kvx-windrain.js"
+  "kvx_cta": 0,
+  "lede": 1,
+  "site_js": [
+   "kvantix-site.js",
+   "kvantix-site.js.",
+   "kvantix-site.js?v=20260927a"
   ],
-  "hub_hooks": 0,
-  "wr_hooks": 9,
-  "wind_card": true
- },
- "kvx-hub.js": {
-  "status": 200,
-  "bytes": 4298,
-  "sha256_matches": true
- },
- "kvx-windrain.js": {
-  "status": 200,
-  "bytes": 38331,
-  "sha256_matches": true
+  "pulse": 0
  }
 }
