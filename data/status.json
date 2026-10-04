@@ -1,0 +1,74 @@
+{
+ "updated_utc": "2026-10-04T07:44:07Z",
+ "rain_values_read": false,
+ "numbers": {
+  "turbine_points": 2863,
+  "farms": 55,
+  "gauge_series": 1384,
+  "gauge_series_dmi": 660,
+  "gauge_series_dwd": 724
+ },
+ "era5": {
+  "years_done": 0,
+  "years_total": 35,
+  "years": []
+ },
+ "steps": [
+  {
+   "key": "method",
+   "when": "2 Oct",
+   "commit": "0410705",
+   "status": "done",
+   "step": "Method, rules, the four readings and the placebos, before any data. Reviewed independently first"
+  },
+  {
+   "key": "farms",
+   "when": "3 Oct",
+   "commit": "8bc5de4",
+   "status": "done",
+   "step": "Every offshore turbine with its own dates: 2,863 turbine points in 55 farms. German total matches the national statistic within 0.1 %"
+  },
+  {
+   "key": "gauges",
+   "when": "3 Oct",
+   "commit": "4598d52",
+   "status": "done",
+   "step": "Gauge list from metadata, and only a count of days with a value: 1,384 usable series"
+  },
+  {
+   "key": "windows",
+   "when": "3 Oct",
+   "commit": "eda5c57",
+   "status": "done",
+   "step": "The day each network's daily value covers, fixed from metadata before any value is read"
+  },
+  {
+   "key": "era5",
+   "when": "now",
+   "commit": "",
+   "status": "0 of 35 years in",
+   "step": "Weather model (ERA5), hour by hour, summed over each gauge network's day"
+  },
+  {
+   "key": "exposure",
+   "when": "next",
+   "commit": "",
+   "status": "waiting",
+   "step": "Upwind capacity for every gauge and day, and the 10 % bound"
+  },
+  {
+   "key": "power",
+   "when": "next",
+   "commit": "",
+   "status": "waiting",
+   "step": "Power check on 1991–2001, before the farms: the smallest effect the data can detect"
+  },
+  {
+   "key": "result",
+   "when": "next",
+   "commit": "",
+   "status": "waiting",
+   "step": "The test itself, placebos and robustness checks, then the reading"
+  }
+ ]
+}

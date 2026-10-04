@@ -146,3 +146,10 @@ From the second run (commit `3797cb7`), metadata only.
   - An hourly schedule carries on until 1991–2025 are all in.
   - Nothing about what is computed changes.
 - **Request size.** A whole year of single-level data was refused ("cost limits exceeded"). A refused selection is now split in two by months, as often as needed. The data are the same.
+
+## 2026-10-04: live status for the page
+
+- `tools/status.py` writes `data/status.json`: the steps, whether each is done, its commit, the counts behind it, and how many ERA5 years are in.
+- It is built only from committed files and the git log. It never holds a rain-gauge value or a result. The result goes on the page by hand, after it has been checked.
+- The ERA5 workflow runs it after each commit. A `status` workflow runs it after changes pushed by hand.
+- The page at kvantix.tech/playground/wind-rain/ reads the file live.
