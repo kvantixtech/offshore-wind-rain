@@ -1,0 +1,30 @@
+  retry single 2021-01-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/e11e16bf-7e98-4a66-8504-327cfe534319/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 2019-12-31: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/c07a5369-2278-4a92-bad7-41f42580b170/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 2020-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/2f1f7c74-ea6c-4672-8f98-824241388e20/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 2021-01-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/4cc2c0f2-441d-4f7a-a56c-a232571134a1/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 2019-12-31: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/97f8b80f-abbc-475e-b9c2-42bcd072d752/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 2020-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/aa79d11f-40b8-4ed5-9143-ac37940d6821/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 2019-12-31: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/442e7df1-b54b-431d-bb86-5235b13b68b2/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 2021-01-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/d71e54a3-810c-420e-9247-37eed39e0970/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 2019-12-31: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/6542c4eb-2645-4568-a253-0ee8f96cc62b/results
+The job has been rejected
+Number queued requests for this dat
+  retry single 2021-01-01: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/c53a605e-9c87-48d6-9175-ad11b872470b/results
+The job has been rejected
+Number queued requests for this dat
