@@ -1,0 +1,117 @@
+{
+ "files": {
+  "farm_names_extra.csv": {
+   "bytes": 278,
+   "sha256": "6f6f1d317b56dcfa7659392ce2ebe7a71b69827ab50ba8dd5faaa71044302f5f",
+   "what": "Names, with sources, for register turbines outside every EMODnet polygon"
+  },
+  "farms.csv": {
+   "bytes": 6264,
+   "sha256": "b8c44cfa97f17d7121ca772f352b147db2c10826d1fa1ceed9f028dc1a6a8da0",
+   "what": "Farm table: capacity, first and last commissioning, distance to the nearest station"
+  },
+  "farms_check.json": {
+   "bytes": 13112,
+   "sha256": "151ba72248e587e696f101c385ee8328b7bb1c8403bf266f9b20885644420dd2",
+   "what": "Check 1 inputs: farms without turbines, national totals, what was left out"
+  },
+  "farms_manual.csv": {
+   "bytes": 1289,
+   "sha256": "119a6b58f8081a71a8bafe712cad082283dccc0d52c6bc08de51dc879642051d",
+   "what": "Hand-entered dates with sources for farms without a turbine register here"
+  },
+  "gauges/day_counts.csv": {
+   "bytes": 435840,
+   "sha256": "76aceb920ee4c5bb4d84a9c552f132f1bd5ca5bc97d5ddc3aa7a407136b3e901",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/downloads.csv": {
+   "bytes": 365089,
+   "sha256": "560e09494ef510080b8e9217788bc9a62c793a00431d7e8d9fdbac8f6e4f0be3",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/dwd_rs_windows.csv": {
+   "bytes": 209783,
+   "sha256": "87037a7be2a8432d6678058282a90f65f6a42fe4269bc755f018c02ed9ff1f6d",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/flags.json": {
+   "bytes": 186,
+   "sha256": "e935b4575c9c55c1ab86dc09f2b240a873d38fab3f4ba43a9e2176b6109e3c7a",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/meta/dmi_climate_stations.json": {
+   "bytes": 3042041,
+   "sha256": "73409c4d7b372f6115ff47f76e8da1625a46e5534b67b43d153de33eba2511d1",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/meta/dwd_BESCHREIBUNG_obsgermany-climate-daily-more_precip_de.pdf": {
+   "bytes": 31365,
+   "sha256": "3cc4c4a642f89c51631723f56f35c8a20ccba9bd9116a186a2e0beb9d3d3f664",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/meta/dwd_DESCRIPTION_obsgermany-climate-daily-more_precip_en.pdf": {
+   "bytes": 29826,
+   "sha256": "4b1ba74d4115bef5ed55d78a78e73f436df18732b93f7047ea67a04a43384991",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/meta/dwd_Metadaten_Parameter_example_00052.txt": {
+   "bytes": 4090,
+   "sha256": "828f6c05459ec6bc81d83f1e0c345f9d5950a6c2059499d74ef1737711d95a8b",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/meta/dwd_RR_Tageswerte_Beschreibung_Stationen.txt": {
+   "bytes": 6637782,
+   "sha256": "98cc3c7f71dead32d564a593860df81d3e6abcb2e859e2cac52639570b0200e4",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/series.csv": {
+   "bytes": 178825,
+   "sha256": "7ddd5cb5c10a579d0ac42b061dc6f8e57c3e7fc3061892bbd914ffb1aa5d14be",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/valid_series.csv": {
+   "bytes": 16645,
+   "sha256": "27335822c46f544f047094e73b13eac2b1c0a5fa847a9cd18f5318a135534b22",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "gauges/windows.json": {
+   "bytes": 541,
+   "sha256": "6e4612f9353c625a5f162fddf905b8884ba555d748aef541a50927e5f6eb62fa",
+   "what": "step 2: gauge list, day counts and metadata (tools/gauges.py)"
+  },
+  "raw/emodnet_windfarmspoly.geojson.xz": {
+   "bytes": 365160,
+   "fetched_utc": "2026-10-03T09:40:49Z",
+   "sha256": "2cff305561c292b73efb8ab4b73a941ec58205ae2250a68c405568e9a002f3f9",
+   "source": "https://ows.emodnet-humanactivities.eu/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=emodnet%3Awindfarmspoly&outputFormat=application%2Fjson&srsName=EPSG%3A4326",
+   "what": "EMODnet Human Activities, wind farm polygons (WFS GetFeature, GeoJSON), xz-compressed"
+  },
+  "raw/ens_historiske_vinddata.xlsx": {
+   "bytes": 1280243,
+   "fetched_utc": "2026-10-03T09:40:24Z",
+   "sha256": "e08632169f78cbfe6cbe6eb9c8c15cc21ac4c1bab9c7478115a3c8afe9fe92b4",
+   "source": "https://ens.dk/media/8746/download",
+   "what": "Energistyrelsen, Stamdataregister for vindkraftanlæg (attachment; filename=\"Historiske vinddata.xlsx\")"
+  },
+  "raw/ens_vinddata.xlsx": {
+   "bytes": 2503214,
+   "fetched_utc": "2026-10-03T09:40:20Z",
+   "sha256": "4667614be5e4750fae57e6325d7315d6424d0ab3a5aba628da015ca1cb7610df",
+   "source": "https://ens.dk/media/8748/download",
+   "what": "Energistyrelsen, Stamdataregister for vindkraftanlæg (attachment; filename=Vinddata.xlsx)"
+  },
+  "raw/mastr_offshore_units.csv.xz": {
+   "bytes": 79260,
+   "fetched_utc": "2026-10-03T09:40:48Z",
+   "sha256": "29e9319c0696ba9d33909eb176fc6c6719c9fc29aadd715d2d4d2f5d73a7923a",
+   "source": "https://download.marktstammdatenregister.de/Gesamtdatenexport_20261003_26.2.zip",
+   "what": "Marktstammdatenregister full export, member EinheitenWind.xml (CRC bce996bd, 206460776 bytes): every unit with WindAnLandOderAufSee = 889, all fields, unchanged"
+  },
+  "turbines.csv": {
+   "bytes": 504779,
+   "sha256": "06fb91e61f375afce4f1567c1cea0491e7be4b12303f9cee321c1948edc0c8eb",
+   "what": "Every offshore turbine point with capacity, dates, farm and group (tools/farms.py)"
+  }
+ }
+}

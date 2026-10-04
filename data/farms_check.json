@@ -1,0 +1,669 @@
+{
+ "emodnet_farms_within_150km_without_turbines": [],
+ "mw_in_operation_end_2025_by_country": {
+  "Germany": 9737.2,
+  "Denmark": 2632.2,
+  "Netherlands": 591.0,
+  "Sweden": 111.0
+ },
+ "turbines_by_source": {
+  "ENS": 750,
+  "MaStR": 1808,
+  "polygon grid 500 m": 305
+ },
+ "unmatched_register_turbines": [
+  [
+   "Denmark",
+   ""
+  ],
+  [
+   "Germany",
+   "Arkona Becken Süd-Ost"
+  ],
+  [
+   "Germany",
+   "EnBW He Dreiht"
+  ],
+  [
+   "Germany",
+   "NC 1"
+  ],
+  [
+   "Germany",
+   "OWP Windanker"
+  ]
+ ],
+ "ens": {
+  "ens_vinddata.xlsx": {
+   "header_row": 3,
+   "rows": 7179,
+   "offshore_rows": 736,
+   "dropped_no_position": 0,
+   "location_type_column": "Kommune"
+  },
+  "ens_historiske_vinddata.xlsx": {
+   "header_row": 3,
+   "rows": 3600,
+   "offshore_rows": 14,
+   "dropped_no_position": 0,
+   "location_type_column": "Type af placering"
+  }
+ },
+ "mastr": {
+  "zip": "https://download.marktstammdatenregister.de/Gesamtdatenexport_20261003_26.2.zip",
+  "member_crc": "bce996bd",
+  "member_bytes": 206460776,
+  "bytes_fetched": 8434681,
+  "offshore_units": 1909,
+  "used": 1808,
+  "left_out": [
+   {
+    "id": "SEE900276178437",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE900397382454",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE900513297235",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE902045607711",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE902196614323",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE902663504331",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE902948755779",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE905035167301",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE906006978216",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE907012403433",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE908489858351",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE908532646355",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE909382805954",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE909751586262",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE910064003308",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE912766297955",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE913083803065",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE914229395819",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE914381065261",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE916356712897",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE918479491512",
+    "park": "EnBW He Dreiht",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE919613587375",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE920019158410",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE920824374135",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE924000723038",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE925019304348",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE926317316675",
+    "park": "EnBW He Dreiht",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE926489756811",
+    "park": "NC 1",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE927392755229",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE928148190929",
+    "park": "NC 1",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE930737017791",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE932558049111",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE933637129021",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE934417041526",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE934975939143",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE935159544962",
+    "park": "NC4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE936581181015",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE936778245711",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE939755406938",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE939781560406",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE942675571259",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE944039346589",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE946630904939",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE947617331649",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE948698248963",
+    "park": "NC 1",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE949339640498",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE951024907250",
+    "park": "EnBW He Dreiht",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE952169320249",
+    "park": "NC 1",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE952197771259",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE955203965598",
+    "park": "NC 1",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE956381789525",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE957977503907",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE958300498112",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE958327266701",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE959693163601",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE961766645006",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE961975761351",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE962339865463",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE963632153882",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE964212431123",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE964309087554",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE964687233406",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE965247303478",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE966382878203",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE967113701593",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE967754932226",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE968049784704",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE969153282254",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE970419835671",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE970676961663",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE971714837612",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE972490644852",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE973119472863",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE974721284400",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE976669730117",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE977235373509",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE977283513094",
+    "park": "EnBW He Dreiht",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE978057753760",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE978280774624",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE979853329128",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE980252114741",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE983170127886",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE983599520046",
+    "park": "EnBW He Dreiht",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE984421240149",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE984947736065",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE985320822795",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE986370162176",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE988384232623",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE988735034517",
+    "park": "OWP Windanker",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE989188540167",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE990616595666",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE991977186647",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE993505953028",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE994396655169",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE994982674826",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE995214287739",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE996485113345",
+    "park": "NC 3",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE997960869863",
+    "park": "NC 4",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE998812552131",
+    "park": "EnBW He Dreiht",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE998932559942",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   },
+   {
+    "id": "SEE999304048637",
+    "park": "NC 2",
+    "status": "31",
+    "reason": "no commissioning date"
+   }
+  ]
+ },
+ "seconds": 52
+}

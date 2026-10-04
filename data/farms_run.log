@@ -1,0 +1,11 @@
+ENS ens_vinddata.xlsx: 7179 turbines, 736 offshore, 0 without position
+ENS ens_historiske_vinddata.xlsx: 3600 turbines, 14 offshore, 0 without position
+MaStR: 1909 offshore units, 1808 with position and date, 101 left out
+stations with precipitation in the box (any period): 3032
+register turbines: 2558; matched to an EMODnet farm within 2 km: 2471
+manual farm Buitengaats / Gemini I: 140 grid points
+manual farm ZeeEnergie / Gemini II: 135 grid points
+manual farm Lillgrund: 30 grid points
+missing farms within 150 km: []
+MW in operation at end of 2025: {'Germany': 9737.2, 'Denmark': 2632.2, 'Netherlands': 591.0, 'Sweden': 111.0}
+done in 52 s: 2863 turbine points, 55 farms

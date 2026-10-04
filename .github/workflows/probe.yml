@@ -1,20 +1,34 @@
 name: probe
-# Temporary, on the branch "probe" only: finds the turbine registers before tools/farms.py is written. No rain data.
+# Temporary, branch "probe" only: ERA5 test with one month.
 on:
   push:
     branches: ["probe"]
-    paths: ["probe/*.py", ".github/workflows/probe.yml"]
+    paths: ["probe/*.py", "tools/era5.py", ".github/workflows/probe.yml"]
 permissions:
   contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
-      - run: pip install -q --break-system-packages openpyxl
-      - run: python3 probe/probe.py 2>&1 | tee probe/stdout.txt; exit ${PIPESTATUS[0]}
+      - run: pip install -q --break-system-packages cdsapi xarray netCDF4 numpy
+      - run: |
+          mkdir -p probe/era5test
+          python3 tools/era5.py prepare > probe/era5test/prepare.log 2>&1 || true
+          ERA5_TEST_MONTHS=1 python3 tools/era5.py year 2020 > probe/era5test/year.log 2>&1 || true
+          cp data/era5/series_cells.csv data/era5/farm_cells.csv data/era5/grid.csv probe/era5test/ 2>/dev/null || true
+          python3 - <<'PY' >> probe/era5test/year.log 2>&1 || true
+          import lzma, csv, io
+          b = lzma.decompress(open("data/era5/gauge_days_2020.csv.xz","rb").read()).decode()
+          rows = list(csv.DictReader(io.StringIO(b)))
+          print("gauge rows", len(rows)); print(rows[:3])
+          f = lzma.decompress(open("data/era5/farm_days_2020.csv.xz","rb").read()).decode().splitlines()
+          print("farm rows", len(f)); print(f[:3])
+          PY
         shell: bash
+        env:
+          CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
       - if: always()
         run: |
           git config user.name "github-actions[bot]"

@@ -1,0 +1,26 @@
+DMI: 882 stations with acc_precip in the box
+DMI values counted for 50/882 stations
+DMI values counted for 100/882 stations
+DMI values counted for 150/882 stations
+DMI values counted for 200/882 stations
+DMI values counted for 250/882 stations
+DMI values counted for 300/882 stations
+DMI values counted for 350/882 stations
+DMI values counted for 400/882 stations
+DMI values counted for 450/882 stations
+DMI values counted for 500/882 stations
+DMI values counted for 550/882 stations
+DMI values counted for 600/882 stations
+DMI values counted for 650/882 stations
+DMI values counted for 700/882 stations
+DMI values counted for 750/882 stations
+DMI values counted for 800/882 stations
+DMI values counted for 850/882 stations
+DWD: 427 stations in the box overlapping 1991-2025, 588 files
+DWD files read for 100/427 stations
+DWD files read for 200/427 stations
+DWD files read for 300/427 stations
+DWD files read for 400/427 stations
+series: {'DMI': 1113, 'DWD': 841}; valid (>=3 complete years): {'DMI': 660, 'DWD': 724}
+split reasons: {('DMI', 'first'): 711, ('DMI', 'moved'): 402, ('DWD', 'first'): 330, ('DWD', 'moved'): 165, ('DWD', 'instrument'): 346}
+done in 343 s
