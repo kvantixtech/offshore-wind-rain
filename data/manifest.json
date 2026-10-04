@@ -2,7 +2,7 @@
  "files": {
   "era5/RERUN": {
    "bytes": 2,
-   "sha256": "1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2",
+   "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
    "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
   },
   "era5/downloads_prepare.csv": {
@@ -26,8 +26,8 @@
    "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
   },
   "era5/run.log": {
-   "bytes": 3292,
-   "sha256": "2652e42a9842ac9365e11f435eefd228d638b070a65e59744a9f77557bfcdc6c",
+   "bytes": 2807,
+   "sha256": "d5d09469df54907d7272d0e535bcdf6d24b5079dc2928252fe69337d132851ad",
    "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
   },
   "era5/run_1991.log": {
