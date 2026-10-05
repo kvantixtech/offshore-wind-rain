@@ -1,82 +1,116 @@
 {
  "html": {
-  "title": "Energy data, locked as published",
-  "description": "Energinet&#039;s CO₂ forecast every hour and every Danish grid tariff and the electricity tax every day, saved before they are overwritten and anchored on GitHub. Plus the electricity tax from 2019 to 2027.",
-  "og:image": "https://kvantix.tech/wp-content/uploads/2026/09/kvantix-og-energy.jpg",
+  "status": 200,
+  "title": "Data Playground: our method, tested in public",
+  "description": "A live lab testing claims in public: weather forecasts, offshore wind and rain, energy, economists. Rules locked before the data; every step on GitHub.",
+  "og:title": "Data Playground: our method, tested in public",
+  "og:description": "A live lab testing claims in public: weather forecasts, offshore wind and rain, energy, economists. Rules locked before the data; every step on GitHub.",
+  "og:image": "https://kvantix.tech/wp-content/uploads/2026/10/kvantix-og-playground-2.jpg",
+  "twitter:title": "Data Playground: our method, tested in public",
+  "canonical": "https://kvantix.tech/playground/",
+  "wx_fix_installed": true,
+  "old_wx_wrapper": false,
   "loaders": [
-   "kvx-energy.js?v=20261004p",
-   "kvx-pulse.js?v=20261004p"
+   "kvx-hub.js?v=20261004w",
+   "kvx-pulse.js?v=20261004w",
+   "kvx-weather.js?v=20261004w"
   ],
   "h2": [
-   "The electricity tax, 2019–2027",
-   "What is being locked, and why",
-   "Check it without trusting us"
+   "What the lab did today",
+   "Three steps, every experiment",
+   "What the lab is testing",
+   "Try the method yourself"
   ],
-  "h3": [
-   "Does the green hour hold?",
-   "Every tariff, every day",
-   "How good is Denmark&#8217;s wind forecast?",
-   "CO₂ forecast chain",
-   "Price archive chain",
-   "Run it yourself"
-  ],
-  "has_next_section": true,
-  "has_pulse_host": false
+  "og_bytes": 113140
  },
- "desk": {
-  "errors": [],
-  "live": {
-   "co2:state": "COLLECTING",
-   "co2:day": "6",
-   "co2:runs": "136",
-   "co2:chain": "intact",
-   "co2:countdown-n": "25",
-   "co2:head": "cc5c02f2f6758c43…",
-   "co2:anchor-date": "2026-10-05",
-   "co2:code": "v1.0 · a9a20477…27cf (published)",
-   "prices:state": "COLLECTING",
-   "prices:day": "6",
-   "prices:runs": "12",
-   "prices:chain": "intact",
-   "prices:head": "8707ff28346614f7…",
-   "prices:anchor-date": "2026-10-05",
-   "prices:code": "v1.0 · ffbc2709…2ca7 (published)",
-   "note": "Read from the public anchor files on GitHub. Each server adds one line a day; ch",
-   "co2:anchors": "6 anchors",
-   "prices:anchors": "6 anchors"
-  },
-  "pulse": [],
-  "dims": {
-   "h": 900,
-   "wide": false
-  }
+ "links": {
+  "https://github.com/kvantixtech": 200,
+  "https://github.com/kvantixtech/weather-forecast-test": 200,
+  "https://kvantix.tech/": 200,
+  "https://kvantix.tech/comments/feed/": 200,
+  "https://kvantix.tech/feed/": 200,
+  "https://kvantix.tech/playground/": 200,
+  "https://kvantix.tech/playground/energy/": 200,
+  "https://kvantix.tech/playground/experts/": 200,
+  "https://kvantix.tech/playground/lock-your-prediction/": 200,
+  "https://kvantix.tech/playground/luck-or-skill/": 200,
+  "https://kvantix.tech/playground/nitrogen/": 200,
+  "https://kvantix.tech/playground/noise-machine/": 200,
+  "https://kvantix.tech/playground/track-record/": 200,
+  "https://kvantix.tech/playground/wastewater/": 200,
+  "https://kvantix.tech/playground/weather/": 200,
+  "https://kvantix.tech/playground/wind-rain/": 200,
+  "https://kvantix.tech/privacy/": 200,
+  "https://kvantix.tech/wp-content/cache/minify/16271.css": 200,
+  "https://kvantix.tech/wp-content/cache/minify/d8c48.css": 200,
+  "https://kvantix.tech/wp-content/uploads/2026/03/cropped-kvantix_logo-180x180.png": 200,
+  "https://kvantix.tech/wp-content/uploads/2026/03/cropped-kvantix_logo-192x192.png": 200,
+  "https://kvantix.tech/wp-content/uploads/2026/03/cropped-kvantix_logo-32x32.png": 200,
+  "https://kvantix.tech/wp-content/uploads/kvantix-data-guide.html": 200,
+  "https://kvantix.tech/wp-json/": 200,
+  "https://kvantix.tech/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkvantix.tech%2Fplayground%2F": 200,
+  "https://kvantix.tech/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkvantix.tech%2Fplayground%2F&": 200,
+  "https://kvantix.tech/wp-json/wp/v2/pages/610": 200,
+  "https://kvantix.tech/xmlrpc.php?rsd": 403,
+  "https://portal.kvantix.tech/login": 200
  },
- "phone": {
-  "errors": [],
-  "live": {
-   "co2:state": "COLLECTING",
-   "co2:day": "6",
-   "co2:runs": "136",
-   "co2:chain": "intact",
-   "co2:countdown-n": "25",
-   "co2:head": "cc5c02f2f6758c43…",
-   "co2:anchor-date": "2026-10-05",
-   "co2:code": "v1.0 · a9a20477…27cf (published)",
-   "prices:state": "COLLECTING",
-   "prices:day": "6",
-   "prices:runs": "12",
-   "prices:chain": "intact",
-   "prices:head": "8707ff28346614f7…",
-   "prices:anchor-date": "2026-10-05",
-   "prices:code": "v1.0 · ffbc2709…2ca7 (published)",
-   "note": "Read from the public anchor files on GitHub. Each server adds one line a day; ch",
-   "co2:anchors": "6 anchors",
-   "prices:anchors": "6 anchors"
+ "tour desk": {
+  "page": {
+   "scroller": "kvx-root",
+   "height": 7256,
+   "client": 1000,
+   "hscroll": false,
+   "wideBody": false
   },
-  "pulse": [],
-  "dims": {
-   "h": 844,
-   "wide": false
-  }
+  "checks": {
+   "overlaps": [],
+   "outside_viewport": [],
+   "broken_images": [],
+   "vital": "Live lab \u00b7 8 investigations, 4 at work \u00b7 last event 38 min ago",
+   "hud": "Live \u00b7 the pulse is checked every two minutesLast change 31 min ago",
+   "feed": "Last 24 hoursTimes in your time zone. Every line links to its source.Today15:40Wind & solar \u00b7 change to code or methodScore offshore wind also against parks >=100 MW (CHANGELOG #7); first scores uncha",
+   "wx_state": null,
+   "wx_day": "8",
+   "wx_runs": "554",
+   "wx_chain": "intact",
+   "hub_live": [
+    "wr-n: 4 of 8 steps done",
+    "wr-live: Weather model (ERA5): 1 of 35 years in \u00b7 0 rain values read",
+    "en-n: 148 downloads locked"
+   ]
+  },
+  "shots": 9,
+  "logs": []
+ },
+ "tour mob": {
+  "page": {
+   "scroller": "kvx-root",
+   "height": 14065,
+   "client": 844,
+   "hscroll": false,
+   "wideBody": false
+  },
+  "checks": {
+   "overlaps": [],
+   "outside_viewport": [
+    "path.[object.SVGAnimatedString] \"\" -15..489",
+    "path.[object.SVGAnimatedString] \"\" -94..484"
+   ],
+   "broken_images": [],
+   "vital": "Live lab \u00b7 8 investigations, 4 at work \u00b7 last event 39 min ago",
+   "hud": "Reading the pulse\u202632 min ago",
+   "feed": "Last 24 hoursTimes in your time zone. Every line links to its source.Today15:40Wind & solar \u00b7 change to code or methodScore offshore wind also against parks >=100 MW (CHANGELOG #7); first scores uncha",
+   "wx_state": null,
+   "wx_day": "8",
+   "wx_runs": "554",
+   "wx_chain": "intact",
+   "hub_live": [
+    "wr-n: 4 of 8 steps done",
+    "wr-live: Weather model (ERA5): 1 of 35 years in \u00b7 0 rain values read",
+    "en-n: 148 downloads locked"
+   ]
+  },
+  "shots": 20,
+  "logs": []
  }
 }
