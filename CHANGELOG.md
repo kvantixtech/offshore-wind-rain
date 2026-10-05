@@ -173,3 +173,13 @@ What changed (`tools/era5.py`, `.github/workflows/era5.yml`):
   - the manifest and the status are recomputed.
 
 Nothing about what is computed changes. The requests are the same, and no rain-gauge value is read.
+
+## 2026-10-05: ERA5 requests resumable at CDS too (no data affected)
+
+- **What happened overnight:** the run that started at 18:46 UTC got three of 1992's six downloads at once (CDS still had them from the run stopped the evening before). It then waited more than five hours on the remaining two. They were still queued at CDS, behind copies of themselves left by the stopped run. The job was stopped at its limit at 00:45 UTC. The three downloads were cached and are not lost.
+- **What changed (`tools/era5.py`):**
+  - Requests are submitted and polled, not waited on.
+  - The CDS id of a request is cached the moment it exists. A run that reaches 340 minutes stops cleanly, and the next run waits for the same CDS job instead of queueing a copy.
+  - A request already at CDS (identical selection, still queued, running or finished) is picked up instead of sent again.
+  - Nothing about what is fetched or computed changes.
+

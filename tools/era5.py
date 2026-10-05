@@ -5,8 +5,9 @@
                                      valid gauge series, and every cell holding a turbine point (100 m wind for R13)
   python3 tools/era5.py run 225      fetch whole years one at a time (CDS limits queued requests per dataset), reduce each
                                      year to day windows once the next year is in; no new request starts after the time
-                                     budget. Every finished download is kept in the GitHub Actions cache at once, so the
-                                     next scheduled run carries on from the last finished request, also inside a year
+                                     budget, and no request is waited on after 340 minutes. Every finished download and
+                                     the CDS id of every request still waiting are kept in the GitHub Actions cache at
+                                     once, so the next run carries on from there, also inside a year
 
 Reads no rain-gauge value. ERA5 comes from the Copernicus Climate Data Store (CC BY 4.0); the key is the GitHub secret
 CDSAPI_KEY and is never written to the repository. The raw hourly downloads are too large to keep (about 4 GB): their
@@ -59,11 +60,14 @@ def window(kind, day):
 
 # ------------------------------------------------------------------ CDS
 def cds_client():
-    import cdsapi
+    """The CDS API client itself (ecmwf-datastores, which cdsapi wraps): requests are submitted and polled
+    separately, so a run never blocks on a request beyond its own time limit. cleanup=False: jobs are never
+    deleted, so the next run can pick up a request this run left waiting."""
+    from ecmwf.datastores import Client
     key = os.environ.get("CDSAPI_KEY", "").strip()
     if not key:
         sys.exit("CDSAPI_KEY is not set")
-    return cdsapi.Client(url="https://cds.climate.copernicus.eu/api", key=key, quiet=True, progress=False)
+    return Client(url="https://cds.climate.copernicus.eu/api", key=key, progress=False, cleanup=False)
 
 
 def open_nc(b):
@@ -101,9 +105,9 @@ def prepare():
     os.makedirs(OUT, exist_ok=True)
     client = cds_client()
     downloads = []
-    b = retrieve_once(client, "reanalysis-era5-single-levels",
-                 base_req({"variable": ["land_sea_mask"], "year": ["2020"], "month": ["01"], "day": ["01"], "time": ["00:00"]}),
-                 "lsm", downloads)
+    b = fetch_part(client, "reanalysis-era5-single-levels",
+                   base_req({"variable": ["land_sea_mask"], "year": ["2020"], "month": ["01"], "day": ["01"], "time": ["00:00"]}),
+                   "lsm", os.path.join(PARTS, "prepare_lsm.bin"), downloads, time.time() + 3600)
     ds = open_nc(b)
     lsm = ds["lsm"].isel(time=0).values if "time" in ds["lsm"].dims else ds["lsm"].values
     lat, lon = ds["latitude"].values, ds["longitude"].values
@@ -147,33 +151,121 @@ PARTS = os.path.join(RAWDIR, "parts")            # each finished request, kept u
 QUEUE_MSG = "Number queued requests"
 
 
+HARD = [float("inf")]     # set by run(): after this moment no run keeps waiting (job limit minus room to publish)
+
+
 class Budget(Exception):
-    """No new CDS request once the run's time budget is used. Finished requests stay in the cache for the next run."""
+    """No new CDS request after the run's time budget, and no waiting past its hard limit. Finished downloads and
+    the ids of requests still at CDS stay in the cache, so the next run carries on from there."""
 
 
-def retrieve_patient(client, dataset, req, tag, downloads, deadline):
+def _val(x):
+    try:
+        return repr(float(x))
+    except (TypeError, ValueError):
+        return str(x)
+
+
+def _norm(req):
+    """A request in a form that compares equal however CDS stores it ("01" and 1, 4 and 4.0, any order)."""
+    keys = ("year", "month", "day", "time", "variable", "pressure_level", "area")
+    return {k: sorted(_val(x) for x in (req[k] if isinstance(req[k], list) else [req[k]])) for k in keys if k in req}
+
+
+_JOBS = {}
+
+
+def find_job(client, dataset, req):
+    """The same request may already be at CDS: left waiting by a run that was stopped before request ids were
+    kept, or still finishing. Waiting for it is faster than queueing a second copy."""
+    if "list" not in _JOBS:
+        try:
+            _JOBS["list"] = client.get_jobs(limit=100, sortby="-created", status=["accepted", "running", "successful"]).json.get("jobs", [])
+        except Exception as e:
+            log(f"  could not list CDS jobs ({str(e)[:120]})"); _JOBS["list"] = []
+    want = _norm(req)
+    for j in _JOBS["list"]:
+        if j.get("processID") != dataset:
+            continue
+        jid = j.get("jobID")
+        try:
+            if jid not in _JOBS:
+                _JOBS[jid] = _norm(client.get_remote(jid).request)
+            if _JOBS[jid] == want:
+                return client.get_remote(jid)
+        except Exception:
+            continue
+    return None
+
+
+def submit_patient(client, dataset, req, label, deadline):
     """CDS allows only a few queued requests per dataset and user. A rejection for that reason is not a failure:
-    wait and submit again, until the run's deadline."""
+    wait and submit again, until the run's budget. "Cost limits exceeded" goes back to the caller, which splits."""
     while True:
         try:
-            return retrieve_once(client, dataset, req, tag, downloads)
+            return client.submit(dataset, req)
         except Exception as e:
             msg = str(e)
             if QUEUE_MSG in msg and time.time() + 900 < deadline:
-                log(f"  {tag}: CDS queue limit, waiting 10 min"); time.sleep(600); continue
+                log(f"  {label}: CDS queue limit, waiting 10 min"); time.sleep(600); continue
             if QUEUE_MSG in msg:
-                raise Budget(tag)
+                raise Budget(label)
             raise
 
 
-def retrieve_once(client, dataset, req, tag, downloads):
+def fetch_part(client, dataset, req, label, part, downloads, deadline):
+    """One request, resumable at every stage: its CDS id is kept in the cache as soon as it exists, it is polled
+    rather than waited on, and a run that reaches its hard limit leaves it to the next run, which waits for the
+    same job instead of asking again."""
+    pend = part[:-4] + ".req"
+    remote = None
+    if os.path.exists(pend):
+        rid = open(pend).read().strip()
+        try:
+            remote = client.get_remote(rid)
+            st = remote.status
+            if st in ("failed", "rejected", "dismissed", "deleted"):
+                log(f"  {label}: the request from an earlier run ended as {st}; asking again")
+                remote = None
+            else:
+                log(f"  {label}: waiting for the request an earlier run left at CDS ({st})")
+        except Exception as e:
+            log(f"  {label}: the request from an earlier run is gone ({str(e)[:80]}); asking again")
+            remote = None
+        if remote is None:
+            os.unlink(pend)
+    if remote is None:
+        remote = find_job(client, dataset, req)
+        if remote is not None:
+            log(f"  {label}: the same request is already at CDS ({remote.status}); waiting for it")
+    if remote is None:
+        if time.time() > deadline:
+            raise Budget(label)
+        remote = submit_patient(client, dataset, req, label, deadline)
+    os.makedirs(PARTS, exist_ok=True)
+    with open(pend, "w") as fh:
+        fh.write(remote.request_id + "\n")
+    t0, nap = time.time(), 15
+    while True:
+        st = remote.status
+        if st == "successful":
+            break
+        if st in ("failed", "rejected", "dismissed", "deleted"):
+            os.unlink(pend)
+            raise RuntimeError(f"{label}: CDS request {remote.request_id} ended as {st}")
+        if time.time() > HARD[0]:
+            raise Budget(f"{label} (still {st} at CDS; the next run waits for the same request)")
+        time.sleep(nap); nap = min(120, nap * 1.5)
     with tempfile.NamedTemporaryFile(suffix=".dl", delete=False) as fh:
         path = fh.name
-    t0 = time.time()
-    client.retrieve(dataset, req, path)
+    remote.download(path)
     b = open(path, "rb").read(); os.unlink(path)
-    downloads.append([tag, dataset, len(b), hashlib.sha256(b).hexdigest()])
-    log(f"  {tag}: {len(b) / 1e6:.1f} MB in {round((time.time() - t0) / 60)} min")
+    with open(part + ".tmp", "wb") as fh:
+        fh.write(b)
+    os.replace(part + ".tmp", part)
+    os.unlink(pend)
+    downloads.append([label, dataset, len(b), hashlib.sha256(b).hexdigest()])
+    log(f"  {label}: {len(b) / 1e6:.1f} MB in {round((time.time() - t0) / 60)} min")
     return b
 
 
@@ -188,17 +280,10 @@ def fetch_split(client, dataset, extra, y, months, tag, downloads, deadline):
         downloads.append([label, dataset, len(b), hashlib.sha256(b).hexdigest()])
         log(f"  {label}: {len(b) / 1e6:.1f} MB, fetched by an earlier run")
         return open_nc(b)
-    if time.time() > deadline:
-        raise Budget(label)
     days = ["01"] if y == 2026 else [f"{d:02d}" for d in range(1, 32)]
     req = base_req({"year": [str(y)], "month": [f"{m:02d}" for m in months], "day": days, **extra})
     try:
-        b = retrieve_patient(client, dataset, req, label, downloads, deadline)
-        os.makedirs(PARTS, exist_ok=True)
-        with open(part + ".tmp", "wb") as fh:
-            fh.write(b)
-        os.replace(part + ".tmp", part)
-        return open_nc(b)
+        return open_nc(fetch_part(client, dataset, req, label, part, downloads, deadline))
     except Exception as e:
         if "cost limits exceeded" in str(e) and len(months) > 1:
             h = len(months) // 2
@@ -285,10 +370,12 @@ def process(y):
     log(f"year {y} processed: {len(gcells)} gauge cells, {len(farm)} farm cells, {len(days)} days")
 
 
-def run(budget_min):
-    """Fetch and process years in order. No new request starts after the time budget; the next run carries on from the
-    last finished request."""
+def run(budget_min, hard_min=340):
+    """Fetch and process years in order. No new request starts after the budget, and no request is waited on after
+    the hard limit (the job itself is stopped at 358 minutes); the next run carries on from the last finished
+    download and waits for any request still at CDS."""
     deadline = time.time() + budget_min * 60
+    HARD[0] = time.time() + hard_min * 60
     client = cds_client()
     done = lambda y: os.path.exists(os.path.join(OUT, f"gauge_days_{y}.csv.xz"))
     raw = lambda y: os.path.exists(os.path.join(RAWDIR, f"{y}.nc"))
