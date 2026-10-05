@@ -68,3 +68,12 @@ year 1991 processed: 282 gauge cells, 55 farm cells, 365 days
   p850 1993: too large, splitting 01-12
   single 1993: too large, splitting 01-06
   p850 1993 01-06: 16.7 MB in 154 min
+  p850 1993: too large, splitting 01-12
+  p850 1993 01-06: 16.7 MB, fetched by an earlier run
+  single 1993: too large, splitting 01-12
+  single 1993: too large, splitting 01-06
+  single 1993 01-03: the same request is already at CDS (accepted); waiting for it
+  single 1993 01-03: 19.0 MB in 145 min
+  p850 1993 07-12: 17.1 MB in 264 min
+time budget used: stopping before single 1993 04-06 (still accepted at CDS; the next run waits for the same request); finished downloads are kept for the next run
+years done: 1991
