@@ -142,3 +142,22 @@ years done: 1991,1992,1993
   single 1995 07-09: 19.5 MB in 213 min
 time budget used: stopping before single 1995 10-12; finished downloads are kept for the next run
 years done: 1991,1992,1993
+  p850 1995: too large, splitting 01-12
+  p850 1995 01-06: 16.8 MB, fetched by an earlier run
+  p850 1995 07-12: 17.0 MB, fetched by an earlier run
+  single 1995: too large, splitting 01-12
+  single 1995: too large, splitting 01-06
+  single 1995 01-03: 19.5 MB, fetched by an earlier run
+  single 1995 04-06: 19.6 MB, fetched by an earlier run
+  single 1995: too large, splitting 07-12
+  single 1995 07-09: 19.5 MB, fetched by an earlier run
+  single 1995 10-12: 19.7 MB in 51 min
+year 1995 fetched: 8760 hours
+year 1994 processed: 282 gauge cells, 55 farm cells, 365 days
+  p850 1996: too large, splitting 01-12
+  single 1996: too large, splitting 01-12
+  single 1996: too large, splitting 01-06
+  p850 1996 01-06: 16.9 MB in 125 min
+  single 1996 01-03: 19.2 MB in 202 min
+time budget used: stopping before single 1996 04-06; finished downloads are kept for the next run
+years done: 1991,1992,1993,1994
