@@ -217,3 +217,11 @@ year 1997 fetched: 8760 hours
 year 1996 processed: 282 gauge cells, 55 farm cells, 366 days
 time budget used: stopping before single 1998 01-12; finished downloads are kept for the next run
 years done: 1991,1992,1993,1994,1995,1996
+  p850 1998: too large, splitting 01-12
+  single 1998: too large, splitting 01-12
+  single 1998: too large, splitting 01-06
+  p850 1998 01-06: 16.8 MB in 10 min
+  single 1998 01-03: 19.2 MB in 118 min
+  p850 1998 07-12: 17.1 MB in 181 min
+time budget used: stopping before single 1998 04-06 (still accepted at CDS; the next run waits for the same request); finished downloads are kept for the next run
+years done: 1991,1992,1993,1994,1995,1996
