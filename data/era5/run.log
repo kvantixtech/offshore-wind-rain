@@ -225,3 +225,15 @@ years done: 1991,1992,1993,1994,1995,1996
   p850 1998 07-12: 17.1 MB in 181 min
 time budget used: stopping before single 1998 04-06 (still accepted at CDS; the next run waits for the same request); finished downloads are kept for the next run
 years done: 1991,1992,1993,1994,1995,1996
+  p850 1998: too large, splitting 01-12
+  p850 1998 01-06: 16.8 MB, fetched by an earlier run
+  p850 1998 07-12: 17.1 MB, fetched by an earlier run
+  single 1998: too large, splitting 01-12
+  single 1998: too large, splitting 01-06
+  single 1998 01-03: 19.2 MB, fetched by an earlier run
+  single 1998 04-06: waiting for the request an earlier run left at CDS (running)
+  single 1998 04-06: 19.7 MB in 12 min
+  single 1998: too large, splitting 07-12
+  single 1998 07-09: 20.0 MB in 158 min
+time budget used: stopping before single 1998 10-12 (still accepted at CDS; the next run waits for the same request); finished downloads are kept for the next run
+years done: 1991,1992,1993,1994,1995,1996
