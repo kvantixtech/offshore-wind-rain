@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-10-09T14:40:06Z",
+ "updated_utc": "2026-10-09T21:58:58Z",
  "rain_values_read": false,
  "numbers": {
   "turbine_points": 2863,
@@ -9,7 +9,7 @@
   "gauge_series_dwd": 724
  },
  "era5": {
-  "years_done": 8,
+  "years_done": 9,
   "years_total": 35,
   "years": [
    1991,
@@ -19,7 +19,8 @@
    1995,
    1996,
    1997,
-   1998
+   1998,
+   1999
   ]
  },
  "steps": [
@@ -54,8 +55,8 @@
   {
    "key": "era5",
    "when": "now",
-   "commit": "ac51fd9",
-   "status": "8 of 35 years in",
+   "commit": "ecda7d5",
+   "status": "9 of 35 years in",
    "step": "Weather model (ERA5), hour by hour, summed over each gauge network's day"
   },
   {
