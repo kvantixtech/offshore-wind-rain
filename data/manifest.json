@@ -181,8 +181,8 @@
    "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
   },
   "era5/run.log": {
-   "bytes": 19531,
-   "sha256": "01a3d668c9132920d41b3bf78673be7e8972c998edcf47f0ca393543c0d852e1",
+   "bytes": 20095,
+   "sha256": "d76010d47a08dfc9ba72ec3aa85d7672bb9b3dbf8df7c076f004253a598a45b3",
    "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
   },
   "era5/run_1991.log": {
