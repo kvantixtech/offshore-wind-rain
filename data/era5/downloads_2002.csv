@@ -1,0 +1,7 @@
+tag,dataset,bytes,sha256
+p850 2002 01-06,reanalysis-era5-pressure-levels,16609037,02031dc9ccfd99a43d3bfeb3ac6749dbb4a97cd55e1c319d56675f7ef3bac938
+p850 2002 07-12,reanalysis-era5-pressure-levels,17232605,3b18f914d04912b7ede6f0949f001f0acd459a4f64b19f01187624054d24da04
+single 2002 01-03,reanalysis-era5-single-levels,19179304,3f0636cbfa83eff4d6574962733ce832ec1e9d9b239ffefa924d8f974ec1ca0f
+single 2002 04-06,reanalysis-era5-single-levels,19403986,d804c3f9b2c579b61bd72e3bd26f94b9b5dcf5f2864219852523300be48d816b
+single 2002 07-09,reanalysis-era5-single-levels,19767470,57b76ec4f3f45eb6133b36e769e7eb1b4abfc9ee5f3433c7ab9b7fbf25ecdb6c
+single 2002 10-12,reanalysis-era5-single-levels,20139539,5cbb9eb281bfdd95f64de1d7789f550a4cec862ea26ccce0a156aa25ee935055
