@@ -460,3 +460,115 @@ years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002
   single 2004: too large, splitting 07-12
 time budget used: stopping before single 2004 07-09 (still accepted at CDS; the next run waits for the same request); finished downloads are kept for the next run
 years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002
+  p850 2004: too large, splitting 01-12
+  p850 2004 01-06: 17.1 MB, fetched by an earlier run
+  p850 2004 07-12: 16.9 MB, fetched by an earlier run
+  single 2004: too large, splitting 01-12
+  single 2004: too large, splitting 01-06
+  single 2004 01-03: 19.7 MB, fetched by an earlier run
+  single 2004 04-06: 19.5 MB, fetched by an earlier run
+  single 2004: too large, splitting 07-12
+  single 2004 07-09: waiting for the request an earlier run left at CDS (accepted)
+  single 2004 07-09: 19.7 MB in 28 min
+Traceback (most recent call last):
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 286, in fetch_split
+    return open_nc(fetch_part(client, dataset, req, label, part, downloads, deadline))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 244, in fetch_part
+    remote = submit_patient(client, dataset, req, label, deadline)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 206, in submit_patient
+    return client.submit(dataset, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/client.py", line 413, in submit
+    return self._retrieve_api.submit(collection_id, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 754, in submit
+    return self.get_process(collection_id).submit(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 317, in submit
+    job = Job.from_request(
+          ^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 177, in from_request
+    cads_raise_for_status(response)
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 100, in cads_raise_for_status
+    raise requests.HTTPError(message, response=response)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+cost limits exceeded
+Your request is too large, please reduce your selection.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 286, in fetch_split
+    return open_nc(fetch_part(client, dataset, req, label, part, downloads, deadline))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 244, in fetch_part
+    remote = submit_patient(client, dataset, req, label, deadline)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 206, in submit_patient
+    return client.submit(dataset, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/client.py", line 413, in submit
+    return self._retrieve_api.submit(collection_id, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 754, in submit
+    return self.get_process(collection_id).submit(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 317, in submit
+    job = Job.from_request(
+          ^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 177, in from_request
+    cads_raise_for_status(response)
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 100, in cads_raise_for_status
+    raise requests.HTTPError(message, response=response)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+cost limits exceeded
+Your request is too large, please reduce your selection.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 400, in <module>
+    run(int(sys.argv[2]) if len(sys.argv) > 2 else 300)
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 386, in run
+    fetch(client, y, deadline)
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 305, in fetch
+    a, b = fs.result(), fp.result().rename({"u": "u850", "v": "v850"})
+           ^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 292, in fetch_split
+    fetch_split(client, dataset, extra, y, months[h:], tag, downloads, deadline)], dim="time")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 292, in fetch_split
+    fetch_split(client, dataset, extra, y, months[h:], tag, downloads, deadline)], dim="time")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 286, in fetch_split
+    return open_nc(fetch_part(client, dataset, req, label, part, downloads, deadline))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/offshore-wind-rain/offshore-wind-rain/tools/era5.py", line 250, in fetch_part
+    st = remote.status
+         ^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 425, in status
+    reply = self.json
+            ^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 410, in json
+    return self._get_api_response("get", params=params)._json_dict
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 395, in _get_api_response
+    return ApiResponse.from_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 177, in from_request
+    cads_raise_for_status(response)
+  File "/home/runner/.local/lib/python3.12/site-packages/ecmwf/datastores/processing.py", line 100, in cads_raise_for_status
+    raise requests.HTTPError(message, response=response)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/135e9e89-6678-4b4a-a4b6-6bea93c0e085?log=True&request=True
+job not found
+job 135e9e89-6678-4b4a-a4b6-6bea93c0e085 deleted
