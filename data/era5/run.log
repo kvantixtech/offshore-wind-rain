@@ -648,3 +648,10 @@ year 2006 fetched: 8760 hours
 year 2005 processed: 282 gauge cells, 55 farm cells, 365 days
 time budget used: stopping before single 2007 01-12; finished downloads are kept for the next run
 years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005
+  p850 2007: too large, splitting 01-12
+  single 2007: too large, splitting 01-12
+  single 2007: too large, splitting 01-06
+  p850 2007 01-06: 16.7 MB in 164 min
+  single 2007 01-03: 19.3 MB in 329 min
+time budget used: stopping before single 2007 04-06; finished downloads are kept for the next run
+years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005
