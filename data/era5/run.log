@@ -842,3 +842,14 @@ Traceback (most recent call last):
 requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://cds.climate.copernicus.eu/api/retrieve/v1/jobs/9521af8a-43d1-467a-a759-77eccadf8943?log=True&request=True
 job not found
 job 9521af8a-43d1-467a-a759-77eccadf8943 deleted
+  p850 2009: too large, splitting 01-12
+  p850 2009 01-06: 16.9 MB, fetched by an earlier run
+  p850 2009 07-12: the request from an earlier run is gone (404 Client Error: Not Found for url: https://cds.climate.copernicus.eu/api/retri); asking again
+  single 2009: too large, splitting 01-12
+  single 2009: too large, splitting 01-06
+  single 2009 01-03: the request from an earlier run is gone (404 Client Error: Not Found for url: https://cds.climate.copernicus.eu/api/retri); asking again
+  p850 2009 07-12: 17.0 MB in 64 min
+  single 2009 01-03: 19.6 MB in 198 min
+  single 2009 04-06: 19.2 MB in 136 min
+time budget used: stopping before single 2009 07-12; finished downloads are kept for the next run
+years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007
