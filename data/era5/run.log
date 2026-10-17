@@ -995,3 +995,24 @@ job c091d478-bf64-4fbe-988b-81b117d33d3a deleted
   single 2010 07-09: 20.1 MB in 168 min
 time budget used: stopping before single 2010 10-12; finished downloads are kept for the next run
 years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008
+  p850 2010: too large, splitting 01-12
+  p850 2010 01-06: 17.1 MB, fetched by an earlier run
+  p850 2010 07-12: 17.3 MB, fetched by an earlier run
+  single 2010: too large, splitting 01-12
+  single 2010: too large, splitting 01-06
+  single 2010 01-03: 19.5 MB, fetched by an earlier run
+  single 2010 04-06: 19.3 MB, fetched by an earlier run
+  single 2010: too large, splitting 07-12
+  single 2010 07-09: 20.1 MB, fetched by an earlier run
+  single 2010 10-12: 20.3 MB in 111 min
+year 2010 fetched: 8760 hours
+year 2009 processed: 282 gauge cells, 55 farm cells, 365 days
+  single 2011: too large, splitting 01-12
+  p850 2011: too large, splitting 01-12
+  single 2011: too large, splitting 01-06
+  p850 2011 01-06: 16.8 MB in 133 min
+Recovering from HTTP error [500 Internal Server Error], attempt 1 of 500
+Retrying in 120 seconds
+  single 2011 01-03: 18.9 MB in 215 min
+time budget used: stopping before single 2011 04-06; finished downloads are kept for the next run
+years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009
