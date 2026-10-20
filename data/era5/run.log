@@ -1290,3 +1290,13 @@ job eb9858ec-d4b7-42c4-89f0-f78b6fc2b4df deleted
   p850 2015 07-12: 17.0 MB in 199 min
 time budget used: stopping before single 2015 01-03 (still accepted at CDS; the next run waits for the same request); finished downloads are kept for the next run
 years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013
+  p850 2015: too large, splitting 01-12
+  p850 2015 01-06: 16.7 MB, fetched by an earlier run
+  p850 2015 07-12: 17.0 MB, fetched by an earlier run
+  single 2015: too large, splitting 01-12
+  single 2015: too large, splitting 01-06
+  single 2015 01-03: waiting for the request an earlier run left at CDS (accepted)
+  single 2015 01-03: 19.4 MB in 42 min
+  single 2015 04-06: 19.3 MB in 194 min
+time budget used: stopping before single 2015 07-12; finished downloads are kept for the next run
+years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013
