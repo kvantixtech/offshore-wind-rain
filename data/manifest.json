@@ -130,6 +130,11 @@
    "sha256": "dd9b3ba9d503bde3ddff69f0eaf838a39d908aabaf4eecf09f10d79417e48cf1",
    "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
   },
+  "era5/downloads_2016.csv": {
+   "bytes": 757,
+   "sha256": "5ff583a78ebe508164d36d57c57488331b79d0d8a7fea46203a956dc0249ef14",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
   "era5/downloads_prepare.csv": {
    "bytes": 130,
    "sha256": "4ea67177d2319b91d80ebd8781980553c8b26607dfd358946446c0131bb05798",
@@ -260,6 +265,11 @@
    "sha256": "9dec22729afd56ddacb07aaaa8217a2b14c6570dbe293ba2a93ce74059d1313e",
    "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
   },
+  "era5/farm_days_2015.csv.xz": {
+   "bytes": 196704,
+   "sha256": "670336e0015bafbf3e3a6ec7ed52850b946227f8bef8d0acfaf7a16019fd5405",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
   "era5/gauge_days_1991.csv.xz": {
    "bytes": 1302252,
    "sha256": "41ec1db2311b73082ae71b987536c32d7bcfa2154f4b6def4cd21967a8626b94",
@@ -380,6 +390,11 @@
    "sha256": "7cb961a49d1806029fab424404714aa4b25d1a9219b0f55feef8f18c0e5764bf",
    "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
   },
+  "era5/gauge_days_2015.csv.xz": {
+   "bytes": 1336184,
+   "sha256": "ac1e8bbe7415af1f4a8b2bac3d9f22b20ddefa5b88facee35c02e82f5d60f788",
+   "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
+  },
   "era5/grid.csv": {
    "bytes": 19380,
    "sha256": "340fd3ec397c32fe67f19c88ddedfd5081e4dfcb406fe5faf797855d9ff50df7",
@@ -391,8 +406,8 @@
    "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
   },
   "era5/run.log": {
-   "bytes": 83955,
-   "sha256": "09d0fc0955febe8f33f24402ebbc154a06fbb0d82daa2c31b2f5377f4c3d7a65",
+   "bytes": 84764,
+   "sha256": "1aa7c163b0fadf680b6bd31193913b2d06a171158b98d12522860c48af2f51e7",
    "what": "step 3: ERA5 reduced to day windows (tools/era5.py)"
   },
   "era5/run_1991.log": {
