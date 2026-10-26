@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-10-26T09:14:29Z",
+ "updated_utc": "2026-10-26T14:56:14Z",
  "rain_values_read": false,
  "numbers": {
   "turbine_points": 2863,
@@ -76,7 +76,7 @@
   {
    "key": "era5",
    "when": "now",
-   "commit": "5b97bdd",
+   "commit": "2d4d223",
    "status": "30 of 35 years in",
    "step": "Weather model (ERA5), hour by hour, summed over each gauge network's day"
   },
