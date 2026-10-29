@@ -1851,3 +1851,18 @@ years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,200
   single 2025 07-09: 19.9 MB in 111 min
 time budget used: stopping before single 2025 10-12; finished downloads are kept for the next run
 years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023
+  p850 2025: too large, splitting 01-12
+  p850 2025 01-06: 16.8 MB, fetched by an earlier run
+  p850 2025 07-12: 17.1 MB, fetched by an earlier run
+  single 2025: too large, splitting 01-12
+  single 2025: too large, splitting 01-06
+  single 2025 01-03: 19.0 MB, fetched by an earlier run
+  single 2025 04-06: 19.2 MB, fetched by an earlier run
+  single 2025: too large, splitting 07-12
+  single 2025 07-09: 19.9 MB, fetched by an earlier run
+  single 2025 10-12: 20.0 MB in 98 min
+year 2025 fetched: 8760 hours
+year 2024 processed: 282 gauge cells, 55 farm cells, 366 days
+  p850 2026 01-01: 0.1 MB in 115 min
+time budget used: stopping before single 2026 01-01 (still accepted at CDS; the next run waits for the same request); finished downloads are kept for the next run
+years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024
