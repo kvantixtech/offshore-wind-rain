@@ -1866,3 +1866,9 @@ year 2024 processed: 282 gauge cells, 55 farm cells, 366 days
   p850 2026 01-01: 0.1 MB in 115 min
 time budget used: stopping before single 2026 01-01 (still accepted at CDS; the next run waits for the same request); finished downloads are kept for the next run
 years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024
+  p850 2026 01-01: 0.1 MB, fetched by an earlier run
+  single 2026 01-01: waiting for the request an earlier run left at CDS (accepted)
+  single 2026 01-01: 0.3 MB in 17 min
+year 2026 fetched: 24 hours
+year 2025 processed: 282 gauge cells, 55 farm cells, 365 days
+years done: 1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025
