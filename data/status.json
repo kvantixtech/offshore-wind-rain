@@ -1,5 +1,5 @@
 {
- "updated_utc": "2026-10-29T04:57:22Z",
+ "updated_utc": "2026-10-29T05:15:33Z",
  "rain_values_read": false,
  "numbers": {
   "turbine_points": 2863,
@@ -9,7 +9,7 @@
   "gauge_series_dwd": 724
  },
  "era5": {
-  "years_done": 34,
+  "years_done": 35,
   "years_total": 35,
   "years": [
    1991,
@@ -45,7 +45,8 @@
    2021,
    2022,
    2023,
-   2024
+   2024,
+   2025
   ]
  },
  "steps": [
@@ -79,14 +80,14 @@
   },
   {
    "key": "era5",
-   "when": "now",
-   "commit": "0365601",
-   "status": "34 of 35 years in",
+   "when": "29 Oct",
+   "commit": "b3d1c4c",
+   "status": "done",
    "step": "Weather model (ERA5), hour by hour, summed over each gauge network's day"
   },
   {
    "key": "exposure",
-   "when": "next",
+   "when": "now",
    "commit": "",
    "status": "waiting",
    "step": "Upwind capacity for every gauge and day, and the 10 % bound"
